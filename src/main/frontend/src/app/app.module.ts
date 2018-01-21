@@ -13,6 +13,8 @@ import {
 import { Chapter1StartpointComponent } from './component/chapter-1-startpoint/chapter-1-startpoint.component';
 import { NewLineToBreakerPipe } from './pipe/new-line-to-breaker.pipe';
 import {FormsModule} from "@angular/forms";
+import {ProjectModule} from "./project/project.module";
+import {ProductService} from "./service/product.service";
 
 
 @NgModule({
@@ -30,8 +32,10 @@ import {FormsModule} from "@angular/forms";
     /* Angular Material & Animation Modeul */
     MatToolbarModule,MatSnackBarModule,MatCardModule,MatInputModule,
     MatRadioModule,MatButtonModule,
+    /* App Module */
+    ProjectModule,
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
