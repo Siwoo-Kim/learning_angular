@@ -1,4 +1,5 @@
 
+<div class="row">
 <mat-toolbar><h2>chapter-1-startpoint</h2> &nbsp;by&nbsp; <a href="skim327@myseneca.ca">SiWoo-Kim</a></mat-toolbar>
 <hr>
 <ul>
@@ -26,7 +27,7 @@
 
   </li>
 
-  <li>
+  <li class="sub-chapter">
     <h3>Module 기본</h3>
     <p><em>모듈(Module></em>은 컴포넌트(Component) , 서비스(Service), 디렉티브(Directive)을 논리적인 하나의 요소로
     모아놓은 것이다.
@@ -42,5 +43,37 @@
     </p>
   </li>
 
+  <li class="sub-chapter">
+    <h3>데이터 바인딩(Data Binding) 기본</h3>
+    <p>데이터 바인딩(Data Binding)이란 컴포넌트의 프로퍼티(property)와 뷰(View or Template)을 동기화시키는 작업을 의미한다.</p>
+    <p>데이터 바인딩에는 세가지 종류가 있으며 모두 <strong>단방향이다</strong></p>
+    <ul>
+      <li>{{escapeHtml4}} : 삽입식(injection)</li>
+      <li>{{escapeHtml5}} : 프러퍼터 바인딩(property or attribute binding)</li>
+      <li>{{escapeHtml6}} : 이벤트 바인딩(event binding)</li>
+    </ul>
+    <hr>
+    <code [innerText]="escapeHtml7">
+    </code>
+
+    <br>
+      <h1>Hello {{name}}! </h1>
+      <span [hidden]="isValid">The field is not valid</span>
+      <button mat-raised-button (click)="onEventHandler()" >Trigger event handler</button>
+
+    <hr>
+
+    <p>양방햔 바인딩(bi-directional data binding) <code>[(ngModel)]</code>로 구현 가능하지만 꼭 필요하지 않다면 사용하지 않는것이 바람직하다.
+    또한 템플릿 안에서 다른 엘리먼트의 프러퍼티를 지역 템플릿 변수(local template variable)을 생성하여 참조할 수 있다.<br/>
+      <code [innerText]="escapeHtml8"></code>
+    </p>
+    <br/>
+
+    <input #localTemplate type="text" >
+    <p>{{localTemplate.value}}</p>
+
+  </li>
+
 
 </ul>
+</div>

@@ -12,6 +12,7 @@ import {
 } from "@angular/material";
 import { Chapter1StartpointComponent } from './component/chapter-1-startpoint/chapter-1-startpoint.component';
 import { NewLineToBreakerPipe } from './pipe/new-line-to-breaker.pipe';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { NewLineToBreakerPipe } from './pipe/new-line-to-breaker.pipe';
   ],
   imports: [
     /* Angular Module */
-    BrowserModule,HttpModule,
+    BrowserModule,HttpModule,FormsModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     /* Angular Material & Animation Modeul */

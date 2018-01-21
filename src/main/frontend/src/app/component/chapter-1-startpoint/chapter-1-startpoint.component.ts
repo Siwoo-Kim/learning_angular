@@ -10,6 +10,11 @@ export class Chapter1StartpointComponent implements OnInit {
   escapeHtml1:string;
   escapeHtml2:string;
   escapeHtml3:string;
+  escapeHtml4:string;
+  escapeHtml5:string;
+  escapeHtml6:string;
+  escapeHtml7:string;
+  escapeHtml8: string;
   constructor() {
     this.name = 'Angular';
     this.escapeHtml1 = "{{name}}";
@@ -39,9 +44,28 @@ export class Chapter1StartpointComponent implements OnInit {
       "      })\n" +
       "      export class AppModule { }";
 
+    this.escapeHtml4="{{property}}";
+    this.escapeHtml5="[property] or [attr.attribute]";
+    this.escapeHtml6="(event)";
+
+    this.escapeHtml7=
+      "<h1>Hello {{name}}! </h1>\n" +
+      "    <span [hidden]=\"isValid\">The field is not valid</span>\n" +
+      "    <button mat-raised-button (click)=\"onEventHandler()\" >Trigger event handler</button>\n" +
+      "   ";
+
+    this.escapeHtml8="<input #localTemplate type=\"text\">"
+
+  }
+
+
+  isValid:boolean=false;
+  onEventHandler(){
+    console.log(`Event is handled by event handler!`);
   }
 
   ngOnInit() {
   }
+
 
 }
