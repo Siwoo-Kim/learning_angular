@@ -1,12 +1,29 @@
 
-<mat-toolbar><h2><strong>chapter-1-startpoint</strong></h2></mat-toolbar>
+<mat-toolbar><h2>chapter-1-startpoint</h2> &nbsp;by&nbsp; <a href="skim327@myseneca.ca">SiWoo-Kim</a></mat-toolbar>
 <hr>
 <ul>
-  <li>
+  <li class="sub-chapter">
     <h3>Component 기본</h3>
     <p><em>컴포넌트(Component)</em>는 Angular 어플리케이션을 구성하는 기본 요소이며, 템플릿을 가진다</p>
+    <p>모든 앱은 최소한 하나의 모듈(Root Module)과 하나의 루트 컴포넌트(root component)을 가진다. </p>
     <p>클래스의 <code>@Component</code> 선언시, 해당 클래스는 컴포넌트로 선언된다</p>
+    <hr>
+    <code [innerText]="escapeHtml2"></code>
+    <hr>
+    <p>컴포넌트 어노테이션안의 <em>메타데이타(Metadata)</em> 종류에는 <code>selector</code>, <code>template</code>
+    등이 있으며 기능은 아래와같다.
+    </p>
+    <br>
+      <ul>
+        <li>selector : 컴포넌트에 고유의 HTML 태그를 부여한다</li>
+        <li>template 혹은 templateUrl : 템플릿(view) 의 정보를 명시한다</li>
+        <li>styles 혹은 styleUrls: 스타일 스크립트 의 정보를 명시한다</li>
+      </ul>
+    <br>
+    <p>컴포넌트가 위치할 <code>selector</code> 와 <code>template</code>은 최소 요구 사항이며, 뷰와 컴포넌트 로직을
+    별개로 설계하여 관심이 다른것을 분리(seperation of different concerns) 것이 컴포넌트의 핵심이다.</p>
     <p>{{escapeHtml1}} 은 컴포넌트의 프러피티인 <strong>name</strong>을 템플릿으로 렌더링함을 의미한다</p>
+
   </li>
 
   <li>
@@ -15,8 +32,15 @@
     모아놓은 것이다.
     </p>
     <hr>
-    <code [innerText]="escapeHtml2"></code>
+    <code [innerText]="escapeHtml3"></code>
     <hr>
-    <p></p>
+    <p>
+      모듈은 <code>@NgModule</code> 어노테이션을 붙여 선언하며 어노테이션안의
+      <em>Metadata</em>에 모듈의 내용을 설정한다.
+      RootModule (bootstrap될) 에서는 반드시 <code>BrowserModule</code>을 불러와야 하며,
+      그외 모듈은 <code>CommonModule</code>을 불러와 사용한다.
+    </p>
   </li>
+
+
 </ul>
