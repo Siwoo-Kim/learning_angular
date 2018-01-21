@@ -10,12 +10,16 @@ import {
   MatButtonModule, MatCardModule, MatInputModule, MatRadioModule, MatSnackBarModule,
   MatToolbarModule
 } from "@angular/material";
+import { Chapter1StartpointComponent } from './component/chapter-1-startpoint/chapter-1-startpoint.component';
+import { NewLineToBreakerPipe } from './pipe/new-line-to-breaker.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    Chapter1StartpointComponent,
+    NewLineToBreakerPipe,
   ],
   imports: [
     /* Angular Module */
