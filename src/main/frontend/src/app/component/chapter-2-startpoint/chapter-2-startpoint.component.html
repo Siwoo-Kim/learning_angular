@@ -1,0 +1,55 @@
+
+<mat-card>
+<div class="row">
+  <mat-toolbar><h2>chapter-2-startpoint</h2> &nbsp;by&nbsp; <a href="skim327@myseneca.ca">SiWoo-Kim</a></mat-toolbar>
+  <hr>
+  <ul>
+    <li class="sub-chapter">
+      <h3>Router 기본</h3>
+      <p>
+        앵귤러는 싱글 페이지 어플리케이션(Single Page Application - SPA)을 구축하는데 사용되며,
+        라우터<code>router</code>는 페이지 내용 일부를 변경하는데 이용된다. 어플리케이션에서는
+        보통 변하는 부분과 변하지 않는 부분으로 구성되는데 간략한 구성은 이러하다.
+      </p>
+      <mat-card>
+        <hr>
+      <code [innerText]="escapeHtml1" >
+      </code>
+        <hr>
+      </mat-card>
+      <p> <code>main</code> 은 SPA에서 변하는 부분이며, 라우터 영역 <code [innerText]="'<router-outlet></router-outlet>'"></code> 을 통하며 표시할 수 있다.
+      </p>
+      <br/>
+    </li>
+
+    <li class="sub-chapter">
+      <h3>위치 정책</h3>
+      <p>
+        브라우저의 주소 표시줄은 URL(Uniform Resource Locator)을 의미한다. URL은 <em>여러 구성 요소</em>로 나누어지는데,
+        구성은 이러하다.
+      </p>
+      <hr>
+      <pre>
+        http://siwoo.com:8080/learning?myName=SiWoo
+        Protocol HostName     FileName?QueryString1&QueryString2
+      </pre>
+      <hr>
+
+      <p>
+        앵귤러에서 주소를 관리하는 위치 정책에는 <em>HashLocationStrategy</em> 와 <em>PathLocationStrategy</em>등이 있다.
+        기본 정책인 PathLocationStrategy에서 HashLocationStrategy를 변경시에, <a [routerLink]="['/chapter1']">루트 모듈(Root Module)</a>에서 아래와 같이
+        설정한다.
+
+      </p>
+      <mat-card>
+      <hr>
+      <code [innerText]="escapeHtml2">
+      </code>
+      <hr>
+      </mat-card>
+      <br/>
+    </li>
+
+  </ul>
+</div>
+</mat-card>
