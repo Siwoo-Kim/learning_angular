@@ -1,5 +1,11 @@
 import {Component, NgModule, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, RouterModule, Routes} from "@angular/router";
+import {Chapter2HomeComponent} from "./chapter-2/chapter-2-home/chapter-2-home.component";
+import {Chapter2Child2Component} from "./chapter-2/chapter-2-child-2/chapter-2-child-2.component";
+import {Chapter2ProductComponent} from "./chapter-2/chapter-2-product/chapter-2-product.component";
+import {Chapter2ParentComponent} from "./chapter-2/chapter-2-parent/chapter-2-parent.component";
+import {Chapter2ChildComponent} from "./chapter-2/chapter-2-child/chapter-2-child.component";
+import {Chapter2ProductParamComponent} from "./chapter-2/chapter-2-product-param/chapter-2-product-param.component";
 
 @Component({
   selector: 'app-chapter-2-startpoint',
@@ -19,6 +25,10 @@ export class Chapter2StartpointComponent implements OnInit {
   code9:string;
   code10:string;
   code11:string;
+  code12:string;
+  code13:string;
+  code14:string;
+
 
   constructor(private router:Router) {
     this.escapeHtml1 = "\n" +
@@ -120,6 +130,25 @@ export class Chapter2StartpointComponent implements OnInit {
       "]\n" +
       "\n" +
       "export const chapter2Routing = RouterModule.forChild(chapter2Routes);";
+
+    this.code12 = "const chapter2Routes:Routes = [\n" +
+      "  {path : 'chapter2/home', component :Chapter2HomeComponent},\n" +
+      "  {path : 'chapter2/product', component :Chapter2ProductComponent},\n" +
+      "  {path : 'chapter2/product/:id', component :Chapter2ProductParamComponent},\n" +
+      "  {\n" +
+      "    path : 'chpater2/parent',component : Chapter2ParentComponent,\n" +
+      "    children : [ //chapter2/parent에 대한 자식 라우팅을 설정한다 \n" +
+      "      {path : 'child' , component : Chapter2ChildComponent},\n" +
+      "      {path : 'child2/:name' , component : Chapter2Child2Component},\n" +
+      "    ],\n" +
+      "  },\n" +
+      "\n" +
+      "]\n";
+
+    this.code13 = "<p>\n" +
+      "  chapter-2-parent works!\n" +
+      "</p>\n" +
+      "<p><router-outlet></router-outlet></p>\n";
   }
 
   ngOnInit() {

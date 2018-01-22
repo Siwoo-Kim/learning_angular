@@ -8,6 +8,5 @@ export const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'chapter1',component:Chapter1StartpointComponent},
   {path:'chapter2',component:Chapter2StartpointComponent},
-  {path:'project',component:ProjectStartpointComponent}
 ]
 

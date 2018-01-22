@@ -3,7 +3,7 @@
   <img src="http://placehold.it/320x150">
   <div class="catpion">
     <h4 class="pull-right">{{product.title}}</h4>
-    <h4><a>{{product.title}}</a></h4>
+    <h4><a [routerLink]="['/project/products',product.title]">{{product.title}}</a></h4>
     <p>{{product.description}}</p>
   </div>
   <div>

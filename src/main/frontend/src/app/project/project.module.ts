@@ -12,11 +12,14 @@ import {
   MatToolbarModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
+import { HomeComponent } from './component/home/home.component';
+import {projectRouting} from "./project.routes";
 
 @NgModule({
   imports: [
     CommonModule,
-
+    projectRouting,
     BrowserAnimationsModule,
     /* Angular Material & Animation Modeul */
     MatToolbarModule,MatSnackBarModule,MatCardModule,MatInputModule,
@@ -29,7 +32,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ProductItemComponent,
     SearchComponent,
     StarsComponent,
-    ProjectStartpointComponent
+    ProjectStartpointComponent,
+    ProductDetailComponent,
+    HomeComponent
   ]
 })
 export class ProjectModule { }
