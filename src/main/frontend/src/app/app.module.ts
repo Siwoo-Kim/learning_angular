@@ -15,6 +15,8 @@ import { NewLineToBreakerPipe } from './pipe/new-line-to-breaker.pipe';
 import {FormsModule} from "@angular/forms";
 import {ProjectModule} from "./project/project.module";
 import {ProductService} from "./service/product.service";
+import { Chapter2StartpointComponent } from './component/chapter-2-startpoint/chapter-2-startpoint.component';
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import {ProductService} from "./service/product.service";
     HomeComponent,
     Chapter1StartpointComponent,
     NewLineToBreakerPipe,
+    Chapter2StartpointComponent,
   ],
   imports: [
     /* Angular Module */
@@ -35,7 +38,7 @@ import {ProductService} from "./service/product.service";
     /* App Module */
     ProjectModule,
   ],
-  providers: [ProductService],
+  providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
