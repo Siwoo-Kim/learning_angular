@@ -128,10 +128,34 @@
 
       <mat-card>
         <p>
-          <a mat-raised-button color="primary" [routerLink]="['/chapter2/home']">Home</a> <br>
+          <a mat-raised-button color="primary" [routerLink]="['/chapter2/home']">Home</a> &ngsp;&ngsp;&ngsp;
           <a mat-raised-button color="accent" [routerLink]="['/chapter2/product']">Product</a>
         </p>
       </mat-card>
+    </li>
+
+    <li class="sub-chapter">
+      <h3>naviate() 함수</h3>
+      <p>
+        HTML 앵커 태그외에 뷰의 전환은 Router의 <code>navigate()</code>함수를 사용할 수 있다.<code>navigate()</code> 함수는
+        사용자의 클릭 동작 없이 특정 로직 혹은 이벤트 발생시 뷰를 전환할 수 있으므로 유용하다.
+      </p>
+
+      <mat-card>
+        <button mat-raised-button color="primary" type="button" (click)="naviageToProduct()" >Product</button>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-title>component.html</mat-card-title>
+        <code [innerText]="code8"></code>
+      </mat-card>
+
+
+      <mat-card>
+        <mat-card-title>component.ts</mat-card-title>
+        <code [innerText]="code9"></code>
+      </mat-card>
+
     </li>
 
   </ul>

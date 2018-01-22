@@ -1,24 +1,5 @@
 import {Component, NgModule, OnInit} from '@angular/core';
-import {ProjectModule} from "../../project/project.module";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {CommonModule, HashLocationStrategy, LocationStrategy} from "@angular/common";
-import {
-  MatButtonModule, MatCardModule, MatInputModule, MatRadioModule, MatSnackBarModule,
-  MatToolbarModule
-} from "@angular/material";
-import {ProductService} from "../../service/product.service";
-import {RouterModule, Routes} from "@angular/router";
-import {BrowserModule} from "@angular/platform-browser";
-import {AppComponent} from "../../app.component";
-import {routes} from "../../app.routes";
-import {Chapter1StartpointComponent} from "../chapter-1-startpoint/chapter-1-startpoint.component";
-import {FormsModule} from "@angular/forms";
-import {NewLineToBreakerPipe} from "../../pipe/new-line-to-breaker.pipe";
-import {HomeComponent} from "../common/home/home.component";
-import {HttpModule} from "@angular/http";
-import {ProjectStartpointComponent} from "../../project/component/project-startpoint/project-startpoint.component";
-import {Chapter2HomeComponent} from "./chapter-2/chapter-2-home/chapter-2-home.component";
-import {Chapter2ProductComponent} from "./chapter-2/chapter-2-product/chapter-2-product.component";
+import {Router, RouterModule,  Routes} from "@angular/router";
 
 @Component({
   selector: 'app-chapter-2-startpoint',
@@ -35,8 +16,11 @@ export class Chapter2StartpointComponent implements OnInit {
   code6:string;
   code7:string;
   code8:string;
+  code9:string;
+  code10:string;
+  code11:string;
 
-  constructor() {
+  constructor(private router:Router) {
     this.escapeHtml1 = "\n" +
       "        <body>\n" +
       "        <header></header> //Not changed content \n" +
@@ -99,9 +83,24 @@ export class Chapter2StartpointComponent implements OnInit {
       "          <a [routerLink]=\"['/chapter2/home']\">Home</a>\n" +
       "          <a [routerLink]=\"['/chapter2/product']\">Product</a>\n" +
       "        </p>"
+
+    this.code8 = "\n" +
+      "      <mat-card>\n" +
+      "        <button mat-raised-button color=\"primary\" type=\"button\" (click)=\"naviageToProduct()\" >Product</button>\n" +
+      "      </mat-card>";
+
+    this.code9 ="\n" +
+      "  constructor(private router:Router) {}\n" +
+      "  naviageToProduct(){\n" +
+      "    this.router.navigate(['/chapter2/product']);\n" +
+      "  } ";
   }
 
   ngOnInit() {
+  }
+
+  naviageToProduct(){
+    this.router.navigate(['/chapter2/product']);
   }
 
 }
