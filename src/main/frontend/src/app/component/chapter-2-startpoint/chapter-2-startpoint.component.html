@@ -158,6 +158,31 @@
 
     </li>
 
+
+    <li class="sub-chapter">
+      <h3>라우터 패스 파라미터(Path Parmemter)로 데이터 전달</h3>
+      <p>
+        라우터는 뷰를 전환할뿐만 아니라 전환될 뷰에 데이터를 함께 전달할 수 있다.
+        컴포넌트는 생성자 인자로 <code>ActivatedRoute</code>를 주입받아, 라우터의 프러퍼티에 접근할 수 있으며
+        URL과 전달받은 데이터 또한 확인할 수 있다.
+      </p>
+
+      <mat-card>
+        <mat-card-title>component.ts</mat-card-title>
+        <code [innerText]="code10"></code>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-title>app.routes.ts</mat-card-title>
+        <code [innerText]="code11"></code>
+      </mat-card>
+
+      <mat-card>
+         <button  mat-raised-button color="primary" [routerLink]="['/chapter2/product','1234']" >Product Detail</button>
+      </mat-card>
+    </li>
+
+
   </ul>
 </div>
 </mat-card>

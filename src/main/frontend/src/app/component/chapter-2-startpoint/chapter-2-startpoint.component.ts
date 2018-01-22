@@ -1,5 +1,5 @@
 import {Component, NgModule, OnInit} from '@angular/core';
-import {Router, RouterModule,  Routes} from "@angular/router";
+import {ActivatedRoute, Router, RouterModule, Routes} from "@angular/router";
 
 @Component({
   selector: 'app-chapter-2-startpoint',
@@ -94,6 +94,32 @@ export class Chapter2StartpointComponent implements OnInit {
       "  naviageToProduct(){\n" +
       "    this.router.navigate(['/chapter2/product']);\n" +
       "  } ";
+
+    this.code10 = "\n" +
+      "@Component({\n" +
+      "  selector: 'app-chapter-2-product-param',\n" +
+      "  template : '<h1 class=\"product\">Product Details for {{productId}}</h1>',\n" +
+      "  styles : [' .product { background: cadetblue }']\n" +
+      "})\n" +
+      "export class Chapter2ProductParamComponent implements OnInit {\n" +
+      "  productId:number;\n" +
+      "  constructor(private activateRoute:ActivatedRoute) {\n" +
+      "    this.productId = this.activateRoute.snapshot.params['id'];\n" +
+      "  }\n" +
+      "\n" +
+      "  ngOnInit() {\n" +
+      "  }\n" +
+      "\n" +
+      "}\n";
+
+    this.code11 = "const chapter2Routes:Routes = [\n" +
+      "  {path : 'chapter2/home', component :Chapter2HomeComponent},\n" +
+      "  {path : 'chapter2/product', component :Chapter2ProductComponent},\n" +
+      "  {path : 'chapter2/product/:id', component :Chapter2ProductParamComponent},\n // :id 로 패스 변수를 전달한다" +
+      "\n" +
+      "]\n" +
+      "\n" +
+      "export const chapter2Routing = RouterModule.forChild(chapter2Routes);";
   }
 
   ngOnInit() {
