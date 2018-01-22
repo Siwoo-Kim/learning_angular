@@ -10,3 +10,4 @@ export const routes:Routes = [
   {path:'chapter2',component:Chapter2StartpointComponent},
   {path:'project',component:ProjectStartpointComponent}
 ]
+

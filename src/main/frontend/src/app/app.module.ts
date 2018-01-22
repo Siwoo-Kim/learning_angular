@@ -7,7 +7,7 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
-  MatButtonModule, MatCardModule, MatInputModule, MatRadioModule, MatSnackBarModule,
+  MatButtonModule, MatCardModule, MatIconModule, MatInputModule, MatListModule, MatRadioModule, MatSnackBarModule,
   MatToolbarModule
 } from "@angular/material";
 import { Chapter1StartpointComponent } from './component/chapter-1-startpoint/chapter-1-startpoint.component';
@@ -17,6 +17,8 @@ import {ProjectModule} from "./project/project.module";
 import {ProductService} from "./service/product.service";
 import { Chapter2StartpointComponent } from './component/chapter-2-startpoint/chapter-2-startpoint.component';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {Chapter2Module} from "./component/chapter-2-startpoint/chapter-2/chapter-2.module";
+
 
 
 @NgModule({
@@ -30,13 +32,13 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
   imports: [
     /* Angular Module */
     BrowserModule,HttpModule,FormsModule,
-    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     /* Angular Material & Animation Modeul */
     MatToolbarModule,MatSnackBarModule,MatCardModule,MatInputModule,
-    MatRadioModule,MatButtonModule,
+    MatRadioModule,MatButtonModule,MatListModule,MatIconModule,
     /* App Module */
-    ProjectModule,
+    ProjectModule, Chapter2Module,
+    RouterModule.forRoot(routes),
   ],
   providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]

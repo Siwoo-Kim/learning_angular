@@ -50,6 +50,90 @@
       <br/>
     </li>
 
+    <li class="sub-chapter">
+      <h3>라우터의 구성</h3>
+      <p>
+        라우터의 모듈은 <code>RouterModule</code>에 구현되어 있으며, 라우터 모듈의 구성 요소는 아래와 같다.
+      </p>
+      <mat-card>
+        <mat-card-title>라우터 구성 요소</mat-card-title>
+        <hr>
+          <mat-list>
+            <mat-list-item>
+              <p>Router : 라우터를 구현한 객체다. 메서드로는 <code>navigate()</code>,<code>navigateByUrl()</code>등이 있다. 이 객체의
+              프러퍼티인 <em>path</em>을 변경하면 원하는 경로로 이동할 수 있다.
+              </p>
+            </mat-list-item>
+            <br/>
+            <mat-list-item>
+              <p>RouterOutlet : <a [routerLink]="['/chapter1']">컴퍼넌트(Component)</a>을 렌더링(Rendering)하는 영역이다
+              <code [innerText]="'<router-outlet></router-outlet>'"></code>으로 지역을 지정한다
+              </p>
+            </mat-list-item>
+            <mat-list-item>
+              <p>Routes : <a [routerLink]="['/chapter1']">컴퍼넌트(Component)</a>와 URL을 연결하는 객체의 배열(Array)이다.</p>
+            </mat-list-item>
+            <mat-list-item>
+              <p>RouterLink : 앵커 태그<code [innerText]="'<a></a>'"></code>의 Default action을 정지하고 라우터를 통하여  <a [routerLink]="['/chapter1']">컴퍼넌트(Component)</a>를 렌더링 하도록 변경한다.</p>
+            </mat-list-item>
+            <mat-list-item>
+              <p>ActivatedRouter : 현재 활동하는 라우터의 인스턴스를 가리키는 객체다. <a [routerLink]="['/chapter1']">컴퍼넌트(Component)</a>의 생성자(Constructer)로 앵귤로가 주입(Injection)한다</p>
+            </mat-list-item>
+          </mat-list>
+        <hr>
+      </mat-card>
+
+      <br>
+      <p>라우터는 Routes(배열) 객체를 사용하여 설정한다</p>
+      <mat-card>
+        <hr>
+        <code [innerText]="escapeHtml3">
+        </code>
+        <hr>
+      </mat-card>
+      <br>
+      <p>라우터는 모듈 단위로 설정하며, @NgModule 어노테이션의 메타데이터에 라우터 모듈을 로드한다.</p>
+      <mat-card>
+        <hr>
+        <code [innerText]="code4">
+        </code>
+        <hr>
+      </mat-card>
+      <br>
+      <p>루트 모듈이 아닌 자식 모듈(Child Module)에서는 라우터 모듈의  <code>forChild()</code> 메서드를 사용한다</p>
+    </li>
+
+    <li class="sub-chapter">
+      <h3>실습</h3>
+      <mat-card>
+        <mat-card-title>routes.app.ts</mat-card-title>
+        <hr>
+        <code [innerText]="code5">
+        </code>
+        <hr>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-title>app.module.ts</mat-card-title>
+        <hr>
+        <code [innerText]="code6">
+        </code>
+        <hr>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-title>app.html</mat-card-title>
+        <code [innerText]="code7"></code>
+      </mat-card>
+
+      <mat-card>
+        <p>
+          <a mat-raised-button color="primary" [routerLink]="['/chapter2/home']">Home</a> <br>
+          <a mat-raised-button color="accent" [routerLink]="['/chapter2/product']">Product</a>
+        </p>
+      </mat-card>
+    </li>
+
   </ul>
 </div>
 </mat-card>
