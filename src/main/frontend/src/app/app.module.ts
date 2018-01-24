@@ -18,6 +18,8 @@ import {ProductService} from "./service/product.service";
 import { Chapter2StartpointComponent } from './component/chapter-2-startpoint/chapter-2-startpoint.component';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {Chapter2Module} from "./component/chapter-2-startpoint/chapter-2/chapter-2.module";
+import { HelloWorldComponent } from './component/chapter-1-startpoint/components/hello-world/hello-world.component';
+import { Chapter3StartpointComponent } from './component/chapter-3-startpoint/chapter-3-startpoint.component';
 
 
 
@@ -28,6 +30,8 @@ import {Chapter2Module} from "./component/chapter-2-startpoint/chapter-2/chapter
     Chapter1StartpointComponent,
     NewLineToBreakerPipe,
     Chapter2StartpointComponent,
+    HelloWorldComponent,
+    Chapter3StartpointComponent,
   ],
   imports: [
     /* Angular Module */

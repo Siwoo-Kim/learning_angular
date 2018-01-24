@@ -33,3 +33,8 @@ footer {
 .starrating.glyphicon-star {
   margin-right: 4px;
 }
+
+li.sub-chapter {
+  margin: 25px;
+  margin-top: 100px;
+}
