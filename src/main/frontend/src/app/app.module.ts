@@ -7,7 +7,9 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
-  MatButtonModule, MatCardModule, MatIconModule, MatInputModule, MatListModule, MatRadioModule, MatSnackBarModule,
+  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule,
+  MatRadioModule,
+  MatSnackBarModule,
   MatToolbarModule
 } from "@angular/material";
 import { Chapter1StartpointComponent } from './component/chapter-1-startpoint/chapter-1-startpoint.component';
@@ -20,6 +22,8 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {Chapter2Module} from "./component/chapter-2-startpoint/chapter-2/chapter-2.module";
 import { HelloWorldComponent } from './component/chapter-1-startpoint/components/hello-world/hello-world.component';
 import { Chapter3StartpointComponent } from './component/chapter-3-startpoint/chapter-3-startpoint.component';
+import {Chapter3Module} from "./component/chapter-3-startpoint/chapter3/chapter3.module";
+import { CodeComponent } from './component/common/code/code.component';
 
 
 
@@ -32,6 +36,7 @@ import { Chapter3StartpointComponent } from './component/chapter-3-startpoint/ch
     Chapter2StartpointComponent,
     HelloWorldComponent,
     Chapter3StartpointComponent,
+    CodeComponent,
   ],
   imports: [
     /* Angular Module */
@@ -39,10 +44,11 @@ import { Chapter3StartpointComponent } from './component/chapter-3-startpoint/ch
     BrowserAnimationsModule,
     /* Angular Material & Animation Modeul */
     MatToolbarModule,MatSnackBarModule,MatCardModule,MatInputModule,
-    MatRadioModule,MatButtonModule,MatListModule,MatIconModule,
+    MatRadioModule,MatButtonModule,MatListModule,MatIconModule,MatExpansionModule,
     /* App Module */
     ProjectModule, Chapter2Module,
     RouterModule.forRoot(routes),
+    Chapter3Module,
   ],
   providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]
