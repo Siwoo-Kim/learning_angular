@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Chap3Product, Chap3ProductService} from "../../services/chap3-product.service";
+import {Chap3ProductService} from "../../services/chap3-product.service";
+import {Chap3Product} from "../../model/chap-3-product";
 
 
 

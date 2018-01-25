@@ -1,0 +1,33 @@
+{
+  "result" : "success",
+  "data" : [ {
+    "name" : "product1",
+    "description" : "This is just dummy description",
+    "price" : "30"
+  },
+    {
+      "name" : "product1",
+      "description" : "This is just dummy description",
+      "price" : "30"
+    },
+    {
+      "name" : "product1",
+      "description" : "This is just dummy description",
+      "price" : "30"
+    },
+    {
+      "name" : "product1",
+      "description" : "This is just dummy description",
+      "price" : "30"
+    },
+    {
+      "name" : "product1",
+      "description" : "This is just dummy description",
+      "price" : "30"
+    },
+    {
+      "name" : "product1",
+      "description" : "This is just dummy description",
+      "price" : "30"
+    }]
+}

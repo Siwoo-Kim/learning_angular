@@ -67,8 +67,43 @@
 
         <app-code [code]="code4" [title]="'product-component.ts'"></app-code>
 
-        <app-product ></app-product>
+        <app-product></app-product>
+      </li>
+
+      <li class="sub-chapter">
+        <h3>서비스에 서비스 주입(Inject Service to Service)</h3>
+        <p>
+          데이타베이스 혹은 외부에서 데이터를 가져올때(fetch data from database or external resource), <strong>HTTP 프로토콜</strong>을 사용해야 한다.
+          <em>HTTP 요청(REQUEST)</em>을 보내려면 <code>HttpModule</code>의 Http 객체를 사용해야 되는데, 이 말은 곧 서비스 객체에서 또다른 의존성을 요구함을 나타낸다.
+        </p>
+
+        <pre style="border: 1px solid black; text-align: center"> <h4>HTTP-> Service-> Component</h4> </pre>
+
+        <p>Http 서비스를 주입받는 코드의 예제.</p>
+
+        <app-code [code]="code5" [title]="'product-service.ts'"></app-code>
+
+        <p>서비스 클래스의 <code>@Injectable()</code>는 의존 주입시 <strong>필수</strong> 상기하자</p>
+      </li>
+
+      <li class="sub-chapter">
+        <h3>프로바이더(Provider) 변경하기</h3>
+      </li>
+
+      <li class="sub-chapter">
+        <h3>토근 주입하기(Inject Tokens)</h3>
+        <p>
+          프로그램에서 <em>상수(constant)</em>란 변하지 않은 값을 의미한다.
+          상수는 클래스 단위(Class constant)일수도, 글로벌 단위(Global constant)일수도 있는데,
+          글로벌 단위의 상수는 모든 프로그램에서 공유하므로 주입 받는 것이 마땅하다.<br>
+          문제는 외부 모듈의 상수(external library constant)와의 충돌인데 이때 사용할 수 있는 것이 <strong>토큰(Token)</strong>이다.
+        </p>
+
+        <app-code [code]="code7" [title]="'app.module.ts'"></app-code>
+        <app-code [code]="code6" [title]="'productService.ts'"></app-code>
       </li>
     </ul>
+
+
   </div>
 </mat-card>

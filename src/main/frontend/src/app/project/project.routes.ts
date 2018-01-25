@@ -7,7 +7,7 @@ const routes:Routes = [
   { path : 'project' , component : ProjectStartpointComponent ,
     children : [
       {path:'' , component :HomeComponent},
-      { path : 'products/:prodTitle' , component :ProductDetailComponent}
+      { path : 'products/:productId' , component :ProductDetailComponent}
     ]
   },
 

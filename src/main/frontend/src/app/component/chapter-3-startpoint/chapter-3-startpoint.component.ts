@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {ProductService} from "../../service/product.service";
-import {Chapter3Service} from "../../service/chapter3.service";
-import {Chap3Product} from "./chapter3/services/chap3-product.service";
+import {Component, Inject, Injectable, InjectionToken, NgModule, OnInit} from '@angular/core';
+import {chap3ServerUrl} from "../../tokens/chap3-tokens";
+import {Http} from "@angular/http";
+import {Chap3Product} from "./chapter3/model/chap-3-product";
+import {CommonModule} from "@angular/common";
+import {Chap3ProductService} from "./chapter3/services/chap3-product.service";
+import {MatCardModule, MatExpansionModule} from "@angular/material";
+import {ProductComponent} from "./chapter3/components/product/product.component";
 
-class Product{
-
-}
 
 @Component({
   selector: 'app-chapter-3-startpoint',
@@ -69,7 +70,53 @@ export class Chapter3StartpointComponent implements OnInit {
       "  ngOnInit() {\n" +
       "  }\n" +
       "\n" +
-      "}\n"
+      "}\n";
+
+    this.code5 = "\n" +
+      "\n" +
+      "@Injectable()\n" +
+      "export class Chap3ProductService {\n" +
+      "\n" +
+      "  products:Chap3Product[];\n" +
+      "\n" +
+      "  constructor(private http:Http) {\n" +
+      "    this.http.get('/data/chap3_product.json').subscribe(data => console.log(data) );\n" +
+      "  }\n" +
+      "\n" +
+      "  getProduct() :Chap3Product{\n" +
+      "    return new Chap3Product(\"CocaCola\",\"Nice to drink\",3.2);\n" +
+      "  }\n" +
+      "\n" +
+      "}";
+
+    this.code6 = "\n" +
+      "@Injectable()\n" +
+      "export class Chap3ProductService {\n" +
+      "  \n" +
+      "  constructor(private http:Http, @Inject(chap3ServerUrl) private url) {\n" +
+      "    this.http.get(url).subscribe(data => console.log(data) );\n" +
+      "  }\n" +
+      "\n" +
+      "  getProduct() :Chap3Product{\n" +
+      "    return new Chap3Product(\"CocaCola\",\"Nice to drink\",3.2);\n" +
+      "  }\n" +
+      "\n" +
+      "}\n" +
+      "\n";
+
+    this.code7 = "\n" +
+      "export const chap3ServerUrl = new InjectionToken('serverUrl');\n\n" +
+      "token을 생성한다\n" +
+      "@NgModule({\n" +
+      "  imports: [\n" +
+      "    CommonModule, HttpModule,\n" +
+      "    MatCardModule, MatExpansionModule,\n" +
+      "  ],\n" +
+      "  declarations: [ProductComponent],\n" +
+      "  providers : [Chap3ProductService,{provide:chap3ServerUrl,useValue : 'server.com'}],\n" +
+      "  exports : [ProductComponent]\n" +
+      "})\n" +
+      "export class Chapter3Module { }\n";
   }
 
 }
