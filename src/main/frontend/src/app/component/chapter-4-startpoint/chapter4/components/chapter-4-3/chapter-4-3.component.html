@@ -1,0 +1,20 @@
+
+
+
+<hr>
+<mat-card>
+  <mat-card-title><h4><i class="fa fa-cogs" aria-hidden="true"></i> <strong>Try</strong></h4></mat-card-title>
+  <mat-card-content>
+    <div>
+      <h3>Two-Way Binding</h3>
+      <mat-input-container >
+        <input matInput type="text" placeholder="Enter your id"
+               [(ngModel)]="cookiedName">
+
+      </mat-input-container>
+        <br>
+        <p>Your ID is {{cookieName}}</p>
+    </div>
+  </mat-card-content>
+</mat-card>
+<hr><br/>

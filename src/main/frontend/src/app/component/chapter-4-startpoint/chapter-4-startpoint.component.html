@@ -77,6 +77,28 @@
 
         <app-chapter-4-2></app-chapter-4-2>
       </li>
+
+      <li class="sub-chapter">
+        <h3>양방향 바인딩(two-way data binding)</h3>
+        <p> <strong>양방향 바인딩</strong>은 단방향 두개를 조합한 것이다.
+        단방향 두개를 조합 <em>(event -> component),(component -> dom property)</em> 하면 양방향이 되지만
+        편의성을 위해 앵귤러는 <code>NgModel</code>이란 디렉티브를 제공한다.
+        </p>
+
+        <p style="border: 1px solid black; margin-top: 15px;margin-bottom: 15px;height: 35px">
+          <code [innerText]="'<input [(ngModel)]=\'componetProperty\'>'" > </code>
+        </p>
+
+        <p>
+          양방향 바인딩은 폼 필드의 값과 모델 객체의 값이 일치해야되는 폼에서 주로 사용되며, 성능에 영향이 크기 때문에
+          꼭 필요한 상황에만 사용하도록 하자.
+        </p>
+
+        <app-code [code]="codes[4].code" [title]="codes[4].title"></app-code>
+
+        <app-code [code]="codes[5].code" [title]="codes[5].title"></app-code>
+        <app-chapter-4-3></app-chapter-4-3>
+      </li>
     </ul>
 
   </div>
