@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chapter4-1-1.component.css']
 })
 export class Chapter411Component implements OnInit {
-
+  data:string;
+  name:string;
   constructor() { }
+
+  onClickHandler(){
+    this.data = "Fetched Data";
+  }
+
+  onInputHandler(event:Event){
+    console.log(event);
+    this.name = (<HTMLInputElement>event.target).value;
+  }
 
   ngOnInit() {
   }
+
 
 }

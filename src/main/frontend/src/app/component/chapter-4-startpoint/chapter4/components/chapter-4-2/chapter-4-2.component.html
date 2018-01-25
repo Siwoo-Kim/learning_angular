@@ -1,0 +1,23 @@
+
+
+<hr>
+<mat-card>
+  <mat-card-title><h4><i class="fa fa-cogs" aria-hidden="true"></i> <strong>Try</strong></h4></mat-card-title>
+  <mat-card-content>
+    <div>
+      <h3>Structural Directive</h3>
+      <mat-radio-group>
+        <mat-radio-button value="true" (change)="isShow=radioButton1.value" #radioButton1>Turn On</mat-radio-button>
+        <mat-radio-button value="false" (change)="isShow=radioButton2.value" #radioButton2>Turn Off</mat-radio-button>
+
+        <p>
+          State : <strong>{{isShow}}</strong>
+        </p>
+        <p>
+          <span *ngIf="isShow" ><strong>State is turn on</strong></span>
+        </p>
+      </mat-radio-group>
+    </div>
+  </mat-card-content>
+</mat-card>
+<hr><br/>

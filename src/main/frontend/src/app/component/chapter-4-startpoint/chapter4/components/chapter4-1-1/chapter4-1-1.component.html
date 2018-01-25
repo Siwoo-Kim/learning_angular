@@ -1,3 +1,8 @@
-<p>
-  chapter4-1-1 works!
-</p>
+
+<button (click)="onClickHandler()">Get data</button>
+<input placeholder="Enter your name" (input)="onInputHandler($event)">
+
+<div>
+  <span *ngIf="data">{{data}}</span>
+  <span *ngIf="name">{{name}}</span>
+</div>
