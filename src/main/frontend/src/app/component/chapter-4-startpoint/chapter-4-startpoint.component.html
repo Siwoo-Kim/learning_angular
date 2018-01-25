@@ -1,0 +1,41 @@
+
+<mat-card>
+  <div class="row">
+    <app-chapter-title [title]="'Chapter 4 - Data Binding'" ></app-chapter-title>
+    <hr>
+    <ul>
+      <li class="sub-chapter">
+        <h3>데이터 바인딩(Data Binding) 기초</h3>
+        <p>
+          <strong><em>데이터 바인딩</em></strong>이란 데이터를 컴포넌트 화면과 연결(sending data from component to view or vice versa)하는 기능이다.
+          지금까지 챕터를 읽어왔다면, 우리는 이미 데이터 바인딩을 목격해왔다.
+        </p>
+
+        <app-code [code]="codes[0].code"></app-code>
+
+        <hr>
+        <mat-card>
+          <mat-card-title><h4>Try</h4></mat-card-title>
+          <app-chapter4-1></app-chapter4-1>
+        </mat-card>
+        <hr> <br/>
+        <p>
+          앵귤러에서 데이터 바인딩의 방향은 <strong>단반향(one-directional)과 양방향(bi-directional)</strong>이 있다.
+          단방향은 컴포넌트의 데이타가 뷰로 향하거나, 화면의 발생한 <em>event</em>가 컴포넌트의 핸들러로 향하는 것을 의미한다.<br/>
+          앵귤러는 양방향 데이터 바인딩(two-way data binding)을 권장하지 않는다. 하지만 요구 사항에 따라 구현할 수 있다.
+        </p>
+
+
+      </li>
+
+      <li class="sub-chapter">
+        <h3>이벤트 바인딩(event binding)</h3>
+        <p>
+          이벤트 바인딩이란 특정 이벤트를 컴포넌트의 함수(event handler in component)에 연결함을 의미한다.
+          템플릿(template)에서 이벤트 이름을 괄호("()") 로 감싸는 문법을 사용한다.
+        </p>
+
+      </li>
+    </ul>
+  </div>
+</mat-card>

@@ -24,6 +24,9 @@ import { HelloWorldComponent } from './component/chapter-1-startpoint/components
 import { Chapter3StartpointComponent } from './component/chapter-3-startpoint/chapter-3-startpoint.component';
 import {Chapter3Module} from "./component/chapter-3-startpoint/chapter3/chapter3.module";
 import { CodeComponent } from './component/common/code/code.component';
+import { Chapter4StartpointComponent } from './component/chapter-4-startpoint/chapter-4-startpoint.component';
+import { ChapterTitleComponent } from './component/common/chapter-title/chapter-title.component';
+import {Chapter4Module} from "./component/chapter-4-startpoint/chapter4/chapter4.module";
 
 
 
@@ -37,6 +40,8 @@ import { CodeComponent } from './component/common/code/code.component';
     HelloWorldComponent,
     Chapter3StartpointComponent,
     CodeComponent,
+    Chapter4StartpointComponent,
+    ChapterTitleComponent,
   ],
   imports: [
     /* Angular Module */
@@ -48,7 +53,7 @@ import { CodeComponent } from './component/common/code/code.component';
     /* App Module */
     ProjectModule, Chapter2Module,
     RouterModule.forRoot(routes),
-    Chapter3Module,
+    Chapter3Module,Chapter4Module
   ],
   providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]
