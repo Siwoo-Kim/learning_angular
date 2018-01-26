@@ -1,0 +1,24 @@
+
+
+<hr>
+<mat-card>
+  <mat-card-title><h4><i class="fa fa-cogs" aria-hidden="true"></i> <strong>Try</strong></h4></mat-card-title>
+  <mat-card-content>
+    <div>
+      <h3>Event Object</h3>
+      <p><span>{{inputString}}</span></p>
+      <mat-input-container>
+        <input placeholder="inputString" matInput type="text" (keyup)="onKeyUpHandler($event)">
+        <br/>
+       </mat-input-container>
+      <mat-input-container>
+        <input placeholder="byTemplate" #myInputTemplate matInput type="text" (keyup)="inputString = myInputTemplate.value">
+      </mat-input-container>
+
+      <mat-input-container>
+        <input matInput placeholder="byObservable" type="text" [formControl]="observableInput">
+      </mat-input-container>
+    </div>
+  </mat-card-content>
+</mat-card>
+<hr><br/>

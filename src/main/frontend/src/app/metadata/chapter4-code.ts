@@ -1,5 +1,11 @@
 import {Chapter43Component} from "../component/chapter-4-startpoint/chapter4/components/chapter-4-3/chapter-4-3.component";
 import {Component, OnInit} from "@angular/core";
+import {Observable} from "rxjs/Observable";
+import {Subscription} from "rxjs/Subscription";
+import {Chapter44Component} from "../component/chapter-4-startpoint/chapter4/components/chapter-4-4/chapter-4-4.component";
+import {FormControl} from "@angular/forms";
+import {Http} from "@angular/http";
+import {Chapter441Component} from "../component/chapter-4-startpoint/chapter4/components/chapter-4-4-1/chapter-4-4-1.component";
 
 export const chapter4_code = [
   {
@@ -84,6 +90,99 @@ export const chapter4_code = [
     "      this.cookiedName = \"user01@email.com\"\n" +
     "    },3000);\n" +
     "  }\n"
+  },
+
+
+  {
+    "id" : "4-4",
+    "title" : "observable.ts",
+    "code" : "\n" +
+    "\n" +
+    "    let mySubscription:Subscription =\n" +
+    "      new Observable(subscriber => { subscriber.next([1,2,3,4,5])})\n" +
+    "      .subscribe(data => (<Array<number>>data).forEach(item => console.log(item) ));\n"
+  },
+
+  {
+    "id" : "4-4-1",
+    "title" : "observable.ts",
+    "code" : "\n" +
+    "export class Chapter44Component implements OnInit {\n" +
+    "  inputString:string;\n" +
+    "\n" +
+    "  onKeyUpHandler(event : any){\n" +
+    "    this.inputString = event.target.value;\n" +
+    "  }"
+  },
+
+  {
+    "id" : "4-4-2",
+    "title" : "observable.ts",
+    "code" : "\n" +
+    "export class Chapter44Component implements OnInit {\n" +
+    "  inputString:string;\n" +
+    "  observableInput:FormControl = new FormControl();\n" +
+    "\n" +
+    "  constructor() {\n" +
+    "    this.observableInput.valueChanges\n" +
+    "      .debounceTime(500)\n" +
+    "      .subscribe( value => this.inputString = value );\n" +
+    "  }\n"
+  },
+
+  {
+    "id" : "4-4-3",
+    "title" : "cancelObservable.ts",
+    "code" : "\n" +
+    "@Component({\n" +
+    "  selector: 'app-chapter-4-4-1',\n" +
+    "  template : `    \n" +
+    "    <hr>\n" +
+    "    <mat-card>\n" +
+    "      <mat-card-title><h4><i class=\"fa fa-cogs\" aria-hidden=\"true\"></i> <strong>Try</strong></h4></mat-card-title>\n" +
+    "      <mat-card-content>\n" +
+    "        <div>\n" +
+    "          <h3>Searching Weatehr</h3>\n" +
+    "          <p><span><strong>{{temperature}}</strong></span></p>\n" +
+    "          <mat-input-container>\n" +
+    "            <input matInput placeholder=\"Enter City\" type=\"text\" [formControl]=\"searchInput\">\n" +
+    "          </mat-input-container>\n" +
+    "        </div>\n" +
+    "      </mat-card-content>\n" +
+    "    </mat-card>\n" +
+    "    <hr><br/>\n" +
+    "  `,\n" +
+    "  styleUrls: ['./chapter-4-4-1.component.css']\n" +
+    "})\n" +
+    "export class Chapter441Component implements OnInit {\n" +
+    "  private baseWeatherUrl:string = 'http://api.openweathermap.org/data/2.5/weather?q=';\n" +
+    "  private urlSuffix:string = '&units=metric&appid=b9dbf1e48fe5e56ff01cecbdd54fc138';\n" +
+    "\n" +
+    "  searchInput:FormControl = new FormControl();\n" +
+    "  temperature:string;\n" +
+    "\n" +
+    "  constructor(private http:Http) {\n" +
+    "    this.searchInput.valueChanges\n" +
+    "      .debounceTime(200)\n" +
+    "      .switchMap( city => this.getWeather(city) )\n" +
+    "      .subscribe( res => {\n" +
+    "        this.temperature = `Current temperature is ${res['main'].temp}C, humidity: ${res['main'].humidity}%`\n" +
+    "      });\n" +
+    "  }\n" +
+    "\n" +
+    "  private getWeather(city: string):Observable<Array<string>> {\n" +
+    "    return this.http.get(this.baseWeatherUrl + city + this.urlSuffix)\n" +
+    "      .map(res => {\n" +
+    "        console.log(res.json());\n" +
+    "        return res.json();\n" +
+    "      })\n" +
+    "      .catch(err => {\n" +
+    "        if(err.status == 404){\n" +
+    "          console.log(`City ${city} not found`);\n" +
+    "          return Observable.of();\n" +
+    "        }\n" +
+    "      });\n" +
+    "  }"
   },
 
 ]

@@ -99,6 +99,80 @@
         <app-code [code]="codes[5].code" [title]="codes[5].title"></app-code>
         <app-chapter-4-3></app-chapter-4-3>
       </li>
+
+      <li class="sub-chapter">
+        <h3>옵저버블(Observable)</h3>
+        <p>
+          <strong>반응형 프로그래밍(Reactive Programming)</strong>은
+          <strong>스트림(stream)</strong>을 <strong>구독(subscribe)</strong>하고, 스트림을 알맞게 가공하여 그것에 반응하는 방식의
+          어플리케이션을 만드는 것을 의미한다.<br/>
+          <a href="http://reactivex.io/rxjs/">RxJS</a>는 <strong>옵저버/옵저버블(observer/obserable)</strong>의 디자인 패턴(design pattern)을 모티브로 한
+          스트림 지원 라이브러리 중 하나이며, 앵귤어 내부에 많이 통합되어 있어 사용하기 좋다.
+        </p>
+        <br>
+        <p>
+          <strong>옵저버블</strong> 연속된 데이터 스트림을 생성하는 객체이며, <strong>옵저버</strong> 이 스트림을 구독(subscription)하는 객체다.
+          A 객체가 스트림을 생성하고 B가 이를 구독한다면, A는 Observable이며 B는 Observer이다.
+        </p>
+
+        <app-code [code]="codes[6].code" [title]="codes[6].title"></app-code>
+
+        <p>
+          옵저버 객체는 세 가지 콜백 함수<code>next,error,onComplete</code>를 가지고 있는데 next 는 다음 엘리멘터를 처리할 함수, error는 구독 중 에러 발생시 처리할 함수,
+          데이터 스트림을 모두 소비(consume)하고 실행할 함수가 있다.<br/>
+          또한 스트림은 절달될대 가공될 수 있으며, 그때는 <code>map(),filter()</code>등을 사용하면 된다.
+        </p>
+
+        <p>
+          옵저버블을 알아봤으니, 이벤트를 옵저버블을 사용하여 핸들링하는 방법을 알아보자. 아래는 옵저버블 없이 이벤트를 처리하는 방법이다.<br/>
+          <strong>이벤트(event)</strong>는 자바스크립트에서는 <code>Event</code> 객체로 표현되며, 이벤트가 어떤것인지, 어디서, 발생했는지에
+          대한 정보를 가지고 있다. Template에서 $event를 전달하면, 이벤트 핸들러 함수는 이벤트 정보가 들어있는 Event 객체를 받을 수 있다.<br>
+          또한 엘리멘트에서 <strong>템플릿 지역 변수(Local template variable)</strong> 사용하여 엘리먼트의 프러퍼티에 바로 접근도 가능하다.
+        </p>
+        <app-code [code]="codes[7].code" [title]="codes[7].title" ></app-code>
+
+        <p>
+          비동기적으로 발생하는 이벤트를 옵저버블로 처리하기 위해서는 <code>FormControl</code> 클래스의 <code>valueChanges</code>을
+          사용하면 되는데 <code>valueChanges</code>는 <strong>이벤트를 옵저버블 스트림</strong> 리턴한다.
+
+        </p>
+
+        <app-code [code]="codes[8].code" [title]="codes[8].title" ></app-code>
+
+        <app-chapter-4-4></app-chapter-4-4>
+
+        <h3>구독 취소하기(Cancelling subscription)</h3>
+        <hr>
+        <p>
+          옵저버블은 프로미스와 달리 동작이 완료되기 전에 <strong>취소</strong>할 수 있다.
+          취소를 할 수 있다는 것은 이벤트 핸들러의 동작 중, 클라이언트가 다른 이벤트를 발생한다면
+          전의 이벤트의 요청을 중단하고 새로운 이벤트 핸들러를 동작시킴을 의미한다.
+          구독을 취소함으로써 서버에 불필요한 요청을 보내지 않으므로 성능상 큰 이점을 가져올 수 있다.
+        </p>
+
+        <app-code [code]="codes[9].code" [title]="codes[9].title" ></app-code>
+        <app-chapter-4-4-1></app-chapter-4-4-1>
+      </li>
+
+      <li class="sub-chapter">
+        <h3>파이프 (Pipe)</h3>
+        <p>
+          <strong>파이프</strong>는 어떤 값을 뷰로 보낼때 가공하기위해 사용하는 템플릿 엘리먼트이다.
+          파이프의 기호는 리눅스(linux)와 같이 <strong>|</strong> 기호를 사용하며, 기호 뒤에 파이프 이름을 명시하면 된다.<br>
+          아래는 자주 쓰이는 파이프의 종류이다.
+        </p>
+        <ul>
+          <li><code>UpperCasePipe</code> :  | uppercase </li>
+          <li><code>DatePipe</code> :  | date </li>
+          <li><code>CurrencyPipe</code> :  | uppercase </li>
+          <li><code>JsonPipe</code> :  | uppercase </li>
+          <li><code>AsyncPipe</code> :  | uppercase </li>
+        </ul>
+
+
+
+
+      </li>
     </ul>
 
   </div>

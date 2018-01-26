@@ -6,13 +6,19 @@ import {Chapter412Component} from "./components/chapter4-1-2/chapter4-1-2.compon
 import {MatCardModule, MatInputModule, MatRadioModule} from "@angular/material";
 import { Chapter42Component } from './components/chapter-4-2/chapter-4-2.component';
 import { Chapter43Component } from './components/chapter-4-3/chapter-4-3.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { Chapter44Component } from './components/chapter-4-4/chapter-4-4.component';
+import { Chapter441Component } from './components/chapter-4-4-1/chapter-4-4-1.component';
+import {HttpModule} from "@angular/http";
+import { Cpahter45Component } from './components/cpahter-4-5/cpahter-4-5.component';
 
 @NgModule({
   imports: [
-    CommonModule,MatInputModule,MatCardModule,MatRadioModule,FormsModule
+    CommonModule,MatInputModule,MatCardModule,MatRadioModule,FormsModule,ReactiveFormsModule,HttpModule
   ],
-  declarations: [Chapter41Component, Chapter411Component, Chapter412Component, Chapter42Component, Chapter43Component],
-  exports :[Chapter41Component, Chapter411Component,Chapter412Component,Chapter42Component,Chapter43Component]
+  declarations: [Chapter41Component, Chapter411Component, Chapter412Component, Chapter42Component,
+    Chapter43Component, Chapter44Component, Chapter441Component, Cpahter45Component],
+  exports :[Chapter41Component, Chapter411Component,Chapter412Component,
+    Chapter42Component,Chapter43Component,Chapter44Component,Chapter441Component]
 })
 export class Chapter4Module { }
