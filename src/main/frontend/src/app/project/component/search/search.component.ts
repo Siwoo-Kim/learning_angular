@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-search',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
+  formMode:FormGroup = new FormGroup({
+    'title' : new FormControl(),
+    'price' : new FormControl(),
+    'category' : new FormControl(),
+  })
   constructor() { }
 
   ngOnInit() {

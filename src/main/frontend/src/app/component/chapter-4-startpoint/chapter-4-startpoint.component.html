@@ -169,10 +169,25 @@
           <li><code>AsyncPipe</code> :  | uppercase </li>
         </ul>
 
+        <br>
+        <p>
+          다음의 예제를 보자.
+        </p>
 
+        <app-code  [code]="'\{\{ myDate | date : \'medium\' | uppercase \}\}'"></app-code>
 
+        <p>{{ date | date : 'medium' | uppercase }}</p>
+
+        <br>
+        <p>
+          파이프에 인자기 있을 수도 있고, 없을수도 있으며 원하는 만큼 메서드 체이닝(method chanining)이 가능하다
+          또한 개발자에 의한 <strong>커스텀 파이프</strong> 정의도 가능하며 방법은 아래와 같다.
+        </p>
+
+        <app-code [code]="codes[10].code" [title]="codes[10].title" ></app-code>
 
       </li>
+
     </ul>
 
   </div>

@@ -1,5 +1,5 @@
 import {Chapter43Component} from "../component/chapter-4-startpoint/chapter4/components/chapter-4-3/chapter-4-3.component";
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, Pipe, PipeTransform} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {Subscription} from "rxjs/Subscription";
 import {Chapter44Component} from "../component/chapter-4-startpoint/chapter4/components/chapter-4-4/chapter-4-4.component";
@@ -183,6 +183,24 @@ export const chapter4_code = [
     "        }\n" +
     "      });\n" +
     "  }"
+  },
+
+  {
+    "id" : "4-5",
+    "title" : "temperatuePipe.ts",
+    "code" : "\n" +
+    "@Pipe({name: 'temperature'})\n" +
+    "export class TemperaturePipe implements PipeTransform {\n" +
+    "\n" +
+    "  transform(value: number, fromTo: string): any {\n" +
+    "\n" +
+    "    if(!fromTo){ throw 'Temperature pipe required parameter FtoC or CtoF'}\n" +
+    "\n" +
+    "    return (fromTo === 'FtoC') ? (value - 32) * 5.0 /9.0 : (value * 5.0) + 5.0 + 32;\n" +
+    "    \n" +
+    "  }\n" +
+    "\n" +
+    "}\n"
   },
 
 ]

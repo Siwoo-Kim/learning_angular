@@ -1,6 +1,13 @@
 
+
+<div class="form-group">
+  <mat-input-container style="width: 100%">
+    <input matInput type="text" placeholder="Filter products by title" class="form-control"
+           [formControl]="titleFilter">
+  </mat-input-container>
+</div>
 <div class="row">
-  <div *ngFor="let product of products" class="col-4">
+  <div *ngFor="let product of products | filter : 'title' : filterCriteria" class="col-4">
     <app-product-item [product]="product"></app-product-item>
   </div>
 </div>

@@ -27,6 +27,8 @@ import { CodeComponent } from './component/common/code/code.component';
 import { Chapter4StartpointComponent } from './component/chapter-4-startpoint/chapter-4-startpoint.component';
 import { ChapterTitleComponent } from './component/common/chapter-title/chapter-title.component';
 import {Chapter4Module} from "./component/chapter-4-startpoint/chapter4/chapter4.module";
+import { TemperaturePipe } from './pipe/temperature.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 
@@ -56,6 +58,6 @@ import {Chapter4Module} from "./component/chapter-4-startpoint/chapter4/chapter4
     Chapter3Module,Chapter4Module
   ],
   providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

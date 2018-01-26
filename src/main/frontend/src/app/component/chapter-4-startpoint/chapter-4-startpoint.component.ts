@@ -18,6 +18,7 @@ export class Code{
 })
 export class Chapter4StartpointComponent implements OnInit {
   codes:Code[] = chapter4_code;
+  date:Date = new Date();
 
   constructor() { }
 

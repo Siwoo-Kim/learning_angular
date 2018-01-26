@@ -15,15 +15,21 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import { HomeComponent } from './component/home/home.component';
 import {projectRouting} from "./project.routes";
+import {ReactiveFormsModule} from "@angular/forms";
+import {FilterPipe} from "../pipe/filter.pipe";
+import {PipeModule} from "../pipe/pipe/pipe.module";
 
 @NgModule({
   imports: [
     CommonModule,
     projectRouting,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     /* Angular Material & Animation Modeul */
     MatToolbarModule,MatSnackBarModule,MatCardModule,MatInputModule,
     MatRadioModule,MatButtonModule,MatListModule,
+
+    PipeModule
   ],
   declarations: [
     CarouselComponent,
