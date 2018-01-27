@@ -7,7 +7,7 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
-  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule,
+  MatButtonModule, MatCardModule, MatChipsModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule,
   MatRadioModule,
   MatSnackBarModule,
   MatToolbarModule, MatTooltipModule
@@ -56,8 +56,11 @@ import {ToastModule} from "ng2-toastr";
     BrowserModule,HttpModule,FormsModule,
     BrowserAnimationsModule,
     /* Angular Material & Animation Modeul */
-    MatToolbarModule,MatSnackBarModule,MatCardModule,MatInputModule,MatTooltipModule,
-    MatRadioModule,MatButtonModule,MatListModule,MatIconModule,MatExpansionModule,
+    MatToolbarModule,MatSnackBarModule,MatCardModule,
+    MatInputModule,MatTooltipModule, MatRadioModule,
+    MatButtonModule,MatListModule,MatIconModule,
+    MatExpansionModule,MatChipsModule,
+
     /* App Module */
     ProjectModule, Chapter2Module,
     RouterModule.forRoot(routes),
