@@ -10,7 +10,7 @@ import {
   MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule,
   MatRadioModule,
   MatSnackBarModule,
-  MatToolbarModule
+  MatToolbarModule, MatTooltipModule
 } from "@angular/material";
 import { Chapter1StartpointComponent } from './component/chapter-1-startpoint/chapter-1-startpoint.component';
 import { NewLineToBreakerPipe } from './pipe/new-line-to-breaker.pipe';
@@ -30,6 +30,8 @@ import {Chapter4Module} from "./component/chapter-4-startpoint/chapter4/chapter4
 import { TemperaturePipe } from './pipe/temperature.pipe';
 import { FilterPipe } from './pipe/filter.pipe';
 import { Chapter5StartpointComponent } from './component/chapter-5-startpoint/chapter-5-startpoint.component';
+import {Chapter5Module} from "./component/chapter-5-startpoint/chapter5/chapter5.module";
+import {ToastModule} from "ng2-toastr";
 
 
 
@@ -48,16 +50,18 @@ import { Chapter5StartpointComponent } from './component/chapter-5-startpoint/ch
     Chapter5StartpointComponent,
   ],
   imports: [
+    /* 3rd Module */
+    ToastModule.forRoot(),
     /* Angular Module */
     BrowserModule,HttpModule,FormsModule,
     BrowserAnimationsModule,
     /* Angular Material & Animation Modeul */
-    MatToolbarModule,MatSnackBarModule,MatCardModule,MatInputModule,
+    MatToolbarModule,MatSnackBarModule,MatCardModule,MatInputModule,MatTooltipModule,
     MatRadioModule,MatButtonModule,MatListModule,MatIconModule,MatExpansionModule,
     /* App Module */
     ProjectModule, Chapter2Module,
     RouterModule.forRoot(routes),
-    Chapter3Module,Chapter4Module
+    Chapter3Module,Chapter4Module,Chapter5Module,
   ],
   providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],

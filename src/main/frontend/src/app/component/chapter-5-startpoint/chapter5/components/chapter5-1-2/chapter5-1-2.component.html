@@ -1,0 +1,17 @@
+
+
+<hr>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h4><strong>Input by Getter Component</strong></h4>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Your request quantity is <strong>{{requestQuantity}}</strong>
+     and order is
+      <span *ngIf="isOrdered;else reject"><strong>Complete</strong></span>
+      <ng-template #reject><strong>Rejected</strong></ng-template></p>
+  </mat-card-content>
+</mat-card>
+<hr><br>
