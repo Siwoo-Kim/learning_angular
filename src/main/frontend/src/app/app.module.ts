@@ -29,6 +29,7 @@ import { ChapterTitleComponent } from './component/common/chapter-title/chapter-
 import {Chapter4Module} from "./component/chapter-4-startpoint/chapter4/chapter4.module";
 import { TemperaturePipe } from './pipe/temperature.pipe';
 import { FilterPipe } from './pipe/filter.pipe';
+import { Chapter5StartpointComponent } from './component/chapter-5-startpoint/chapter-5-startpoint.component';
 
 
 
@@ -44,6 +45,7 @@ import { FilterPipe } from './pipe/filter.pipe';
     CodeComponent,
     Chapter4StartpointComponent,
     ChapterTitleComponent,
+    Chapter5StartpointComponent,
   ],
   imports: [
     /* Angular Module */
