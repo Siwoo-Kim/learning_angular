@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {chapter5_code} from "../../metadata/chapter5-code";
 import {Code} from "../../model/code";
 import {IPriceQuote} from "./chapter5/components/chapter5-1-3/chapter5-1-3.component";
+import {Stock} from "../../model/stock";
 
 @Component({
   selector: 'app-chapter-5-startpoint',
@@ -32,6 +33,12 @@ export class Chapter5StartpointComponent implements OnInit {
     this.stockSymbol = event.stockSymbol;
     this.price = event.lastPrice;
 
+  }
+
+  stock:Stock;
+
+  onBuyHandler(stock : Stock){
+    this.stock = stock;
   }
 
 }

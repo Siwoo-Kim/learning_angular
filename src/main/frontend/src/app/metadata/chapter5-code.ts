@@ -1,8 +1,10 @@
 import {Code} from "../model/code";
-import {Input, OnInit} from "@angular/core";
+import {EventEmitter, Input, OnInit, Output} from "@angular/core";
 import {Chapter511Component} from "../component/chapter-5-startpoint/chapter5/components/chapter5-1-1/chapter5-1-1.component";
 import {ToastsManager} from "ng2-toastr";
 import {Chapter512Component} from "../component/chapter-5-startpoint/chapter5/components/chapter5-1-2/chapter5-1-2.component";
+import {Stock} from "../model/stock";
+import {Chapter514Component} from "../component/chapter-5-startpoint/chapter5/components/chapter5-1-4/chapter5-1-4.component";
 
 export var chapter5_code:Code[] = [
   {
@@ -69,5 +71,30 @@ export var chapter5_code:Code[] = [
     '      <span *ngIf="isOrdered;else reject"><strong>Complete</strong></span>\n' +
     '      <ng-template #reject><strong>Rejected</strong></ng-template></p>\n' +
     '  </mat-card-content>'
+  },
+
+  {
+    id : 5, chapter : 5,
+    title : 'price-quote.ts',
+    code : 'export class Chapter514Component implements OnInit {\n' +
+    '  @Output() buy:EventEmitter<Stock> = new EventEmitter<Stock>();\n' +
+    '  stockSymbol:string = \'IBM\';\n' +
+    '  lastPrice:number;\n' +
+    '\n' +
+    '  constructor() {\n' +
+    '    setInterval(()=>{\n' +
+    '      this.lastPrice = 100 * Math.random();\n' +
+    '    },2000);\n' +
+    '  }\n' +
+    '\n' +
+    '\n' +
+    '  ngOnInit() {\n' +
+    '  }\n' +
+    '\n' +
+    '  buyStocks(){\n' +
+    '    this.buy.emit({ bidPrice : this.lastPrice , stockSymbol : this.stockSymbol });\n' +
+    '  }\n' +
+    '\n' +
+    '}\n'
   },
 ]

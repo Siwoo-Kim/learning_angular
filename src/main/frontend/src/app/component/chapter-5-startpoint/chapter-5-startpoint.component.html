@@ -84,6 +84,31 @@
         <app-chapter5-1-3 (lastPrice)="onPriceQuoteHandler($event)"></app-chapter5-1-3>
       </li>
 
+      <li class="sub-chapter">
+        <h3>중계자 패턴</h3>
+        <p>
+          모든 컴포넌트는 독립적이어야 하며, 다른 컴포넌트와의 결합도는 낮을 수록 좋다.
+          다른 컴포넌트의 결합도를 낮게 유지하면서 데이터를 주고 받으려면 <strong>중개자 패턴(The Mediator Pattern)</strong>
+          을 사용하는 것을 고려하라. 중개자는 한 컴포넌트에서 데이터를 받아 다른 컴포넌트로 전달해준다.
+          <br>
+          데이타를 받는 @Input을 가진 컴포넌트와 이벤트를 발생하여 데이터를 보내는 @Output EventEmitter을 가진
+          컴포넌트는 <strong>누가 데이터를 보냈는지, 누가 데이터를 받는지에 대한 정보를 가진 코드가 그들에게선 존재하지 않는다.</strong>
+          이것은 독립성이 높다는 뜻이다.
+        </p>
+
+        <app-code [code]="codes[4].code" [title]="codes[4].title"></app-code>
+
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title><h3>Mediator Part</h3></mat-card-title>
+          </mat-card-header>
+
+          <p><strong>Mediator Got : {{ stock | json }} </strong></p>
+        <app-chapter5-1-4 (buy)="onBuyHandler($event)"></app-chapter5-1-4>
+        <app-chapter5-1-4-1 [stock]="stock"></app-chapter5-1-4-1>
+        </mat-card>
+      </li>
+
     </ul>
   </div>
 </mat-card>
