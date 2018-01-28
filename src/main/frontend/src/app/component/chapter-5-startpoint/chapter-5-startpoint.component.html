@@ -97,6 +97,7 @@
         </p>
 
         <app-code [code]="codes[4].code" [title]="codes[4].title"></app-code>
+        <app-code [code]="codes[5].code" [title]="codes[5].title"></app-code>
 
         <mat-card>
           <mat-card-header>
@@ -109,6 +110,57 @@
         </mat-card>
       </li>
 
+      <li class="sub-chapter">
+        <h3>프로젝션(Projection)</h3>
+        <p>
+          <code>NgContent</code> 디렉티브를 이용하면 부모 컴포넌트의 <a [routerLink]="['/chapter1']" >템플릿(template)</a>
+          일부분을 자식에게 <strong>프로젝션</strong>할 수 있다. 부모 컴포넌트에선 자식 컴포넌트 태그 안쪽에서
+          원하는 컨텐츠를 넣고, 자식 컴포넌트에서는 <code>ngcontent</code>태그를 이용하여 랜더링할 위치를 지정하면 된다.
+        </p>
+
+        <app-code [code]="codes[6].code" [title]="codes[6].title" ></app-code>
+        <app-code [code]="codes[7].code" [title]="codes[7].title" ></app-code>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title><h3>Parent Part</h3></mat-card-title>
+            <app-chapter5-1-5><p style="color: pink">This part is projected by Parent</p></app-chapter5-1-5>
+          </mat-card-header>
+        </mat-card>
+      </li>
+
+      <p>
+        자식 <a [routerLink]="['/chapter1']" >템플릿(template)</a>에서 <code>ngContent</code> 디렉티브를 여러번 사용할 수도 있다.
+        여러개의 <code>ngContent</code> 디렉티브를 사용할때 각 디렉티브를 구분할 수 있는 메카니즘이 필요한데 이때 <strong>select 속성</strong>을 사용한다.
+        *ex: <code [innerText]="'<ng-content select=\'.header\'></ng-content>'"></code>
+      </p>
+
+      <mat-card>
+        <mat-card-title><h3>Parent Part</h3></mat-card-title>
+        <app-chapter5-1-5-1>
+          <p class="header" style="color: lightblue">This is derived from Parent's header class</p>
+          <p class="footer" style="color: pink">This is derived from Parent's footer class</p>
+        </app-chapter5-1-5-1>
+      </mat-card>
+
+      <li class="sub-chapter">
+        <h3>컴포넌트 생명주기(Componet Life Cycle)</h3>
+        <p>
+          컴포넌트는 각기 <strong>생명주기(Life Cycle)</strong>를 가지고 있으며 이는 이벤트로 표현된다.
+        </p>
+        <br>
+        <img [src]="'/assets/img/life-cycle.png'">
+        <br>
+        <p>
+          위의 특정 생명주기를 가로채서 원하는 동작, 혹은 로직을 부여하고 싶다면 다음 함수들을 사용하면 된다.
+          <mat-list>
+            <mat-list-item><code>ngOnChanges</code> : <strong>자식 입력 프로퍼티(Input property)</strong>로 바인딩된 값이 변경되거나, 초기화때 실행된다.</mat-list-item>
+            <mat-list-item><code>ngOnInit</code> : 프로퍼티의 값을 초기화할때 실행된다. 생성자(construtor)와 달리 컴포넌트의 모든 프로퍼티들이 초기화되고 난 이후이다.</mat-list-item>
+            <mat-list-item><code>ngAfterViewInit</code> : 템플릿(Template)의 바인딩이 완료된 후 실행된다.</mat-list-item>
+            <mat-list-item><code>ngAfterViewChecked</code> : 템플릿에 바인딩된 항목의 값이 변경되면 실행된다.</mat-list-item>
+          </mat-list>
+          위의 함수들을 정의하려면 함수명에 해당하는 이름의 인터페이스를 구현해야됨을 알아두자.
+        </p>
+      </li>
     </ul>
   </div>
 </mat-card>

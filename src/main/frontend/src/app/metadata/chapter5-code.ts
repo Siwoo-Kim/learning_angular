@@ -97,4 +97,39 @@ export var chapter5_code:Code[] = [
     '\n' +
     '}\n'
   },
+  {
+    id : 6, chapter : 5,
+    title : 'mediator.html',
+    code : ' <mat-card>\n' +
+    '          <mat-card-header>\n' +
+    '            <mat-card-title><h3>Mediator Part</h3></mat-card-title>\n' +
+    '          </mat-card-header>\n' +
+    '\n' +
+    '          <p><strong>Mediator Got : {{ stock | json }} </strong></p>\n' +
+    '        <app-chapter5-1-4 (buy)="onBuyHandler($event)"></app-chapter5-1-4>\n' +
+    '        <app-chapter5-1-4-1 [stock]="stock"></app-chapter5-1-4-1>\n' +
+    '        </mat-card>'
+  },
+  {
+    id : 7, chapter : 5,
+    title : 'parent.html',
+    code : '\n' +
+    '        <mat-card>\n' +
+    '          <mat-card-header>\n' +
+    '            <mat-card-title><h3>Parent Part</h3></mat-card-title>\n' +
+    '            <app-chapter5-1-5><p style="color: pink">This part is projected by Parent</p></app-chapter5-1-5>\n' +
+    '          </mat-card-header>\n' +
+    '        </mat-card>'
+  },
+  {
+    id : 8, chapter : 5,
+    title : 'child.html',
+    code : '<mat-card-header>\n' +
+    '    <mat-card-title><h3>Child Component</h3></mat-card-title>\n' +
+    '  </mat-card-header>\n' +
+    '  <mat-card-content>\n' +
+    '    <p style="color: lightgreen">This part is of child component</p>\n' +
+    '    <ng-content></ng-content>\n' +
+    '  </mat-card-content>'
+  },
 ]
