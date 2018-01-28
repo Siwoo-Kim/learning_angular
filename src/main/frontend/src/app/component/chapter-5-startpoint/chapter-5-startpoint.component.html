@@ -160,6 +160,57 @@
           </mat-list>
           위의 함수들을 정의하려면 함수명에 해당하는 이름의 인터페이스를 구현해야됨을 알아두자.
         </p>
+
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title><h4>Parent Component</h4></mat-card-title>
+          </mat-card-header>
+
+
+          <app-code [code]="codes[8].code" [title]="codes[8].title" ></app-code>
+
+          <div class="form-group">
+            <mat-form-field>
+              <input type="text" matInput placeholder="Enter greeting" class="form-control"
+                [value]="greeting" (input)="greeting=$event.target.value"
+              >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="text" matInput placeholder="Enter name" class="form-control"
+                     [value]="user.name" (input)="user.name=$event.target.value"
+              >
+            </mat-form-field>
+          </div>
+
+          <app-chapter5-2-1 [greeting]="greeting" [user]="user" [userName]="user.name" ></app-chapter5-2-1>
+        </mat-card>
+      </li>
+
+      <li class="sub-chapter">
+        <h3>자식 컴포넌트를 직접 받아오기(ViewChild)</h3>
+        <p>
+          앞에서의 설명은 부모의 프로퍼티를 자식에게 전달하거나, 이벤트로 받아오는 메커니즘이였다.
+          이제 부모 컴포넌트에서 <strong>직접 자식 컴포넌트의 프러퍼티, 메서드에 접근하는 방법(Using child component API directly)</strong>을 알아보자.
+        </p>
+
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Parent Component</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+            <mat-list-item>
+              <mat-list>Child 1 API : {{firstChild.message}}</mat-list>
+              <mat-list>Child 2 API : {{secondChild.message}}</mat-list>
+            </mat-list-item>
+            <app-chapter-5-3-1 #child1></app-chapter-5-3-1>
+            <app-chapter-5-3-1 #child2></app-chapter-5-3-1>
+            <button mat-raised-button color="primary" (click)="child1.message='clicked'">Child1</button>
+            <button mat-raised-button color="accent" (click)="child2.message='clicked'">Child2
+            </button>
+          </mat-card-content>
+        </mat-card>
       </li>
     </ul>
   </div>

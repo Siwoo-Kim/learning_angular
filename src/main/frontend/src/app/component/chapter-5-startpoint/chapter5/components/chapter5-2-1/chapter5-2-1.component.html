@@ -1,0 +1,17 @@
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h4>OnChanges Component</h4></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>Greeting : {{greeting}}</mat-list-item>
+      <mat-list-item>User name : {{user.name}}</mat-list-item>
+      <mat-list-item>Message : {{message}}
+
+          <input class="form-control" type="text" placeholder="Enter message" [(ngModel)]="message">
+
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

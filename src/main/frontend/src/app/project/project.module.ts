@@ -15,7 +15,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import { HomeComponent } from './component/home/home.component';
 import {projectRouting} from "./project.routes";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FilterPipe} from "../pipe/filter.pipe";
 import {PipeModule} from "../pipe/pipe/pipe.module";
 
@@ -24,7 +24,7 @@ import {PipeModule} from "../pipe/pipe/pipe.module";
     CommonModule,
     projectRouting,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, FormsModule,
     /* Angular Material & Animation Modeul */
     MatToolbarModule,MatSnackBarModule,MatCardModule,MatInputModule,
     MatRadioModule,MatButtonModule,MatListModule,

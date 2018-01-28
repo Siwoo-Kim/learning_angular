@@ -7,7 +7,7 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  formMode:FormGroup = new FormGroup({
+  formModel:FormGroup = new FormGroup({
     'title' : new FormControl(),
     'price' : new FormControl(),
     'category' : new FormControl(),

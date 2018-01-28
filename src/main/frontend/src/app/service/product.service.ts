@@ -19,7 +19,9 @@ export class ProductService {
   }
 
   getReviewsForProduct(product: Product) :Observable<Review[]> {
-    return new Observable(subscriber => subscriber.next( reviews.filter( review => review.productId == product.id ) ) );
+    return new Observable(subscriber => subscriber.next( reviews.filter( review => review.productId == product.id ).map(
+      review => new Review(review.id,review.productId,new Date(review.timestamp),review.user,review.rating,review.comment)
+    ) ) );
   }
 }
 

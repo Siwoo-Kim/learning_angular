@@ -1,10 +1,11 @@
 import {Code} from "../model/code";
-import {EventEmitter, Input, OnInit, Output} from "@angular/core";
+import {EventEmitter, Input, OnChanges, OnInit, Output} from "@angular/core";
 import {Chapter511Component} from "../component/chapter-5-startpoint/chapter5/components/chapter5-1-1/chapter5-1-1.component";
 import {ToastsManager} from "ng2-toastr";
 import {Chapter512Component} from "../component/chapter-5-startpoint/chapter5/components/chapter5-1-2/chapter5-1-2.component";
 import {Stock} from "../model/stock";
 import {Chapter514Component} from "../component/chapter-5-startpoint/chapter5/components/chapter5-1-4/chapter5-1-4.component";
+import {Chapter521Component} from "../component/chapter-5-startpoint/chapter5/components/chapter5-2-1/chapter5-2-1.component";
 
 export var chapter5_code:Code[] = [
   {
@@ -131,5 +132,23 @@ export var chapter5_code:Code[] = [
     '    <p style="color: lightgreen">This part is of child component</p>\n' +
     '    <ng-content></ng-content>\n' +
     '  </mat-card-content>'
+  },
+
+  {
+    id : 9, chapter : 5,
+    title : 'child.ts',
+    code : 'export class Chapter521Component implements OnInit,OnChanges {\n' +
+    '\n' +
+    '  @Input() greeting:string;\n' +
+    '  @Input() user: {name : string};\n' +
+    '  @Input() userName:string;\n' +
+    '\n' +
+    '  message:string = \'Initial message\';\n' +
+    '\n' +
+    '  ngOnChanges(changes: SimpleChanges): void {\n' +
+    '    for(var key in changes){\n' +
+    '      console.log(key +" : "+JSON.stringify(changes[key],null,2));\n' +
+    '    }\n' +
+    '  }\n'
   },
 ]
