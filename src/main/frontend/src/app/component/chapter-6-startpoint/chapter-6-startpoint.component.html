@@ -30,6 +30,48 @@
           <input #myInput matInput placeholder="입력" type="text" required pattern="[a-zA-Z0-9]+">
         </mat-form-field>
       </li>
+
+      <li class="sub-chapter">
+        <h3>Angular 폼 기본(Angular Form)</h3>
+        <p>
+          앞에서 말했다 싶이, 앵귤러에서 폼을 처리하는 방식은 <strong>템플릿 기반 폼 방식</strong> 과 <strong>반응형 폼 방식</strong>이 있다.
+          템플릿 기반 폼(template form)은 템플릿(template)에서 디렉티브(directive)를 사용하고,
+          반응형 폼은 컴포넌트에서 폼 컨트롤(FormControl)을 사용한다.
+          간단한 방식은 주로 템플릿 기반 폼을 사용하고, 복잡한 폼은 반응형 폼을 사용하는 것을 추천한다.
+        </p>
+        <p>
+          두 가지 앵귤러 폼의 중요한 특징을 알아보자.
+        </p>
+        <ul>
+          <li>두 방식 모두 폼 데이터를 Model에 저장한다. <strong>템플릿은 디렉티브(template directive)</strong>를 사용하여 모델을 정의.반응형은 <strong>컴포넌트 코드에서 모델</strong>을 정의하고 템플릿에 연결한다.</li>
+          <li>반응형 폼에서 모델을 정의할때는 <code>FormControl, FormGroup, FormArray</code> 클래스를 사용한다.</li>
+          <li>반응형 폼에서 모델을 정의한 후, 템플릿에서 연결될 엘리먼트를 정의한다.</li>
+        </ul>
+      </li>
+
+      <li class="sub-chapter">
+        <h3>템플릿 기반 폼(Template Form)</h3>
+        <p>
+          템플릿 기반의 폼에선 모델을 정의할 때는 <code>FormsModule</code>의 <code>NgModel, NgModelGroup, NgForm</code>을 사용한다.
+        </p>
+
+        <p>
+          NgForm은 폼 전체를 가리키는 디렉티브이며, <strong>폼 모듈을 로드하면 모든 form 엘리먼트는 이 디렉티브가 자동으로 적용된다.</strong>
+          <strong>NgForm 인스턴스</strong>의 값을 참조할 때 <strong>지역 템플릿 변수(local template variable)</strong>을 지정해 사용할 수도 있다.
+          또한 NgForm은 폼에서 발생하는 <strong>submit 이벤트</strong>의 동작을 막으므로 <strong>NgSubmit 이벤트</strong>를 사용해야 한다
+        </p>
+
+        <app-code [code]="codes[0].code" [title]="codes[0].title"></app-code>
+        <app-chapter6-1-1></app-chapter6-1-1>
+
+        <p>
+          템플릿 기반 폼에서 <code>NgModel</code><strong>[양방향 바인딩의 NgModel과 다르다]</strong>은 폼에 있는
+          필드 하나를 가르키며, <strong>FormControl 인스턴스가</strong> 생성된다.
+        </p>
+
+        <app-code [code]="codes[1].code" [title]="codes[1].title"></app-code>
+        <app-chapter6-1-2></app-chapter6-1-2>
+      </li>
     </ul>
 
 

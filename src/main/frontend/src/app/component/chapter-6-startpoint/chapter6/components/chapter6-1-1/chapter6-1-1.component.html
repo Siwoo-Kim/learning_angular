@@ -1,0 +1,10 @@
+
+<hr>
+<mat-card>
+  <mat-card-content>
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+      <pre>{{myForm['form'] | json }} </pre>
+    </form>
+  </mat-card-content>
+</mat-card>
+<hr><br/>
