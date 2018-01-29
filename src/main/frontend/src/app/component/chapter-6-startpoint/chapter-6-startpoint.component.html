@@ -5,11 +5,34 @@
     <hr>
     <ul>
       <li class="sub-chapter">
-        <h3></h3>
+        <h3>앵귤러 폼처리 기본</h3>
+        <p>앵귤러에선 폼을 구현할 때 <a [routerLink]="['/chapter4']">데이터 바인딩(data binding)</a> 혹은 폼 컨트롤(form control), 이 두가지 방식으로 처리한다.
+          폼 컨트롤은 다시 <strong>템플릿 기반 폼(template form)</strong>, <strong>반응형 폼(reactive form)</strong> 두가지로 나누어진다.
+          앵귤러에서 제공하는 폼 컨트롤 사용시 가장 훌륭한 점은 <strong>HTML 표준 폼</strong> 달리 사용자 검증 로직(custom validation)을 넣을 수 있다는 것이다.</p>
+      </li>
+
+      <li class="sub-chapter">
+        <h3>HTML 표준 유효성 속성(HTML STANDARD VALIDATION ATTRIBUTE)</h3>
         <p>
+          입력 필드엔 <code>required, pattern, maxlength, min, max, step</code>과 같은 표준 속성으로 유형성을 검증할 수 있다.
         </p>
 
+        <br/><hr/>
+        <mat-card>
+          <mat-card-content>
+            <code [innerText]="'<input #myInput matInput placeholder=\'입력\' type=\'text\' required pattern=\'[a-zA-Z0-9]+\'>'"></code>
+          </mat-card-content>
+        </mat-card>
+        <br/><hr/>
+
+        <p><span>{{myInput.validity.valid}}</span></p>
+        <mat-form-field>
+          <input #myInput matInput placeholder="입력" type="text" required pattern="[a-zA-Z0-9]+">
+        </mat-form-field>
       </li>
     </ul>
+
+
+
   </div>
 </mat-card>
