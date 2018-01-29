@@ -19,4 +19,11 @@ export class Chapter6StartpointComponent implements OnInit {
     console.log(value);
   }
 
+  result:any;
+
+  onSubmitHandler(value:any){
+    console.log(value);
+    this.result = value;
+  }
+
 }

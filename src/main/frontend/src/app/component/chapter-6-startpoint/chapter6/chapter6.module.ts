@@ -4,8 +4,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {Chapter611Component} from "./components/chapter6-1-1/chapter6-1-1.component";
 import {MatButtonModule, MatCardModule, MatInputModule} from "@angular/material";
 import {Chapter612Component} from "./components/chapter6-1-2/chapter6-1-2.component";
+import {Chapter613Component} from "./components/chapter6-1-3/chapter6-1-3.component";
+import {Chapter614Component} from "./components/chapter6-1-4/chapter6-1-4.component";
 
-var components = [Chapter611Component,Chapter612Component];
+var components = [Chapter611Component,Chapter612Component,Chapter613Component,Chapter614Component];
 
 @NgModule({
   imports: [

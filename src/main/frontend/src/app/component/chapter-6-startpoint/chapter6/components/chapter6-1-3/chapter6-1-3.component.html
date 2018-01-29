@@ -1,0 +1,25 @@
+<hr>
+<mat-card>
+  <mat-card-content>
+    <mat-card-header>
+      <p>
+        First Name: {{myForm.value.fullName.firstName}} <br/>
+        Last Name: {{myForm.value.fullName.lastName}} <br/>
+      </p>
+    </mat-card-header>
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value.fullName)">
+      <div ngModelGroup="fullName">
+        <mat-form-field>
+          <input matInput placeholder="Enter First Name" ngModel type="text"
+                 name="firstName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Enter Last Name" ngModel type="text"
+                 name="lastName">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="accent">Submit</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+<hr><br>

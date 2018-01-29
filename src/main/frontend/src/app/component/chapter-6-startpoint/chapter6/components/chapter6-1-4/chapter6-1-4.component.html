@@ -1,0 +1,32 @@
+
+<hr/>
+<mat-card>
+  <mat-card-content>
+  <form
+    class="form-group"
+    #joinForm="ngForm" (ngSubmit)="onSubmit(joinForm.value)">
+    <mat-form-field>
+      <input matInput ngModel placeholder="Enter name"
+             type="text" name="username">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput ngModel placeholder="Enter ssn"
+             type="text" name="ssn">
+    </mat-form-field>
+
+    <div ngModelGroup="passwordsGroup">
+      <mat-form-field>
+        <input matInput ngModel placeholder="Enter password"
+               type="password" name="password">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput ngModel placeholder="Enter confirm password"
+               type="password" name="pconfirm">
+      </mat-form-field>
+    </div>
+
+    <button type="submit" mat-raised-button color="primary">Join</button>
+  </form>
+  </mat-card-content>
+</mat-card>
+<hr><br/>
