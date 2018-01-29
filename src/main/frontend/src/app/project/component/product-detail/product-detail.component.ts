@@ -29,7 +29,7 @@ export class ProductDetailComponent implements OnInit {
     let review = new Review(0,this.product.id,new Date(),'Anonymous',
       this.newRating,this.newComment);
 
-    console.log(`Adding review ${JSON.stringify(review)}`);
+    console.log(`Adding review ${JSON.stringify(review,null,2)}`);
 
     this.reviews = [...this.reviews,review];
     this.product.rating = this.averageRating(this.reviews);

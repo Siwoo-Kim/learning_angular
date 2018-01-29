@@ -32,6 +32,7 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { Chapter5StartpointComponent } from './component/chapter-5-startpoint/chapter-5-startpoint.component';
 import {Chapter5Module} from "./component/chapter-5-startpoint/chapter5/chapter5.module";
 import {ToastModule} from "ng2-toastr";
+import { Chapter6StartpointComponent } from './component/chapter-6-startpoint/chapter-6-startpoint.component';
 
 
 
@@ -48,6 +49,7 @@ import {ToastModule} from "ng2-toastr";
     Chapter4StartpointComponent,
     ChapterTitleComponent,
     Chapter5StartpointComponent,
+    Chapter6StartpointComponent,
   ],
   imports: [
     /* 3rd Module */

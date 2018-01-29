@@ -6,6 +6,7 @@ import {Chapter2StartpointComponent} from "./component/chapter-2-startpoint/chap
 import {Chapter3StartpointComponent} from "./component/chapter-3-startpoint/chapter-3-startpoint.component";
 import {Chapter4StartpointComponent} from "./component/chapter-4-startpoint/chapter-4-startpoint.component";
 import {Chapter5StartpointComponent} from "./component/chapter-5-startpoint/chapter-5-startpoint.component";
+import {Chapter6StartpointComponent} from "./component/chapter-6-startpoint/chapter-6-startpoint.component";
 
 export const routes:Routes = [
   {path:'',component:HomeComponent},
@@ -14,5 +15,6 @@ export const routes:Routes = [
   {path:'chapter3',component:Chapter3StartpointComponent},
   {path:'chapter4',component:Chapter4StartpointComponent},
   {path:'chapter5',component:Chapter5StartpointComponent},
+  {path:'chapter6',component:Chapter6StartpointComponent},
 ]
 
