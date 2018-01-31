@@ -163,6 +163,14 @@
           유효 검사의 결과를 확인할 수 있다.
           <strong>유효성 검사기의 갯수에는 제한이 없으며</strong> <code>valid</code>property 을 통해 검사 결과를 확인할 수 있다.
         </p>
+
+        <p><strong>커스텀 유효성 검사기(Custom Validator)</strong>은 사용자가 원하는 특정 로직을 검사할 수 있으며
+        단순한 함수이기에 정의하기 간편하다. <strong>주의할 점은 <code>FormControl,FormGroup,FormArray</code>와 같은 모델 클래스를 인자로 받고
+            검사 로직을 수행후 에러 객체를 반환하면 된다.</strong></p>
+
+        <app-code [code]="codes[8].code" [title]="codes[8].title"></app-code>
+        <app-code [code]="codes[9].code" [title]="codes[9].title"></app-code>
+        <app-chapter6-2-1></app-chapter6-2-1>
       </li>
     </ul>
 

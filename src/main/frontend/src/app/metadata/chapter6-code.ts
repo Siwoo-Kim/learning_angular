@@ -1,7 +1,10 @@
 import {Code} from "../model/code";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {OnInit} from "@angular/core";
 import {Chapter617Component} from "../component/chapter-6-startpoint/chapter6/components/chapter6-1-7/chapter6-1-7.component";
+import {ssnValidator} from "../component/chapter-6-startpoint/chapter6/validators/ssn-validator";
+import {Chapter621Component} from "../component/chapter-6-startpoint/chapter6/components/chapter6-2-1/chapter6-2-1.component";
+import {equalValidator} from "../component/chapter-6-startpoint/chapter6/validators/equal-validator";
 
 export var chapter6_code:Code[] = [
   {
@@ -156,6 +159,41 @@ export var chapter6_code:Code[] = [
     '    this.myControl.valueChanges\n' +
     '      .debounceTime(500)\n' +
     '      .subscribe(data => this.name = data );\n' +
+    '  }'
+  },
+
+  {
+    id : 9, chapter : 6,
+    title : 'equalValidator.ts',
+    code : 'export function equalValidator({ value } : FormGroup) : { [key:string] : any}{\n' +
+    '  const [first , ...rest] = Object.keys(value || {});\n' +
+    '  const valid = rest.every(v => value[v] === value[first]);\n' +
+    '  return valid ? null : { equal : true };\n' +
+    '}'
+  },
+  {
+    id : 10, chapter : 6,
+    title : 'customValidator.ts',
+    code : '\n' +
+    'export class Chapter621Component implements OnInit {\n' +
+    '  formGroup:FormGroup;\n' +
+    '\n' +
+    '  constructor() {\n' +
+    '    this.formGroup = new FormGroup({\n' +
+    '      \'username\' : new FormControl(\'\',Validators.required),\n' +
+    '      \'ssn\' : new FormControl(\'\',ssnValidator),\n' +
+    '      \'passwordsGroup\' : new FormGroup({\n' +
+    '        \'password\' : new FormControl(\'\',[Validators.required,Validators.minLength(5) ] ),\n' +
+    '        \'pconfirm\' : new FormControl(\'\')\n' +
+    '      },equalValidator)\n' +
+    '    })\n' +
+    '  }\n' +
+    '\n' +
+    '  valid:boolean;\n' +
+    '\n' +
+    '  onFormSubmit(){\n' +
+    '    console.log(this.formGroup.valid);\n' +
+    '    this.valid = this.formGroup.valid;\n' +
     '  }'
   },
 ]

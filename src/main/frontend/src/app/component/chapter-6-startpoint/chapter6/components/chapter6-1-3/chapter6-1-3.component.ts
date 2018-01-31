@@ -12,8 +12,11 @@ export class Chapter613Component implements OnInit {
   ngOnInit() {
   }
 
+  isSubmit:boolean = false;
+
   onTheSubmit(value:any){
     console.log(value);
+    this.isSubmit = true;
   }
 
 }

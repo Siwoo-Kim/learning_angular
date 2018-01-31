@@ -2,7 +2,7 @@
 <mat-card>
   <mat-card-content>
     <mat-card-header>
-      <p>
+      <p *ngIf="isSubmit">
         First Name: {{myForm.value.fullName.firstName}} <br/>
         Last Name: {{myForm.value.fullName.lastName}} <br/>
       </p>

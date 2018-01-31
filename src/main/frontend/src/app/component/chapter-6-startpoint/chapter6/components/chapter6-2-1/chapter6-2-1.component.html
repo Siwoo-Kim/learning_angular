@@ -1,0 +1,41 @@
+
+
+<hr>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h4>Custom Validator</h4>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <p *ngIf="valid !== null">
+        <strong>Valid : </strong> {{valid}}
+    </p>
+    <form [formGroup]="formGroup" (ngSubmit)="onFormSubmit()">
+      <mat-form-field>
+        <input type="text" matInput placeholder="Enter username"
+               [formControlName]="'username'">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Enter ssn"
+               [formControlName]="'ssn'">
+      </mat-form-field>
+
+      <div [formGroupName]="'passwordsGroup'">
+        <mat-form-field>
+          <input type="password" matInput placeholder="Enter Password"
+                 [formControlName]="'password'">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Enter Password Again"
+                 [formControlName]="'pconfirm'">
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" >Submit</button>
+    </form>
+  </mat-card-content>
+
+</mat-card>
+<hr/><br/>

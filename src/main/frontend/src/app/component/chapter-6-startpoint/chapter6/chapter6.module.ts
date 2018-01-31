@@ -9,12 +9,13 @@ import {Chapter614Component} from "./components/chapter6-1-4/chapter6-1-4.compon
 import {Chapter615Component} from "./components/chapter6-1-5/chapter6-1-5.component";
 import {Chapter616Component} from "./components/chapter6-1-6/chapter6-1-6.component";
 import {Chapter617Component} from "./components/chapter6-1-7/chapter6-1-7.component";
+import {Chapter621Component} from "./components/chapter6-2-1/chapter6-2-1.component";
 
 var components = [
   Chapter611Component,Chapter612Component,
   Chapter613Component,Chapter614Component,
   Chapter615Component,Chapter616Component,
-  Chapter617Component
+  Chapter617Component,Chapter621Component
 ];
 
 @NgModule({
