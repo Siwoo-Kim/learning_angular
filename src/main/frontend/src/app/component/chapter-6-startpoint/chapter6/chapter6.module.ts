@@ -7,11 +7,14 @@ import {Chapter612Component} from "./components/chapter6-1-2/chapter6-1-2.compon
 import {Chapter613Component} from "./components/chapter6-1-3/chapter6-1-3.component";
 import {Chapter614Component} from "./components/chapter6-1-4/chapter6-1-4.component";
 import {Chapter615Component} from "./components/chapter6-1-5/chapter6-1-5.component";
+import {Chapter616Component} from "./components/chapter6-1-6/chapter6-1-6.component";
+import {Chapter617Component} from "./components/chapter6-1-7/chapter6-1-7.component";
 
 var components = [
   Chapter611Component,Chapter612Component,
   Chapter613Component,Chapter614Component,
-  Chapter615Component
+  Chapter615Component,Chapter616Component,
+  Chapter617Component
 ];
 
 @NgModule({

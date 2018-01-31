@@ -1,5 +1,7 @@
 import {Code} from "../model/code";
 import {FormControl, FormGroup} from "@angular/forms";
+import {OnInit} from "@angular/core";
+import {Chapter617Component} from "../component/chapter-6-startpoint/chapter6/components/chapter6-1-7/chapter6-1-7.component";
 
 export var chapter6_code:Code[] = [
   {
@@ -126,5 +128,34 @@ export var chapter6_code:Code[] = [
     '    this.from = this.formGroup.value[\'from\'];\n' +
     '\n' +
     '  }\n'
+  },
+  {
+    id : 7, chapter : 6,
+    title : 'formGroupName.html',
+    code : '\n' +
+    '  <div [formGroupName]="\'dateRange\'">\n' +
+    '    <mat-form-field>\n' +
+    '      <input type="date" matInput placeholder="Enter from Date"\n' +
+    '        [formControlName]="\'from\'">\n' +
+    '    </mat-form-field>\n' +
+    '    <mat-form-field>\n' +
+    '      <input type="date" matInput placeholder="Enter from Date"\n' +
+    '             [formControlName]="\'to\'">\n' +
+    '    </mat-form-field>\n' +
+    '  </div>'
+  },
+  {
+    id : 8, chapter : 6,
+    title : 'formGroupName.html',
+    code : '\n' +
+    'export class Chapter617Component implements OnInit {\n' +
+    '  myControl:FormControl = new FormControl(\'Guest\');\n' +
+    '  name:String;\n' +
+    '\n' +
+    '  constructor() {\n' +
+    '    this.myControl.valueChanges\n' +
+    '      .debounceTime(500)\n' +
+    '      .subscribe(data => this.name = data );\n' +
+    '  }'
   },
 ]

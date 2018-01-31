@@ -1,0 +1,19 @@
+
+<hr/><br>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h4>FormControl ValueChanges</h4>
+    </mat-card-title>
+  </mat-card-header>
+
+    <hr/>
+    <mat-card-content>
+      <p> <strong>Name :</strong> {{name}}</p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Enter Name"
+               [formControl]="myControl">
+      </mat-form-field>
+    </mat-card-content>
+</mat-card>
+<br/>
