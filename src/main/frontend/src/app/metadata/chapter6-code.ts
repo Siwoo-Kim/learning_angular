@@ -1,4 +1,5 @@
 import {Code} from "../model/code";
+import {FormControl, FormGroup} from "@angular/forms";
 
 export var chapter6_code:Code[] = [
   {
@@ -91,5 +92,39 @@ export var chapter6_code:Code[] = [
     '  </form>\n' +
     '  </mat-card-content>\n' +
     '</mat-card>'
+  },
+  {
+    id : 5, chapter : 6,
+    title : 'formGroup.html',
+    code : '\n' +
+    '    <form [formGroup]="formGroup" (ngSubmit)="onFormSubmit()">\n' +
+    '      <mat-form-field>\n' +
+    '        <input matInput type="date" placeholder="Enter From Date"\n' +
+    '          [formControlName]="\'to\'">\n' +
+    '      </mat-form-field>\n' +
+    '      <mat-form-field>\n' +
+    '        <input matInput type="date" placeholder="Enter to Date"\n' +
+    '          [formControlName]="\'from\'">\n' +
+    '      </mat-form-field>\n' +
+    '      <button mat-raised-button type="submit">Submit</button>\n' +
+    '    </form>'
+  },
+  {
+    id : 6, chapter : 6,
+    title : 'formGroup.ts',
+    code : '  formGroup:FormGroup = new FormGroup({\n' +
+    '    to : new FormControl(),\n' +
+    '    from : new FormControl()\n' +
+    '  });\n' +
+    '\n' +
+    '  to:Date;\n' +
+    '  from:Date;\n' +
+    '\n' +
+    '  onFormSubmit(){\n' +
+    '\n' +
+    '    this.to = this.formGroup.value[\'to\'];\n' +
+    '    this.from = this.formGroup.value[\'from\'];\n' +
+    '\n' +
+    '  }\n'
   },
 ]

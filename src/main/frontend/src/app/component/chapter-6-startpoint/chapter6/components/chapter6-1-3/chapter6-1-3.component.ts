@@ -12,7 +12,8 @@ export class Chapter613Component implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(value:any){
+  onTheSubmit(value:any){
     console.log(value);
   }
+
 }

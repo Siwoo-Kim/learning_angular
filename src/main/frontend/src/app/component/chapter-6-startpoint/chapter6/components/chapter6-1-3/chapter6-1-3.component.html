@@ -7,7 +7,7 @@
         Last Name: {{myForm.value.fullName.lastName}} <br/>
       </p>
     </mat-card-header>
-    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value.fullName)">
+    <form #myForm="ngForm" (ngSubmit)="onTheSubmit(myForm.value.fullName)">
       <div ngModelGroup="fullName">
         <mat-form-field>
           <input matInput placeholder="Enter First Name" ngModel type="text"

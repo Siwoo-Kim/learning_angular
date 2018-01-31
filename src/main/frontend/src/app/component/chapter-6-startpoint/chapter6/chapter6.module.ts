@@ -6,8 +6,13 @@ import {MatButtonModule, MatCardModule, MatInputModule} from "@angular/material"
 import {Chapter612Component} from "./components/chapter6-1-2/chapter6-1-2.component";
 import {Chapter613Component} from "./components/chapter6-1-3/chapter6-1-3.component";
 import {Chapter614Component} from "./components/chapter6-1-4/chapter6-1-4.component";
+import {Chapter615Component} from "./components/chapter6-1-5/chapter6-1-5.component";
 
-var components = [Chapter611Component,Chapter612Component,Chapter613Component,Chapter614Component];
+var components = [
+  Chapter611Component,Chapter612Component,
+  Chapter613Component,Chapter614Component,
+  Chapter615Component
+];
 
 @NgModule({
   imports: [
