@@ -1,0 +1,27 @@
+
+<hr/>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h4>Http Basic</h4>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-list *ngIf="users">
+      <mat-list-item *ngFor="let user of users">
+        {{ user | json }}
+      </mat-list-item>
+    </mat-list>
+    <br/>
+    <p *ngIf="invalid;else showUser"> Cannot found the name : {{myInput.value}} </p>
+    <ng-template #showUser ><p> {{searchUser | json }}</p></ng-template>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Enter Search Name"
+             [formControl]="myInput" >
+    </mat-form-field>
+    <button mat-raised-button (click)="onSearch()">Search</button>
+  </mat-card-content>
+
+</mat-card>
+<hr/><br/>

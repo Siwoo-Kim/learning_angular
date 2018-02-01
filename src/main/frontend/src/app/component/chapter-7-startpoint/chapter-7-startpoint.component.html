@@ -1,0 +1,46 @@
+
+<mat-card>
+  <div class="row">
+    <app-chapter-title [title]="'Chapter 8 - Http'" ></app-chapter-title>
+    <hr>
+    <ul>
+      <li class="sub-chapter">
+        <h3>서버와 클라이언트(Server and Client)</h3>
+        <p>
+          앵귤러 어플리케이션은 <strong>Http 혹은 Websocket</strong>을 이용하여 서버와
+          데이터를 주고 받을 수 있다. 서버에 요청을 보내려면 <strong>Http Object</strong>를
+          사용할 수 있으며, <strong>Websocket</strong>또한 <a [routerLink]="['/chapter4']">Observable (Chapter4)</a>
+          과 맵핑할 수 있다.
+        </p>
+      </li>
+
+      <li class="sub-chapter">
+        <h3>Http Object</h3>
+        <p>
+          앵귤러 어플리케이션은 <strong>Http Request</strong>을 <strong>비동기(asynchronous)</strong>로 처리하기에
+          Http Request을 보낸 후에도 사용자가 하던 작업을 계속할 수 있다(No refresh). Asynchronous Http Request는
+          <a [routerLink]="['/chapter4']">Observable (Chapter4)</a>로 처리할 수 있으며, Observable이 프로미스보다
+          훌륭한 선택임은 당연하다.
+        </p>
+
+        <p>
+          Http 클래스는 <code>@angular/http</code> 패키지에 정의되어 있다.
+          <code>Http</code> 객체의 함수들은 <strong>Http Protocol Method</strong>를 정의하고 있으며,
+          <code>RequestOptionArgs</code> 객체를 추가하여 <strong>옵션(Header,Parameter)</strong>등을 설정할 수 있다.
+          <code>Request</code>객체는 Http 객체보다 더 많은 옵션을 제공하며, <strong>Header를 정의하고, 요청 방식을 선택하는 등 Http 요청 방식을</strong> 더 세밀하게
+          조정할 수 있다.
+        </p>
+
+        <app-code [title]="codes[0].title" [code]="codes[0].code"></app-code>
+        <app-chapter7-1-1></app-chapter7-1-1>
+
+        <p>
+          <code>Request</code> 객체를 생성하면서 객체 리터럴을 전달하지 않고,
+          <strong>RequestOptionsArgs</strong> 객체를 전달할 수도 있다.
+        </p>
+
+        <app-chapter7-1-2></app-chapter7-1-2>
+      </li>
+    </ul>
+  </div>
+</mat-card>

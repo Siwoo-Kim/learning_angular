@@ -34,6 +34,8 @@ import {Chapter5Module} from "./component/chapter-5-startpoint/chapter5/chapter5
 import {ToastModule} from "ng2-toastr";
 import { Chapter6StartpointComponent } from './component/chapter-6-startpoint/chapter-6-startpoint.component';
 import {Chapter6Module} from "./component/chapter-6-startpoint/chapter6/chapter6.module";
+import { Chapter7StartpointComponent } from './component/chapter-7-startpoint/chapter-7-startpoint.component';
+import {Chapter7Module} from "./component/chapter-7-startpoint/chapter7/chapter7.module";
 
 
 
@@ -51,6 +53,7 @@ import {Chapter6Module} from "./component/chapter-6-startpoint/chapter6/chapter6
     ChapterTitleComponent,
     Chapter5StartpointComponent,
     Chapter6StartpointComponent,
+    Chapter7StartpointComponent,
   ],
   imports: [
     /* 3rd Module */
@@ -67,7 +70,9 @@ import {Chapter6Module} from "./component/chapter-6-startpoint/chapter6/chapter6
     /* App Module */
     ProjectModule, Chapter2Module,
     RouterModule.forRoot(routes),
-    Chapter3Module,Chapter4Module,Chapter5Module,Chapter6Module,
+    Chapter3Module,Chapter4Module,
+    Chapter5Module,Chapter6Module,
+    Chapter7Module,
   ],
   providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],
