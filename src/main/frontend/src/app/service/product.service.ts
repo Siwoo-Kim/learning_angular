@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {Product} from "../model/product";
 import {Review} from "../model/review";
+import {Category} from "../model/category";
 
 @Injectable()
 export class ProductService {
@@ -22,6 +23,10 @@ export class ProductService {
     return new Observable(subscriber => subscriber.next( reviews.filter( review => review.productId == product.id ).map(
       review => new Review(review.id,review.productId,new Date(review.timestamp),review.user,review.rating,review.comment)
     ) ) );
+  }
+
+  getAllCategories():Observable<Category[]>{
+    return new Observable<Category[]>(subscriber => subscriber.next(categories));
   }
 }
 
@@ -127,3 +132,9 @@ var reviews = [
     "comment": "Aenean vestibulum velit id placerat posuere. Praesent placerat mi ut massa tempor, sed rutrum metus rutrum. Fusce lacinia blandit ligula eu cursus. Proin in lobortis mi. Praesent pellentesque auctor dictum. Nunc volutpat id nibh quis malesuada. Curabitur tincidunt luctus leo, quis condimentum mi aliquet eu. Vivamus eros metus, convallis eget rutrum nec, ultrices quis mauris. Praesent non lectus nec dui venenatis pretium."
   }
 ];
+
+var categories : Category[] = [
+  { name : "Books" },
+  { name : "Electronics" },
+  { name : "Hardware" },
+]

@@ -8,7 +8,8 @@ import { SearchComponent } from './component/search/search.component';
 import { StarsComponent } from './component/stars/stars.component';
 import { ProjectStartpointComponent } from './component/project-startpoint/project-startpoint.component';
 import {
-  MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatRadioModule, MatSnackBarModule,
+  MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatOptionModule, MatRadioModule, MatSelectModule,
+  MatSnackBarModule,
   MatToolbarModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -27,7 +28,8 @@ import {PipeModule} from "../pipe/pipe/pipe.module";
     ReactiveFormsModule, FormsModule,
     /* Angular Material & Animation Modeul */
     MatToolbarModule,MatSnackBarModule,MatCardModule,MatInputModule,
-    MatRadioModule,MatButtonModule,MatListModule,
+    MatRadioModule,MatButtonModule,MatListModule,MatOptionModule,
+    MatSelectModule,
 
     PipeModule
   ],

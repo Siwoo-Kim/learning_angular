@@ -7,9 +7,6 @@ export class FilterPipe implements PipeTransform {
 
   transform(list: any[], filterField: string,filterValue:string): any {
 
-    console.log(list);
-    console.log(filterValue);
-
     if(!filterField || !filterValue){
       return list;
     }
