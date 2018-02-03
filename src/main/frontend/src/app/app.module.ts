@@ -35,25 +35,27 @@ import {ToastModule} from "ng2-toastr";
 import { Chapter6StartpointComponent } from './component/chapter-6-startpoint/chapter-6-startpoint.component';
 import {Chapter6Module} from "./component/chapter-6-startpoint/chapter6/chapter6.module";
 import { Chapter7StartpointComponent } from './component/chapter-7-startpoint/chapter-7-startpoint.component';
+import { FirstStepChapter3Component } from './component/first-step-chapter-3/first-step-chapter-3.component';
 import {Chapter7Module} from "./component/chapter-7-startpoint/chapter7/chapter7.module";
+import {FirstStepChapter3Module} from "./component/first-step-chapter-3/first-step-chapter3/first-step-chapter3.module";
+import { ExampleTitleComponent } from './component/common/example-title/example-title.component';
+import {AppCommonModule} from "./component/common/app-common.module";
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     Chapter1StartpointComponent,
     NewLineToBreakerPipe,
     Chapter2StartpointComponent,
     HelloWorldComponent,
     Chapter3StartpointComponent,
-    CodeComponent,
     Chapter4StartpointComponent,
-    ChapterTitleComponent,
     Chapter5StartpointComponent,
     Chapter6StartpointComponent,
     Chapter7StartpointComponent,
+    FirstStepChapter3Component,
   ],
   imports: [
     /* 3rd Module */
@@ -65,15 +67,20 @@ import {Chapter7Module} from "./component/chapter-7-startpoint/chapter7/chapter7
     MatToolbarModule,MatSnackBarModule,MatCardModule,
     MatInputModule,MatTooltipModule, MatRadioModule,
     MatButtonModule,MatListModule,MatIconModule,
-    MatExpansionModule,MatChipsModule,
+    MatExpansionModule,MatChipsModule, MatIconModule,
+
 
     /* App Module */
+    AppCommonModule,
     ProjectModule, Chapter2Module,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot([]),
     Chapter3Module,Chapter4Module,
     Chapter5Module,Chapter6Module,
     Chapter7Module,
+
+    FirstStepChapter3Module,
   ],
+  exports : [ExampleTitleComponent],
   providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],
 })

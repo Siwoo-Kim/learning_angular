@@ -1,0 +1,13 @@
+
+
+<app-example-title [chapter]="'3-1'"></app-example-title>
+<mat-toolbar>
+  <span id="display-name">{{userName}}</span>님 환영합니다.
+</mat-toolbar>
+<div class="contents">
+  <mat-form-field>
+    <input matInput #nameInput
+           type="text" placeholder="Enter Name">
+  </mat-form-field>
+    <button mat-raised-button (click)="onSubmitName(nameInput.value)" >입력</button>
+</div>

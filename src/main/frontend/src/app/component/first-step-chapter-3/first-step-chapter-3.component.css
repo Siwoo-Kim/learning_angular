@@ -1,0 +1,10 @@
+
+div.example{
+  padding: 5px;
+  margin-top: 25px;
+  border: 1px solid lightgray;
+}
+
+mat-form-field{
+  width: 100%;
+}
