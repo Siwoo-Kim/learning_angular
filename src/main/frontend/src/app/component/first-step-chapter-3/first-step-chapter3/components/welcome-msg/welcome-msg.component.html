@@ -1,0 +1,16 @@
+
+<h4>
+  <span>Welcome, {{getWelcomeMessage()}}!</span>
+</h4>
+<div class="contents">
+  <label for="user-name">Username : </label>
+  <mat-form-field>
+    <input placeholder="UserName"
+           matInput id="user-name"
+           [(ngModel)]="userName"
+           (ngModelChange)="onChange()" />
+            <!-- ngModelChange will catch the moment when the property which binding property with ngModel is changed
+                and invoke the custom event handler -->
+    <mat-hint>Please enter your name</mat-hint>
+  </mat-form-field>
+</div>

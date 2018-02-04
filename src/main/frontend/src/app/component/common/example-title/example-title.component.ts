@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ExampleTitleComponent implements OnInit {
   @Input() chapter:string;
+  @Input() hide_chapter:boolean = false;
 
   constructor() { }
 

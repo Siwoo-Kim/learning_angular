@@ -1,0 +1,28 @@
+
+<div id="lang-select" class="row contents">
+  <div class="lang-box">
+    <img src="/assets/img/flags/South_Korea.png">
+
+    <!--  ngIf is structure directive ,
+          it determines rendering element by the boolean expression-->
+    <label *ngIf="languageCode === 'ko'">Select</label>
+
+    <button mat-raised-button [color]="'primary'" (click)="onClickLanguage('ko')"
+      [disabled]="languageCode === 'ko'">Korean</button>
+    <!--the value of disabled attribute is determined by boolean expression-->
+    <!--through property binding-->
+  </div>
+
+  <div class="lang-box">
+    <img src="/assets/img/flags/China.png">
+
+    <!--  ngIf is structure directive ,
+          it determines rendering element by the boolean expression-->
+    <label *ngIf="languageCode === 'ch'">Select</label>
+
+    <button mat-raised-button [color]="'primary'" (click)="onClickLanguage('ch')"
+            [disabled]="languageCode === 'ch'">China</button>
+    <!--the value of disabled attribute is determined by boolean expression-->
+    <!--through property binding-->
+  </div>
+</div>
