@@ -40,6 +40,7 @@ import {Chapter7Module} from "./component/chapter-7-startpoint/chapter7/chapter7
 import {FirstStepChapter3Module} from "./component/first-step-chapter-3/first-step-chapter3/first-step-chapter3.module";
 import { ExampleTitleComponent } from './component/common/example-title/example-title.component';
 import {AppCommonModule} from "./component/common/app-common.module";
+import { LanguageToFormatPipe } from './pipe/language-to-format.pipe';
 
 
 

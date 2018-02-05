@@ -1,28 +1,39 @@
 
-<div id="lang-select" class="row contents">
-  <div class="lang-box">
-    <img src="/assets/img/flags/South_Korea.png">
+<div id="lang-select" class="row contents" >
+                        <!--by using structure directive you don't need to repeat same code-->
+  <div class="lang-box" *ngFor="let language of languages" >
+    <img src="/assets/img/flags/{{language.flagImgName}}">
 
     <!--  ngIf is structure directive ,
           it determines rendering element by the boolean expression-->
-    <label *ngIf="languageCode === 'ko'">Select</label>
+    <label *ngIf="selectedLanguageCode === language.code" >SELECT</label>
 
-    <button mat-raised-button [color]="'primary'" (click)="onClickLanguage('ko')"
-      [disabled]="languageCode === 'ko'">Korean</button>
+    <button mat-raised-button [color]="'primary'" (click)="onClickLanguage(language.code)"
+      [disabled]="selectedLanguageCode === language.code">
+      {{language | languageToFormat }}
+    </button>
+                                                          <!--custom pipe also can be created. -->
+                                                          <!--implement transform method and then return the value you want-->
     <!--the value of disabled attribute is determined by boolean expression-->
     <!--through property binding-->
   </div>
 
-  <div class="lang-box">
-    <img src="/assets/img/flags/China.png">
+<!--
+  This repeating is not the good sign.
+  If you add another language you will make another elements which has same structure
+  of the code but the data.
+  In the case, you can use Structure Directive
+    <div class="lang-box">
+      <img src="/assets/img/flags/China.png">
 
-    <!--  ngIf is structure directive ,
-          it determines rendering element by the boolean expression-->
-    <label *ngIf="languageCode === 'ch'">Select</label>
+      &lt;!&ndash;  ngIf is structure directive ,
+            it determines rendering element by the boolean expression&ndash;&gt;
+      <label *ngIf="languageCode === 'ch'">Select</label>
 
-    <button mat-raised-button [color]="'primary'" (click)="onClickLanguage('ch')"
-            [disabled]="languageCode === 'ch'">China</button>
-    <!--the value of disabled attribute is determined by boolean expression-->
-    <!--through property binding-->
-  </div>
+      <button mat-raised-button [color]="'primary'" (click)="onClickLanguage('ch')"
+              [disabled]="languageCode === 'ch'">China</button>
+      &lt;!&ndash;the value of disabled attribute is determined by boolean expression&ndash;&gt;
+      &lt;!&ndash;through property binding&ndash;&gt;
+    </div>
+  -->
 </div>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {I18nSupportService} from "../../services/i18n-support.service";
+import {Component, EventEmitter, OnInit} from '@angular/core';
+import {I18nSupportService, Language} from "../../services/i18n-support.service";
 
 @Component({
   selector: 'app-lang-selector',
@@ -7,16 +7,27 @@ import {I18nSupportService} from "../../services/i18n-support.service";
   styleUrls: ['./lang-selector.component.css']
 })
 export class LangSelectorComponent implements OnInit {
+  // languageCode:string = 'ko';  *changed to proper name languageCode -> selectedLanguageCode
+  selectedLanguageCode:string = 'ko';
 
-  languageCode:string;
+  languages:Language[];
 
   constructor(public i18nSupportService:I18nSupportService) {
-    this.languageCode = 'ko';
+    this.selectedLanguageCode = i18nSupportService.getLanguageByCode(this.selectedLanguageCode).code;
+    this.languages = i18nSupportService.getAllLanguage();
+    // languageCodes = Language_Code; To get a data , service is more better place to get from
+    // * Because the data can be used other place as well
   }
 
+  setLanguageCode(code:string){
+    this.selectedLanguageCode = code;
+    this.i18nSupportService.languageCode = code;
+
+  }
 
   onClickLanguage(languageCode:string){
-    this.languageCode = languageCode;
+    this.selectedLanguageCode = languageCode;
+    this.setLanguageCode(languageCode);
   }
 
   ngOnInit() {

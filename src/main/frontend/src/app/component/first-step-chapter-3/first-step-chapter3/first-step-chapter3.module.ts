@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Example31Component } from './components/example-3-1/example-3-1.component';
 import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule} from "@angular/material";
 import {FormsModule} from "@angular/forms";
-import {ExampleTitleComponent} from "../../common/example-title/example-title.component";
 import {AppCommonModule} from "../../common/app-common.module";
 import {Example32Component} from "./components/example-3-2/example-3-2.component";
 import {LangSelectorComponent} from "./components/lang-selector/lang-selector.component";
 import {WelcomeMsgComponent} from "./components/welcome-msg/welcome-msg.component";
 import {I18nSupportService} from "./services/i18n-support.service";
+import {PipeModule} from "../../../pipe/pipe/pipe.module";
 
 const components = [
   Example31Component , Example32Component,
@@ -25,7 +25,7 @@ const components = [
     MatInputModule,
 
     /* AppModule */
-    AppCommonModule,
+    AppCommonModule, PipeModule
   ],
   /*
       Provide services to all components in the module

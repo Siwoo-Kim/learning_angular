@@ -7,6 +7,16 @@ img {
   border: 1px solid darkblue;
 }
 
+
 .lang-box{
-  margin-right: 5px;
+  width: 8%;
+  display: inline-block;
+  margin: 10px 15px;
 }
+
+.lang-box img{
+  width: 120px;
+  display: inline-block;
+  margin : 10px 15px;
+}
+
