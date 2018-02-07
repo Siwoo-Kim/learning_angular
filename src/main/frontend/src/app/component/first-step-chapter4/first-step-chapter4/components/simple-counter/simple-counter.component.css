@@ -1,0 +1,25 @@
+.counter {
+  width: 100%;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: grey;
+  font-size: 80px;
+  border: 1px solid #000
+}
+.buttons {
+  width: 100%;
+  text-align: center;
+}
+
+.manual-action{
+  text-align: center;
+  margin-top: 35px;
+  width: 100%;
+}
+
+.manual-action > p{
+  width: 100%;
+  text-align: center;
+}

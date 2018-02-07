@@ -9,14 +9,6 @@ export class Example421Component implements OnInit,AfterViewInit {
 
   ngAfterViewInit(): void {
 
-    const toogling = (state:boolean) => { this.toogle  = state; }
-
-    document.querySelector("#agree-checkbox")
-      .addEventListener('click',function(){toogling(true)});
-
-    document.querySelector("#disagree-checkbox")
-      .addEventListener('click',function(){toogling(false)});
-
   }
 
   constructor() {
@@ -30,6 +22,14 @@ export class Example421Component implements OnInit,AfterViewInit {
   toogle:boolean = false;
 
   ngOnInit() {
+
+    const toogling = (state:boolean) => { this.toogle  = state; }
+
+    document.querySelector("#agree-checkbox")
+      .addEventListener('click',function(){toogling(true)});
+
+    document.querySelector("#disagree-checkbox")
+      .addEventListener('click',function(){toogling(false)});
 
   }
 

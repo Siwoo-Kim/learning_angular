@@ -1,0 +1,20 @@
+
+
+<app-example-title [chapter]="'Simple Counter'"></app-example-title>
+
+<div class="counter" [style.backgroundColor]="getColor()">{{currentValue}}</div>
+                      <!--set backgroundColor by property binding-->
+  <div class="buttons" >
+                          <!--event binding-->
+    <button mat-raised-button (click)="increment()">+</button>
+    <button mat-raised-button (click)="decrement()">-</button>
+  </div>
+
+  <div class="manual-action">
+    <p><span class="alert alert-info">Manual Setting</span></p>
+    <mat-form-field >
+      <input matInput type="number" [(ngModel)]="manualValue">
+    </mat-form-field>
+    <button mat-raised-button (click)="setValueManually()" >Set Value manually</button>
+  </div>
+
