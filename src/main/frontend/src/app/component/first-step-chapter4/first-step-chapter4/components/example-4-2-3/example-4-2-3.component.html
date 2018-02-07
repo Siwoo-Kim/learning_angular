@@ -1,0 +1,16 @@
+
+
+
+  <!--{{}} interperat template expression to "string"-->
+<app-example-title [chapter]="'4-2-3'"></app-example-title>
+<label class="alert alert-danger">Interpolation</label>
+  <p> {{contents}}</p>
+
+<mat-input-container>
+  <textarea matInput  >{{getSomeText()}}</textarea>
+</mat-input-container>
+
+  <!--Template Expression only can access properties of the component -->
+  <a href="{{someLink + '?who=angular'}}">Link</a>
+  <p> 1 + myVal = {{ 1 + myVal}}</p>
+

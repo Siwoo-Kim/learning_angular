@@ -21,12 +21,10 @@ import {Chapter2Module} from "./component/chapter-2-startpoint/chapter-2/chapter
 import { HelloWorldComponent } from './component/chapter-1-startpoint/components/hello-world/hello-world.component';
 import { Chapter3StartpointComponent } from './component/chapter-3-startpoint/chapter-3-startpoint.component';
 import {Chapter3Module} from "./component/chapter-3-startpoint/chapter3/chapter3.module";
-import { CodeComponent } from './component/common/code/code.component';
+
 import { Chapter4StartpointComponent } from './component/chapter-4-startpoint/chapter-4-startpoint.component';
-import { ChapterTitleComponent } from './component/common/chapter-title/chapter-title.component';
+
 import {Chapter4Module} from "./component/chapter-4-startpoint/chapter4/chapter4.module";
-import { TemperaturePipe } from './pipe/temperature.pipe';
-import { FilterPipe } from './pipe/filter.pipe';
 import { Chapter5StartpointComponent } from './component/chapter-5-startpoint/chapter-5-startpoint.component';
 import {Chapter5Module} from "./component/chapter-5-startpoint/chapter5/chapter5.module";
 import {ToastModule} from "ng2-toastr";
@@ -38,8 +36,8 @@ import {Chapter7Module} from "./component/chapter-7-startpoint/chapter7/chapter7
 import {FirstStepChapter3Module} from "./component/first-step-chapter-3/first-step-chapter3/first-step-chapter3.module";
 import { ExampleTitleComponent } from './component/common/example-title/example-title.component';
 import {AppCommonModule} from "./component/common/app-common.module";
-import { LanguageToFormatPipe } from './pipe/language-to-format.pipe';
 import { FirstStepChapter4Component } from './component/first-step-chapter4/first-step-chapter4.component';
+import {FirstStepChapter4Module} from "./component/first-step-chapter4/first-step-chapter4/first-step-chapter4.module";
 
 
 
@@ -80,7 +78,7 @@ import { FirstStepChapter4Component } from './component/first-step-chapter4/firs
     Chapter7Module,
 
     /* 앵귤러 첫걸음4 실습 컴포넌트 */
-    FirstStepChapter3Module,FirstStepChapter3Module
+    FirstStepChapter3Module,FirstStepChapter4Module
   ],
   exports : [ExampleTitleComponent],
   providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],
