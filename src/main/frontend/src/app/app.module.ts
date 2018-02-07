@@ -2,9 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {HttpModule} from "@angular/http";
-import { HomeComponent } from './component/common/home/home.component';
-import {RouterModule} from "@angular/router";
-import {routes} from "./app.routes";
+import {AppRoutingModule} from "./app.routes";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MatButtonModule, MatCardModule, MatChipsModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule,
@@ -41,6 +39,7 @@ import {FirstStepChapter3Module} from "./component/first-step-chapter-3/first-st
 import { ExampleTitleComponent } from './component/common/example-title/example-title.component';
 import {AppCommonModule} from "./component/common/app-common.module";
 import { LanguageToFormatPipe } from './pipe/language-to-format.pipe';
+import { FirstStepChapter4Component } from './component/first-step-chapter4/first-step-chapter4.component';
 
 
 
@@ -57,6 +56,7 @@ import { LanguageToFormatPipe } from './pipe/language-to-format.pipe';
     Chapter6StartpointComponent,
     Chapter7StartpointComponent,
     FirstStepChapter3Component,
+    FirstStepChapter4Component,
   ],
   imports: [
     /* 3rd Module */
@@ -74,12 +74,13 @@ import { LanguageToFormatPipe } from './pipe/language-to-format.pipe';
     /* App Module */
     AppCommonModule,
     ProjectModule, Chapter2Module,
-    RouterModule.forRoot([]),
+    AppRoutingModule,
     Chapter3Module,Chapter4Module,
     Chapter5Module,Chapter6Module,
     Chapter7Module,
 
-    FirstStepChapter3Module,
+    /* 앵귤러 첫걸음4 실습 컴포넌트 */
+    FirstStepChapter3Module,FirstStepChapter3Module
   ],
   exports : [ExampleTitleComponent],
   providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],

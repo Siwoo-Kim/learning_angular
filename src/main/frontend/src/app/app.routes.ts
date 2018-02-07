@@ -1,4 +1,4 @@
-import {Routes} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./component/common/home/home.component";
 import {Chapter1StartpointComponent} from "./component/chapter-1-startpoint/chapter-1-startpoint.component";
 import {ProjectStartpointComponent} from "./project/component/project-startpoint/project-startpoint.component";
@@ -9,8 +9,10 @@ import {Chapter5StartpointComponent} from "./component/chapter-5-startpoint/chap
 import {Chapter6StartpointComponent} from "./component/chapter-6-startpoint/chapter-6-startpoint.component";
 import {Chapter7StartpointComponent} from "./component/chapter-7-startpoint/chapter-7-startpoint.component";
 import {FirstStepChapter3Component} from "./component/first-step-chapter-3/first-step-chapter-3.component";
+import {NgModule} from "@angular/core";
+import {FirstStepChapter4Component} from "./component/first-step-chapter4/first-step-chapter4.component";
 
-export const routes:Routes = [
+const routes:Routes = [
   {path:'',component:HomeComponent},
   {path:'chapter1',component:Chapter1StartpointComponent},
   {path:'chapter2',component:Chapter2StartpointComponent},
@@ -19,6 +21,14 @@ export const routes:Routes = [
   {path:'chapter5',component:Chapter5StartpointComponent},
   {path:'chapter6',component:Chapter6StartpointComponent},
   {path:'chapter7',component:Chapter7StartpointComponent},
-  {path:'first-step/chapter1',component:FirstStepChapter3Component},
+  {path:'first-step/chapter3',component:FirstStepChapter3Component},
+  {path:'first-step/chapter4',component:FirstStepChapter4Component},
 ]
+
+
+@NgModule({
+  imports : [RouterModule.forRoot(routes)],
+  exports : [RouterModule]
+})
+export class AppRoutingModule{}
 

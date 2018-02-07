@@ -6,7 +6,7 @@ import {ChapterTitleComponent} from "./chapter-title/chapter-title.component";
 import {HomeComponent} from "./home/home.component";
 import {MatCardModule, MatIconModule, MatToolbarModule} from "@angular/material";
 import {RouterModule} from "@angular/router";
-import {routes} from "../../app.routes";
+import {AppRoutingModule} from "../../app.routes";
 
 const components = [CodeComponent,ExampleTitleComponent,ChapterTitleComponent,HomeComponent];
 
@@ -16,7 +16,7 @@ const components = [CodeComponent,ExampleTitleComponent,ChapterTitleComponent,Ho
 
     /* Angular Material Modules */
     MatCardModule,MatToolbarModule,
-    MatIconModule,RouterModule.forChild(routes),
+    MatIconModule,AppRoutingModule,
   ],
   declarations: components,
   exports : components
