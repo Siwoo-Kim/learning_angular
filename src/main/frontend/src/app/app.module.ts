@@ -38,6 +38,7 @@ import { ExampleTitleComponent } from './component/common/example-title/example-
 import {AppCommonModule} from "./component/common/app-common.module";
 import { FirstStepChapter4Component } from './component/first-step-chapter4/first-step-chapter4.component';
 import {FirstStepChapter4Module} from "./component/first-step-chapter4/first-step-chapter4/first-step-chapter4.module";
+import { FirstStepChapter5Component } from './component/first-step-chapter-5/first-step-chapter-5.component';
 
 
 
@@ -55,6 +56,7 @@ import {FirstStepChapter4Module} from "./component/first-step-chapter4/first-ste
     Chapter7StartpointComponent,
     FirstStepChapter3Component,
     FirstStepChapter4Component,
+    FirstStepChapter5Component,
   ],
   imports: [
     /* 3rd Module */
@@ -78,7 +80,9 @@ import {FirstStepChapter4Module} from "./component/first-step-chapter4/first-ste
     Chapter7Module,
 
     /* 앵귤러 첫걸음4 실습 컴포넌트 */
-    FirstStepChapter3Module,FirstStepChapter4Module
+    FirstStepChapter3Module,FirstStepChapter4Module,
+    FirstStepChapter4Module,
+
   ],
   exports : [ExampleTitleComponent],
   providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],

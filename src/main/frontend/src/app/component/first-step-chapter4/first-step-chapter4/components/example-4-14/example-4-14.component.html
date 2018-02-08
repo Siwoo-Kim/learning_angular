@@ -1,0 +1,14 @@
+
+<app-example-title [chapter]="'4-14 Attribute Directive'"></app-example-title>
+<mat-toolbar ><p>NgClass , NgStyle</p></mat-toolbar>
+
+    <!--changing the class with property binding-->
+<div [class.myClass1]="true" #firstDiv>Property Binding : {{firstDiv.classList}}</div>
+    <!--only binding the property in myClassObj which value is true-->
+<div [ngClass]="myClassObj" #secondDiv>Angular NgClass Directive : {{secondDiv.classList}}</div>
+
+<div [ngStyle]="myStyle" #thirdDiv>Angular NgStyle Directive : {{thirdDiv.style}}</div>
+
+
+
+
