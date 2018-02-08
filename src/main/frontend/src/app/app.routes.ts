@@ -11,6 +11,8 @@ import {Chapter7StartpointComponent} from "./component/chapter-7-startpoint/chap
 import {FirstStepChapter3Component} from "./component/first-step-chapter-3/first-step-chapter-3.component";
 import {NgModule} from "@angular/core";
 import {FirstStepChapter4Component} from "./component/first-step-chapter4/first-step-chapter4.component";
+import {buildPath} from "selenium-webdriver/http";
+import {FirstStepChapter5Component} from "./component/first-step-chapter-5/first-step-chapter-5.component";
 
 const routes:Routes = [
   {path:'',component:HomeComponent},
@@ -21,8 +23,10 @@ const routes:Routes = [
   {path:'chapter5',component:Chapter5StartpointComponent},
   {path:'chapter6',component:Chapter6StartpointComponent},
   {path:'chapter7',component:Chapter7StartpointComponent},
+   // This is reminder that  Later I need to make a child path below
   {path:'first-step/chapter3',component:FirstStepChapter3Component},
   {path:'first-step/chapter4',component:FirstStepChapter4Component},
+  {path:'first-step/chapter5',component:FirstStepChapter5Component},
 ]
 
 

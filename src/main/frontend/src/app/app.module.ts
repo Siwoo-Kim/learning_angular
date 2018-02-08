@@ -39,6 +39,7 @@ import {AppCommonModule} from "./component/common/app-common.module";
 import { FirstStepChapter4Component } from './component/first-step-chapter4/first-step-chapter4.component';
 import {FirstStepChapter4Module} from "./component/first-step-chapter4/first-step-chapter4/first-step-chapter4.module";
 import { FirstStepChapter5Component } from './component/first-step-chapter-5/first-step-chapter-5.component';
+import {FirstStepChapter5Module} from "./component/first-step-chapter-5/first-step-chapter5/first-step-chapter5.module";
 
 
 
@@ -81,7 +82,7 @@ import { FirstStepChapter5Component } from './component/first-step-chapter-5/fir
 
     /* 앵귤러 첫걸음4 실습 컴포넌트 */
     FirstStepChapter3Module,FirstStepChapter4Module,
-    FirstStepChapter4Module,
+    FirstStepChapter4Module,FirstStepChapter5Module,
 
   ],
   exports : [ExampleTitleComponent],

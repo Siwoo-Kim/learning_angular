@@ -1,0 +1,22 @@
+
+
+mat-radio-button{
+  margin-right: 8px;
+}
+
+mat-toolbar{
+  border-top: 4px solid coral;
+  margin-bottom: 15px;
+}
+
+
+p {
+  width: 100%;
+}
+
+span#loggerElement{
+  width: 100%;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}

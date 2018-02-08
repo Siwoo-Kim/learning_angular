@@ -1,0 +1,25 @@
+
+
+<app-example-title [chapter]="'Log Testing'"></app-example-title>
+
+<div class="jumbotron">
+  <h1 class="display-4">Logging Test</h1>
+  <hr>
+  <p class="lead">
+  <mat-toolbar>LogLevel Info is set to default</mat-toolbar>
+
+  <mat-radio-group>
+    <mat-radio-button (click)="onChangeLogLevel(logLevel)" [value]="i" *ngFor="let logLevel of logLevels;let i = index">{{logLevel}}</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field>
+    <input type="text" placeholder="Type to Logger" matInput [formControl]="logForm">
+  </mat-form-field>
+  <button mat-raised-button type="button" (click)="onSendLog()" >Send</button>
+  </p>
+
+  <mat-toolbar>Log History</mat-toolbar>
+  <p *ngIf="pushedLog">
+    <span id="loggerElement" [ngClass]="alertClass"> {{pushedLog}}</span>
+  </p>
+</div>

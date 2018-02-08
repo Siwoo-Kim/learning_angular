@@ -4,11 +4,19 @@ import {CodeComponent} from "./code/code.component";
 import {ExampleTitleComponent} from "./example-title/example-title.component";
 import {ChapterTitleComponent} from "./chapter-title/chapter-title.component";
 import {HomeComponent} from "./home/home.component";
-import {MatCardModule, MatIconModule, MatToolbarModule} from "@angular/material";
+import {
+  MatButtonModule,
+  MatCardModule, MatChipsModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule,
+  MatRadioModule, MatSnackBarModule,
+  MatToolbarModule, MatTooltipModule
+} from "@angular/material";
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "../../app.routes";
 
-const components = [CodeComponent,ExampleTitleComponent,ChapterTitleComponent,HomeComponent];
+const components = [
+  CodeComponent,ExampleTitleComponent,
+  ChapterTitleComponent,HomeComponent,
+];
 
 @NgModule({
   imports: [
@@ -17,6 +25,11 @@ const components = [CodeComponent,ExampleTitleComponent,ChapterTitleComponent,Ho
     /* Angular Material Modules */
     MatCardModule,MatToolbarModule,
     MatIconModule,AppRoutingModule,
+    MatSnackBarModule, MatInputModule,
+    MatTooltipModule, MatRadioModule,
+    MatButtonModule,MatListModule,
+    MatExpansionModule,MatChipsModule,
+
   ],
   declarations: components,
   exports : components

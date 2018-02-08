@@ -17,7 +17,7 @@ import {Example414Component} from "./components/example-4-14/example-4-14.compon
 const components = [
   Example421Component,Example423Component,
   Example424Component,SimpleCounterComponent,
-  Example413Component, Example414Component
+  Example413Component, Example414Component,
 ]
 
 @NgModule({
