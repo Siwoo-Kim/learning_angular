@@ -8,10 +8,11 @@ import {
 import { TestingLoggerComponent } from './components/testing-logger/testing-logger.component';
 import {LoggerService} from "./services/logger.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MouseTrackZoneComponent} from "./components/mouse-track-zone/mouse-track-zone.component";
 
 
 const components = [
-  TestingLoggerComponent,
+  TestingLoggerComponent, MouseTrackZoneComponent,
 ]
 
 @NgModule({
