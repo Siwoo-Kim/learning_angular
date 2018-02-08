@@ -1,0 +1,50 @@
+
+<app-example-title [chapter]="'4-13 Structure Directive :ngIf'"></app-example-title>
+<div>
+                            <!--event binding-->
+  <button mat-raised-button (click)="isShow = !isShow" >Change</button>
+        <!--ngIf Directive. *ngIf="[boolean Expression];[localTemplateVariable]"-->
+        <!--if the template expression is false, rendering localTemplateVariable's element-->
+  <label class="alert alert-success" *ngIf="isShow;else hiding" >You are special</label>
+  <ng-template #hiding>
+    <!--ng-template is dummy element for Angular-->
+    <label class="alert alert-danger">Got depressed..</label>
+  </ng-template>
+
+      <!--Reactive Forms -->
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="name" [formControlName]="'name'" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="email" [formControlName]="'email'" >
+    </mat-form-field>
+    <button mat-raised-button color="primary" >Submit</button>
+  </form>
+
+  <br/>
+      <!--If member is not null display the elements and the element's childs-->
+  <div *ngIf="member">
+    <p>Name : {{member.name}}</p>
+    <p>Email : {{member.email}}</p>
+  </div>
+</div>
+
+
+<hr>
+
+<app-example-title [chapter]="'4-13 Structure Directive :ngFor'"></app-example-title>
+<div>
+  <mat-list>
+            <!--ngFor directive access the all the elements and rendering the view same as the amount of the array-->
+    <mat-list-item
+      *ngFor="let animal of animals;let i = index"
+      (click)="onSelectAnimal(animal)"
+    >{{i + 1}} : {{animal.name}}</mat-list-item>
+  </mat-list>
+
+  <p class="alert alert-danger" *ngIf="selectedAnimal" [ngSwitch]="selectedAnimal.name">
+    <span *ngSwitchCase="'Dog'"   >Come on, Cute Dog!</span>
+    <span *ngSwitchDefault>Go away</span>
+  </p>
+</div>
