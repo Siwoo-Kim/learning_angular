@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import * as dateFormat from 'date-fns/format';
+import {LOG_LEVEL_TOKEN} from "../../../../tokens/app.tokens";
 
 export enum LogLevel{ //Enum for constants which represent log level
     DEBUG , INFO , WARN , ERROR
@@ -7,7 +8,7 @@ export enum LogLevel{ //Enum for constants which represent log level
 
 @Injectable()  //If service has dependencies @Injectable is mandatory
 export class LoggerService {
-  logLevel: LogLevel;
+  logLevel: LogLevel = LogLevel.DEBUG;
   //Current LogLevel
   logs : string[] = [];
   //Log Messages
@@ -16,8 +17,13 @@ export class LoggerService {
   // readonly is same with final in JAVA
   private readonly TIME_FORMATTER : string = 'YYYY-MM-DD HH:mm:ss.SSS';
 
-
-  constructor(logLevel:LogLevel) { this.logLevel = logLevel; }
+          //Inject the value to the service from the module
+          //You can also use InjectableToken which is more safe for name conflict
+  constructor(@Inject(LOG_LEVEL_TOKEN) logLevel:LogLevel) {
+      console.log(logLevel);
+       // if(this.logLevel)
+      this.logLevel = logLevel;
+  }
 
   //Provide User Interface to client (in the case, clients are components)
   debug(message:string) { this.log(LogLevel.DEBUG,message); }

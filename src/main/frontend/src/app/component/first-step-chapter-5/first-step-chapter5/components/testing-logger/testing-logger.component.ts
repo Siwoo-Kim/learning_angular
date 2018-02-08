@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {LoggerService, LogLevel} from "../../services/logger.service";
 import {FormControl, Validators} from "@angular/forms";
 
@@ -8,14 +8,18 @@ import {FormControl, Validators} from "@angular/forms";
   styleUrls: ['./testing-logger.component.css']
 })
 export class TestingLoggerComponent implements OnInit {
+
+
   loggerService:LoggerService;
   logForm:FormControl = new FormControl([],[Validators.minLength(1),Validators.required]);
 
   logLevel:LogLevel = LogLevel.INFO;
   logLevels:string[] = ['DEBUG','INFO','WARN','ERROR'];
 
-  constructor() {
-    this.loggerService = new LoggerService(LogLevel.INFO);
+  constructor(loggerService:LoggerService) {
+    //If there is provider for service , initialize the instance with that object
+    this.loggerService = loggerService;
+    // this.loggerService = new LoggerService(LogLevel.INFO);
   }
 
   ngOnInit() {
@@ -31,16 +35,18 @@ export class TestingLoggerComponent implements OnInit {
       this.loggerService.logLevel = this.logLevel;
       switch (this.logLevel) {
         case LogLevel.DEBUG :
-          this.loggerService.debug(this.logForm.value);
+          this.loggerService.debug(this.logForm.value); break;
         case LogLevel.INFO :
-          this.loggerService.info(this.logForm.value);
+          this.loggerService.info(this.logForm.value); break;
         case LogLevel.WARN :
-          this.loggerService.warn(this.logForm.value);
+          this.loggerService.warn(this.logForm.value); break;
         case LogLevel.ERROR :
           this.loggerService.error(this.logForm.value);
       }
       this.pushedLog = this.loggerService.logs[this.loggerService.logs.length - 1];
       this.alertClass = this.setStyleByLogLevel(this.logLevel);
+      console.dir(this.loggerService);
+
     }
 
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {LoggerService, LogLevel} from "../../services/logger.service";
 
 @Component({
@@ -7,18 +7,24 @@ import {LoggerService, LogLevel} from "../../services/logger.service";
   styleUrls: ['./mouse-track-zone.component.css']
 })
 export class MouseTrackZoneComponent implements OnInit {
+
+
   logLevel:LogLevel = LogLevel.DEBUG;
   loggerService:LoggerService;
 
-  constructor() {
-                  // Constructing dependency for this class by new Keyword
-    this.loggerService = new LoggerService(this.logLevel);
-                  // By making two different instance of LoggerService
-                  // There are different logLevel between components as well.
-                  // We need to have some specific method to share one instance of the class -> SingleTon
+  constructor(loggerService :LoggerService) {
+       //Getting single ton instance from Angular
+    this.loggerService = loggerService;
+        // Constructing dependency for this class by new Keyword
+    // this.loggerService = new LoggerService(this.logLevel);
+        // By making two different instance of LoggerService
+        // There are different logLevel between components as well.
+        // We need to have some specific method to share one instance of the class -> SingleTon
+
   }
 
   ngOnInit() {
+
   }
 
   mousePostion:string;
@@ -27,6 +33,7 @@ export class MouseTrackZoneComponent implements OnInit {
 
     this.mousePostion = `x: ${clientX} , y: ${clientY}`;
     this.loggerService.debug(this.mousePostion);
+    console.dir(this.loggerService);
   }
 
 }
