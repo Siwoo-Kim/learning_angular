@@ -1,4 +1,4 @@
-import {Inject, Injectable} from '@angular/core';
+import {Inject,  Injectable} from '@angular/core';
 import * as dateFormat from 'date-fns/format';
 import {LOG_LEVEL_TOKEN} from "../../../../tokens/app.tokens";
 
@@ -7,7 +7,7 @@ export enum LogLevel{ //Enum for constants which represent log level
 }
 
 @Injectable()  //If service has dependencies @Injectable is mandatory
-export class LoggerService {
+export class AbstractLoggerService {
   logLevel: LogLevel = LogLevel.DEBUG;
   //Current LogLevel
   logs : string[] = [];

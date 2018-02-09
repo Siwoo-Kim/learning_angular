@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {LoggerService, LogLevel} from "../../services/logger.service";
+import {Component, Host, Input, OnInit, Optional} from '@angular/core';
+import {AbstractLoggerService, LogLevel} from "../../services/logger.service";
+import {LoggerFirstService} from "../../services/logger-first.service";
+import {LoggerSecondService} from "../../services/logger-second.service";
 
 @Component({
   selector: 'app-mouse-track-zone',
@@ -8,16 +10,17 @@ import {LoggerService, LogLevel} from "../../services/logger.service";
 })
 export class MouseTrackZoneComponent implements OnInit {
 
-
   logLevel:LogLevel = LogLevel.DEBUG;
-  loggerService:LoggerService;
+  loggerService:AbstractLoggerService;
 
-  constructor(loggerService :LoggerService) {
-       //Getting single ton instance from Angular
+  constructor( loggerService:AbstractLoggerService /* @Host() @Optional() loggerFirstService:LoggerFirstService, loggerSecondService:LoggerSecondService */) {
+       //Getting singleton instance from Angular
     this.loggerService = loggerService;
+    //this.loggerService = loggerFirstService ? loggerFirstService : loggerSecondService;
+
         // Constructing dependency for this class by new Keyword
-    // this.loggerService = new LoggerService(this.logLevel);
-        // By making two different instance of LoggerService
+    // this.loggerService = new AbstractLoggerService(this.logLevel);
+        // By making two different instance of AbstractLoggerService
         // There are different logLevel between components as well.
         // We need to have some specific method to share one instance of the class -> SingleTon
 

@@ -1,6 +1,8 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
-import {LoggerService, LogLevel} from "../../services/logger.service";
+import {Component, Host, Inject, Input, OnInit, Optional} from '@angular/core';
+import {AbstractLoggerService, LogLevel} from "../../services/logger.service";
 import {FormControl, Validators} from "@angular/forms";
+import {LoggerFirstService} from "../../services/logger-first.service";
+import {LoggerSecondService} from "../../services/logger-second.service";
 
 @Component({
   selector: 'app-testing-logger',
@@ -10,16 +12,17 @@ import {FormControl, Validators} from "@angular/forms";
 export class TestingLoggerComponent implements OnInit {
 
 
-  loggerService:LoggerService;
+  loggerService:AbstractLoggerService;
   logForm:FormControl = new FormControl([],[Validators.minLength(1),Validators.required]);
 
   logLevel:LogLevel = LogLevel.INFO;
   logLevels:string[] = ['DEBUG','INFO','WARN','ERROR'];
 
-  constructor(loggerService:LoggerService) {
+  constructor( loggerService:AbstractLoggerService  /* @Host() @Optional() loggerFirstService:LoggerFirstService, loggerSecondService:LoggerSecondService */) {
     //If there is provider for service , initialize the instance with that object
     this.loggerService = loggerService;
-    // this.loggerService = new LoggerService(LogLevel.INFO);
+        //this.loggerService = loggerFirstService ? loggerFirstService : loggerSecondService;
+    // this.loggerService = new AbstractLoggerService(LogLevel.INFO);
   }
 
   ngOnInit() {

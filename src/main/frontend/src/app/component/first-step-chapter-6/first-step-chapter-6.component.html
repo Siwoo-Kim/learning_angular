@@ -1,0 +1,19 @@
+
+<mat-card>
+  <div class="row" >
+    <app-chapter-title [title]="'First-Step Angular : Angular Architecture'" ></app-chapter-title>
+    <hr>
+  </div>
+
+  <div class="col-12 example">
+    <app-check-list (checkResultEmitter)="onResultHandler($event)"></app-check-list>
+    <hr/>
+    <app-check-result [checkedResults]="checkResults" ></app-check-result>
+  </div>
+
+
+  <div class="col-12 example">
+  </div>
+
+
+</mat-card>
