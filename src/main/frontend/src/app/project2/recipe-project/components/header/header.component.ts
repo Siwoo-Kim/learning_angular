@@ -7,7 +7,6 @@ import {Component} from "@angular/core";
     .nav-tabs {
       background-color: cornsilk;
       font-size: 1.1em;
-      font-weight: bold;
     }
   `]
 })
