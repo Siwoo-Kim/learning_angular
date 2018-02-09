@@ -4,6 +4,14 @@
   <div class="col-10">
     <app-shopping-edit></app-shopping-edit>
     <hr>
-    <p>The List</p>
+    <ul class="list-group">
+                              <!--change the mouse cursor when the mouse points to-->
+      <a class="list-group-item"
+         *ngFor="let ingredient of ingredients"
+         style="cursor: pointer"
+      >
+        {{ ingredient.name }} ({{ ingredient.amount }})
+      </a>
+    </ul>
   </div>
 </div>
