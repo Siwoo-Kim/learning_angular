@@ -3,3 +3,8 @@
 mat-list-option{
   font-family: Roboto,Helvetica Neue,sans-serif;
 }
+
+button{
+  margin-top: 8px;
+  margin-left: 25px;
+}

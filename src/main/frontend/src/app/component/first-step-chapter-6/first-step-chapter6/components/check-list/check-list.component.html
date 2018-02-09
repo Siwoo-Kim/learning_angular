@@ -6,8 +6,11 @@
     class="check-list"
     *ngFor="let checkList of checkLists;let id = index"
     (click)="checkResult[id]=!checkResult[id]"
+    [selected]="checkResult[id]"
   >{{ checkList }}</mat-list-option>
 </mat-selection-list>
 
-<button mat-raised-button color="primary" (click)="onClickResult()" >Show Result!</button>
+<button mat-raised-button
+        color="primary"
+        (click)="onClickResult()" >Show Result!</button>
 

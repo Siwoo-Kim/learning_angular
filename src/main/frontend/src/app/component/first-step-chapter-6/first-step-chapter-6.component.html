@@ -6,14 +6,18 @@
   </div>
 
   <div class="col-12 example">
-    <app-check-list (checkResultEmitter)="onResultHandler($event)"></app-check-list>
+    <app-check-list
+      (checkResultEmitter)="onResultHandler($event)"
+      [deletedCheck]="deletedCheck"
+    ></app-check-list>
+            <!-- for custom event , $event is the data which is from child component -->
     <hr/>
-    <app-check-result [checkedResults]="checkResults" ></app-check-result>
+    <app-check-result
+      [checkedResults]="checkResults"
+      (onRemoveCheckEmitter)="onRemoveHandler($event)"
+    ></app-check-result>
   </div>
 
-
-  <div class="col-12 example">
-  </div>
 
 
 </mat-card>

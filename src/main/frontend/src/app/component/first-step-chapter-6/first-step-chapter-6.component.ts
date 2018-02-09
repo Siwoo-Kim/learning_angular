@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstStepChapter6Component implements OnInit {
   checkResults:string[];
+  deletedCheck:string;
 
   constructor() { }
 
@@ -15,5 +16,10 @@ export class FirstStepChapter6Component implements OnInit {
 
   onResultHandler(data:string[]) {
    this.checkResults = data;
+  }
+
+
+  onRemoveHandler(index: number) {
+    this.deletedCheck = this.checkResults[index];
   }
 }

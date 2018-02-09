@@ -1,5 +1,9 @@
 <p *ngIf="checkedResults"  class="alert alert-success">
-  <span *ngFor="let result of checkedResults">{{ result }} <br/></span>
+  <span
+    *ngFor="let result of checkedResults;let id = index">
+    {{ result }}
+    <button mat-raised-button color="accent" (click)="onRemoveCheck(id)" >x</button>
+    <br/></span>
 
   <!-- <span> Count : {{ checkedResults.length }} </span> -->
   <span> Count : {{ checkCount }} </span>

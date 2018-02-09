@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-check-list',
@@ -22,6 +22,17 @@ export class CheckListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  @Input()
+  set deletedCheck(deleteCheck:string){
+
+    this.checkLists.forEach( (isChecked,id)=>{
+      if(isChecked && this.checkLists[id] === deleteCheck){
+        this.checkResult[id] = false;
+        this.onClickResult();
+      }
+    })
   }
 
   onClickResult() {

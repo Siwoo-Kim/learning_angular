@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-check-result',
@@ -31,6 +31,16 @@ export class CheckResultComponent   /* , AfterViewInit */{
     //    this.initCheck();
   }
 
+  @Output() onRemoveCheckEmitter:EventEmitter<number> = new EventEmitter<number>();
+  // Sending data (index of the array which I want to remove) to the parent component
+
+  onRemoveCheck(id:number) {
+    //Becuase we want to remove the result array, not original array
+    //index of checkedResult is perfectly fine
+    console.log(id);
+    this.onRemoveCheckEmitter.emit(id);
+
+  }
 
 
   /*
