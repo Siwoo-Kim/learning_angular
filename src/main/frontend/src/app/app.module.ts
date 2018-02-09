@@ -40,6 +40,7 @@ import { FirstStepChapter4Component } from './component/first-step-chapter4/firs
 import {FirstStepChapter4Module} from "./component/first-step-chapter4/first-step-chapter4/first-step-chapter4.module";
 import { FirstStepChapter5Component } from './component/first-step-chapter-5/first-step-chapter-5.component';
 import {FirstStepChapter5Module} from "./component/first-step-chapter-5/first-step-chapter5/first-step-chapter5.module";
+import {Project2Module} from "./project2/project2.module";
 
 
 
@@ -72,6 +73,8 @@ import {FirstStepChapter5Module} from "./component/first-step-chapter-5/first-st
     MatExpansionModule,MatChipsModule, MatIconModule,
 
 
+    /* Project2 */
+    Project2Module,
     /* App Module */
     AppCommonModule,
     ProjectModule, Chapter2Module,
