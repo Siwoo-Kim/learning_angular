@@ -1,0 +1,11 @@
+
+  <!--ngStyle directive can select ngStyle [css style] dynamically-->
+<p  [ngStyle]="{backgroundColor: getColor()}"
+    [ngClass]="{online : serverStatus === 'online' }">
+    <!--ngClass directive can select class. {className : boolean}-->
+  {{ 'Server' }} with ID {{ serverId }} is {{ serverStatus }}
+</p>
+
+
+
+

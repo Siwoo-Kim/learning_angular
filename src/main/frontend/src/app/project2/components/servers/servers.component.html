@@ -1,0 +1,35 @@
+<!--<label >Server Name</label>
+<input type="text"
+       class="form-control"
+    (input)="onUpdateServerName($event)">-->
+                            <!--$event - default event shipped with dom-->
+
+<input type="text"
+       class="form-control"
+       [(ngModel)]="serverName">
+        <!-- two-way data-binding -->
+
+<!--<p>{{ serverName }}</p>-->
+
+
+          <!--property binding-->
+<button class="btn btn-primary"
+        [disabled]="!allowNewServer"
+        (click)="onCreateServer()">Add Server</button>
+        <!-- Event Binding () -->
+<!--<p [innerText]="allowNewServer"></p>-->
+    <!--Do not mix the string interpolation with property binding-->
+
+    <!--ngIf is a directive which is shipped with angular-->
+        <!--if template expression is true show the element, otherwise hide it-->
+  <p *ngIf="serverCreated">
+    Server was created, server name is {{serverCreationStatus}}
+  </p>
+    <!--dummy element and local template variable-->
+<!--<ng-template #noServer>No server was created</ng-template>-->
+
+          <!--ngFor is a directive rendering the components as many  as the array specified-->
+<app-server *ngFor="let server of servers" ></app-server>
+  <!--ngIf , ngFor, ngSwitch are structure directives-->
+  <!--ngStyle , ngClass are attribute directives-->
+
