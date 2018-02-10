@@ -1,0 +1,55 @@
+
+
+<app-example-title [chapter]="'NgOnChanges Testing'"></app-example-title>
+<div class="card">
+  <div class="card-header">Enter Input</div>
+  <div class="card-body">
+    <p class="card-text">
+      <mat-form-field>
+        <input
+          type="number"
+          placeholder="Enter number"
+          matInput
+          [(ngModel)]="myNumber"
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="text"
+          placeholder="Enter string"
+          matInput
+          [(ngModel)]="myString"
+        >
+      </mat-form-field>
+    </p>
+
+    <div class="form-group">
+      <mat-form-field>
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Enter id"
+          matInput
+          (ngModelChange)="makingNewObject()"
+          [(ngModel)]="data.id"
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Enter name"
+          matInput
+          (ngModelChange)="makingNewObject()"
+          [(ngModel)]="data.name"
+        >
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
+<app-ng-on-changes
+  [data]="data"
+  [myNumber]="myNumber"
+  [myString]="myString"
+></app-ng-on-changes>
