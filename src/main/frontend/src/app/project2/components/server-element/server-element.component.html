@@ -1,9 +1,19 @@
-<div class="card">
+<div class="card" >
+  <div class="card-header">
+    <h6 class="card-title">{{ element.name }}</h6>
+  </div>
+
   <div class="card-body">
-    <h6 class="card-title alert alert-info">{{ element.name }}</h6>
-    <p class="card-text">
-      <strong *ngIf="element.type === 'server'" style="color : red">{{ element.content }}</strong>
-      <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+    <p class="card-text" style="padding: 20px">
+      <strong
+        style="color : red"
+        *ngIf="element.type === 'server';else blueprint"
+        >{{ element.content }}</strong>
+      <ng-template #blueprint>
+        <strong
+          style="color : blue"
+        >{{ element.content }}</strong>
+      </ng-template>
     </p>
   </div>
 </div>

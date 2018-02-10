@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {P2AppComponent} from "../p2-app.component";
 
 @Component({
@@ -7,26 +7,27 @@ import {P2AppComponent} from "../p2-app.component";
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent {
-  serverElements = [];
   newServerName = '';
   newServerContent = '';
+  @Output('onServerEmit') serverCreated
+     : EventEmitter<{ serverName:string, serverContent:string }>
+    = new EventEmitter();
+  @Output('onBlueprintEmit') blueprintCreated
+     : EventEmitter<{ serverName:string, serverContent:string }>
+    = new EventEmitter();
 
-  constructor() { }
+  onAddServer(){
+    this.serverCreated.emit({
+      serverName : this.newServerName,
+      serverContent : this.newServerContent
+    });
+  }
 
-  // onAddServer(){
-  //   this.serverElements.push({
-  //     type : 'server',
-  //     name : this.newServerName,
-  //     content : this.newServerContent
-  //   });
-  // }
-  //
-  // onAddBlueprint(){
-  //   this.serverElements.push({
-  //     type : 'blueprint',
-  //     name : this.newServerName,
-  //     content : this.newServerContent
-  //   });
-  // }
+  onAddBlueprint(){
+    this.blueprintCreated.emit({
+      serverName : this.newServerName,
+      serverContent : this.newServerContent
+    });
+  }
 
 }
