@@ -1,0 +1,38 @@
+
+<p style="background-color: darkcyan">
+  parent works!
+  <app-child></app-child>
+</p>
+
+<mat-form-field>
+   <input id="parentInput"
+          placeholder="I will invoke child's method"
+          type="text"
+          matInput
+          [(ngModel)]="words"
+          (ngModelChange)="onSayingWords()">
+            <!-- ngModelChange will catch the moments of the changes in ngModel -->
+</mat-form-field>
+
+<hr/>
+
+<ul class="item-group">
+  <li class="list-group-item"
+      *ngFor="let num of numbers">
+    <app-child2
+      [num]="num"
+    ></app-child2>
+      <!--Sending data to childs component-->
+  </li>
+</ul>
+
+<div class="button-group" style="margin-left: 18px">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="checkAll()">Check All</button>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="unCheckAll()">UnCheck All</button>
+</div>

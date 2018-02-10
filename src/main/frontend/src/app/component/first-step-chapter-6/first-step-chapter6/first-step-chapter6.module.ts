@@ -11,10 +11,20 @@ import {CheckResultComponent} from "./components/check-result/check-result.compo
 import {AppCommonModule} from "../../common/app-common.module";
 import {FormsModule} from "@angular/forms";
 import {CheckListService} from "./services/check-list.service";
+import {ParentComponent} from "./components/parent/parent.component";
+import {ChildComponent} from "./components/child/child.component";
+import {Child2Component} from "./components/child2/child2.component";
+import {DomSearchParentComponent} from "./components/dom-search-parent/dom-search-parent.component";
 
 const components= [
-  CheckListComponent,CheckResultComponent,
-]
+  CheckListComponent,
+  CheckResultComponent,
+  ParentComponent,
+  ChildComponent,
+  Child2Component,
+  DomSearchParentComponent,
+
+];
 
 @NgModule({
   imports: [
