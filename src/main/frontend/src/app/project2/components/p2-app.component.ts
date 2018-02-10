@@ -9,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
     }
   `]
 })
-export class P2AppComponent implements OnInit {
+export class P2AppComponent {
+  serverElements = [
+    {
+      type : 'server',
+      name : 'TestServer',
+      content : 'Just a test! '
+    },
+    ];
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

@@ -5,6 +5,8 @@ import {FormsModule} from "@angular/forms";
 import { ServerComponent } from './components/server/server.component';
 import {ServersComponent} from "./components/servers/servers.component";
 import {RecipeProjectModule} from "./recipe-project/recipe-project.module";
+import { CockpitComponent } from './components/cockpit/cockpit.component';
+import { ServerElementComponent } from './components/server-element/server-element.component';
 
 @NgModule({
   imports: [
@@ -12,7 +14,7 @@ import {RecipeProjectModule} from "./recipe-project/recipe-project.module";
     RecipeProjectModule,
   ],
   declarations: [
-    P2AppComponent, ServerComponent,ServersComponent
+    P2AppComponent, ServerComponent,ServersComponent, CockpitComponent, ServerElementComponent
   ]
 })
 export class Project2Module { }
