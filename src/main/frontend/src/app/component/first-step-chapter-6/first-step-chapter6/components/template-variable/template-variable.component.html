@@ -1,0 +1,27 @@
+
+<app-example-title [chapter]="'template variable'"></app-example-title>
+<div>
+  <mat-form-field>
+  <input
+    placeholder="Enter Log"
+    matInput
+    type="text"
+    id="n-1"
+    #keyInput
+    (keyup)="leaveKeyLog($event,keyInput.value)" >
+  </mat-form-field>
+    <!-- In the template keyInput element is dom itself ( not wrapped in ElementRef -->
+  <p class="alert alert-info"> INPUT[id="{{ keyInput.id }}"] your current input : {{ keyInput.value }} </p>
+  <p class="alert alert-success"> INPUT[id="{{ keyInput.id }}"] all inputs: {{ logs | json }}</p>
+                                                    <!-- json pipe -->
+  <div class="card">
+    <div class="card-header">Attributes of INPUT[id="{{ keyInput.id }}"]</div>
+    <div class="card-body">
+      <p class="card-text" style="margin: 15px">
+        type : {{ keyInput.type }} <br/>
+        isRequired: {{ keyInput.required }} <br/>
+        isDisabled: {{ keyInput.disabled }} <br/>
+      </p>
+    </div>
+  </div>
+</div>

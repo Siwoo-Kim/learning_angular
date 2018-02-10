@@ -1,3 +1,19 @@
-<p>
-  dom-search-parent works!
+<p #greeting>
+  Welcome Angular
 </p>
+
+<!--One root element must have only one name of template variable -->
+<div>
+  <p #greeting>   <!--different root element with "Welcome Angular"-->
+    Welcome Spring
+  </p>
+</div>
+
+<hr/>
+
+<ul class="list-group">
+  <li class="list-group-item"
+      *ngFor="let item of items"
+      #listItems>{{ item | json }}</li>
+</ul>
+
