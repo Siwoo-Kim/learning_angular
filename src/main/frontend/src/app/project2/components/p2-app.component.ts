@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-project2',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
     h3 {
       color : dodgerblue;
     }
-  `]
+  `],
+  // encapsulation : ViewEncapsulation.None
 })
 export class P2AppComponent {
   serverElements = [

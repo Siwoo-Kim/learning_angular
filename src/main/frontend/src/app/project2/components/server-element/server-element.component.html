@@ -6,8 +6,8 @@
   <div class="card-body">
     <p class="card-text" style="padding: 20px">
       <strong
-        style="color : red"
         *ngIf="element.type === 'server';else blueprint"
+        style="color : red"
         >{{ element.content }}</strong>
       <ng-template #blueprint>
         <strong

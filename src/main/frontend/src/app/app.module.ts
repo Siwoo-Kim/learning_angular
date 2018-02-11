@@ -49,15 +49,19 @@ import {FirstStepChapter6Module} from "./component/first-step-chapter-6/first-st
 @NgModule({
   declarations: [
     AppComponent,
-    Chapter1StartpointComponent,
+
     NewLineToBreakerPipe,
-    Chapter2StartpointComponent,
     HelloWorldComponent,
+
+    Chapter1StartpointComponent,
+    Chapter2StartpointComponent,
+
     Chapter3StartpointComponent,
     Chapter4StartpointComponent,
     Chapter5StartpointComponent,
     Chapter6StartpointComponent,
     Chapter7StartpointComponent,
+
     FirstStepChapter3Component,
     FirstStepChapter4Component,
     FirstStepChapter5Component,
@@ -66,9 +70,11 @@ import {FirstStepChapter6Module} from "./component/first-step-chapter-6/first-st
   imports: [
     /* 3rd Module */
     ToastModule.forRoot(),
+
     /* Angular Module */
     BrowserModule,HttpModule,FormsModule,
     BrowserAnimationsModule,
+
     /* Angular Material & Animation Modeul */
     MatToolbarModule,MatSnackBarModule,MatCardModule,
     MatInputModule,MatTooltipModule, MatRadioModule,
@@ -78,6 +84,7 @@ import {FirstStepChapter6Module} from "./component/first-step-chapter-6/first-st
 
     /* Project2 */
     Project2Module,
+
     /* App Module */
     AppCommonModule,
     ProjectModule, Chapter2Module,
@@ -93,7 +100,10 @@ import {FirstStepChapter6Module} from "./component/first-step-chapter-6/first-st
 
   ],
   exports : [ExampleTitleComponent],
-  providers: [ProductService, {provide:LocationStrategy,useClass:HashLocationStrategy}],
+  providers: [
+    ProductService,
+    {provide:LocationStrategy,useClass:HashLocationStrategy},
+    ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

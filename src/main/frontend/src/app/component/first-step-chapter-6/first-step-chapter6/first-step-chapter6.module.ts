@@ -19,6 +19,7 @@ import {TemplateVariableComponent} from "./components/template-variable/template
 import {NgOnInitNgOnDestroyComponent} from "./components/ng-on-init-ng-on-destroy/ng-on-init-ng-on-destroy.component";
 import {NgOnChangesComponent} from "./components/ng-on-changes/ng-on-changes.component";
 import {NgOnChangesParentComponent} from "./components/ng-on-changes-parent/ng-on-changes-parent.component";
+import {NgDoCheckComponent} from "./components/ng-do-check/ng-do-check.component";
 
 const components= [
   CheckListComponent,
@@ -31,6 +32,7 @@ const components= [
   NgOnInitNgOnDestroyComponent,
   NgOnChangesComponent,
   NgOnChangesParentComponent,
+  NgDoCheckComponent,
 
 ];
 
