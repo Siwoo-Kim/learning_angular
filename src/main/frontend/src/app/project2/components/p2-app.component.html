@@ -28,10 +28,31 @@
   <hr>
   <div class="row">
     <div class="col-12">
+      <button class="btn btn-primary"
+              (click)="onChangeFirst()">Change first Element</button>
+      <button class="btn btn-danger"
+              (click)="onDestroyFirst()">Destroy first Element</button>
+
       <app-server-element
+        style="margin-top: 5px"
         *ngFor="let serverElement of serverElements"
         [srvElement]="serverElement"
-      ></app-server-element>
+        [name]="serverElement.name"
+      >
+        <!--opening child component-->
+        <p class="card-text" style="padding: 20px">
+          <strong
+            *ngIf="serverElement.type === 'server';else blueprint"
+            style="color : red"
+          >{{ serverElement.content }}</strong>
+          <ng-template #blueprint>
+            <strong
+              style="color : blue"
+            >{{ serverElement.content }}</strong>
+          </ng-template>
+        </p>
+        <!--closing child component-->
+      </app-server-element>
         <!--sending serverElement property to child component-->
     </div>
   </div>

@@ -1,9 +1,10 @@
 <div class="card" >
-  <div class="card-header">
+  <div class="card-header" #heading>
     <h6 class="card-title">{{ element.name }}</h6>
   </div>
 
   <div class="card-body">
+    <!--
     <p class="card-text" style="padding: 20px">
       <strong
         *ngIf="element.type === 'server';else blueprint"
@@ -15,5 +16,8 @@
         >{{ element.content }}</strong>
       </ng-template>
     </p>
+    -->
+    <!--injecting complexing elements from parent-->
+    <ng-content></ng-content>
   </div>
 </div>
