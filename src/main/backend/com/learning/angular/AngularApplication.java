@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,11 +34,11 @@ public class AngularApplication {
 		return args -> {
 			userRepository.saveAll(
 					Arrays.asList(
-							User.builder().name("user1").email("user1@email.com").build(),
-							User.builder().name("user2").email("user2@email.com").build(),
-							User.builder().name("user3").email("user3@email.com").build(),
-							User.builder().name("user4").email("user4@email.com").build(),
-							User.builder().name("user5").email("user5@email.com").build()
+							User.builder().name("user1").email("user1@email.com").age(20).build(),
+							User.builder().name("user2").email("user2@email.com").age(15).build(),
+							User.builder().name("user3").email("user3@email.com").age(32).build(),
+							User.builder().name("user4").email("user4@email.com").age(19).build(),
+							User.builder().name("user5").email("user5@email.com").age(25).build()
 					));
 		};
 	}
@@ -63,5 +64,34 @@ public class AngularApplication {
 			log.warning(user::toString);
 			return this.userRepository.save(user);
 		}
+	}
+
+	@RestController
+	@RequestMapping("/user")
+	public class UserController2{
+
+		@Autowired UserRepository userRepository;
+
+		@GetMapping("/{id}")
+		public User user(@PathVariable Long id){
+			return userRepository.findById(id).get();
+		}
+
+		@PostMapping
+        public User create(@RequestBody User user){
+		    return userRepository.save(user);
+        }
+
+        @PutMapping("/{id}")
+        public User update(@PathVariable Long id, @RequestBody User user) {
+            return userRepository.save(user);
+        }
+
+        @DeleteMapping("/{id}")
+        @ResponseStatus(HttpStatus.NO_CONTENT)
+        public void delete(@PathVariable Long id){
+		    userRepository.deleteById(id);
+        }
+
 	}
 }

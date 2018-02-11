@@ -20,7 +20,7 @@ export class UserFormComponent {
     /* Observable Subscriber */
     const subscriber = body => {
       console.log(body);
-      this.searchUser = body['data'];
+      this.searchUser = body;
     };
 
     this.apiUserService.user(id,subscriber);
@@ -48,7 +48,7 @@ export class UserFormComponent {
 
     const subscriber = body => {
       console.log(body);
-      const data = body['data'];
+      const data = body;
       this.toastsManager.info(`${JSON.stringify(data)}`);
     };
 

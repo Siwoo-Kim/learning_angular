@@ -15,10 +15,9 @@ public class User {
     sequenceName = "USER_SEQ",allocationSize = 1,initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "USER_SEQ_GENERATOR")
     private Long id;
-
     private String name;
-
     private String email;
+    private Integer age;
 
 
 }
