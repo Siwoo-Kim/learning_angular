@@ -16,6 +16,7 @@ import {FirstStepChapter5Component} from "./component/first-step-chapter-5/first
 import {P2AppComponent} from "./project2/components/p2-app.component";
 import {RecipeAppComponent} from "./project2/recipe-project/components/recipe-app.component";
 import {FirstStepChapter6Component} from "./component/first-step-chapter-6/first-step-chapter-6.component";
+import {FirstStepChapter7Component} from "./component/first-step-chapter-7/first-step-chapter-7.component";
 
 const routes:Routes = [
   {path:'',component:HomeComponent},
@@ -31,6 +32,7 @@ const routes:Routes = [
   {path:'first-step/chapter4',component:FirstStepChapter4Component},
   {path:'first-step/chapter5',component:FirstStepChapter5Component},
   {path:'first-step/chapter6',component:FirstStepChapter6Component},
+  {path:'first-step/chapter7',component:FirstStepChapter7Component},
   {path:'project2',component:P2AppComponent},
   {path:'recipe',component:RecipeAppComponent},
 

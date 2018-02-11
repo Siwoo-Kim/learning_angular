@@ -30,7 +30,7 @@ export class ServerElementComponent implements OnDestroy, OnInit, AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    console.log('NgAfterViewInit called!');
+    console.log('NgAfterViewIniebe called!');
     console.log("Text content: "+this.header.nativeElement.value.textContent);
   }
   /* You can specify alias fo the element from parent */

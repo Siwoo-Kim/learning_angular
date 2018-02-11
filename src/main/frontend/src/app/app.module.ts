@@ -43,6 +43,8 @@ import {FirstStepChapter5Module} from "./component/first-step-chapter-5/first-st
 import {Project2Module} from "./project2/project2.module";
 import { FirstStepChapter6Component } from './component/first-step-chapter-6/first-step-chapter-6.component';
 import {FirstStepChapter6Module} from "./component/first-step-chapter-6/first-step-chapter6/first-step-chapter6.module";
+import { FirstStepChapter7Component } from './component/first-step-chapter-7/first-step-chapter-7.component';
+import {FirstStepChapter7Module} from "./component/first-step-chapter-7/first-step-chapter7/first-step-chapter7.module";
 
 
 
@@ -66,6 +68,7 @@ import {FirstStepChapter6Module} from "./component/first-step-chapter-6/first-st
     FirstStepChapter4Component,
     FirstStepChapter5Component,
     FirstStepChapter6Component,
+    FirstStepChapter7Component,
   ],
   imports: [
     /* 3rd Module */
@@ -96,7 +99,7 @@ import {FirstStepChapter6Module} from "./component/first-step-chapter-6/first-st
     /* 앵귤러 첫걸음4 실습 컴포넌트 */
     FirstStepChapter3Module,FirstStepChapter4Module,
     FirstStepChapter4Module,FirstStepChapter5Module,
-    FirstStepChapter6Module,
+    FirstStepChapter6Module,FirstStepChapter7Module
 
   ],
   exports : [ExampleTitleComponent],

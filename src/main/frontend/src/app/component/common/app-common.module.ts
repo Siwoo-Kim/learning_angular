@@ -6,7 +6,8 @@ import {ChapterTitleComponent} from "./chapter-title/chapter-title.component";
 import {HomeComponent} from "./home/home.component";
 import {
   MatButtonModule,
-  MatCardModule, MatChipsModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule,
+  MatCardModule, MatCheckboxModule, MatChipsModule, MatExpansionModule, MatFormFieldModule, MatIconModule,
+  MatInputModule, MatListModule,
   MatRadioModule, MatSnackBarModule,
   MatToolbarModule, MatTooltipModule
 } from "@angular/material";

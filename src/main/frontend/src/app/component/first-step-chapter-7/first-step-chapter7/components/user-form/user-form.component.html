@@ -1,0 +1,73 @@
+
+<app-example-title [chapter]="'User Http Practice'"></app-example-title>
+<div class="form-group" style="margin-top: 15px">
+  <h4>Searching User and Delete</h4>
+  <mat-form-field>
+    <input
+      matInput
+      type="number"
+      placeholder="Enter User ID"
+      #userIdInput
+    >
+  </mat-form-field>
+  <button
+    type="button"
+    mat-raised-button
+    color="primary"
+    (click)="onFindUser(userIdInput.value)"
+  >Search</button>
+  <button
+    type="button"
+    mat-raised-button
+    color="accent"
+    (click)="onDeleteUser(userIdInput.value)"
+  >Delete</button>
+  <div class="alert alert-success user-result">Result : {{ findUser | json }}</div>
+</div>
+
+<hr/>
+
+<div class="form-group">
+  <h4>Register new user and Edit</h4>
+  <mat-form-field>
+    <input
+      matInput
+      type="number"
+      placeholder="Enter User ID"
+      [(ngModel)]="formUser.id"
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      placeholder="Enter name"
+      [(ngModel)]="formUser.name"
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      type="number"
+      placeholder="Enter age"
+      [(ngModel)]="formUser.age"
+    >
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onUserRegister()"
+  >Register or Edit</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
