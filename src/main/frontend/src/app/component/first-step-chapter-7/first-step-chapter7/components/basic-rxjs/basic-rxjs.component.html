@@ -1,0 +1,42 @@
+
+<app-example-title [chapter]="'Basic RxJS'"></app-example-title>
+
+<button
+  mat-raised-button
+  color="accent"
+  (click)="onFireSubscribe()"
+>Subscribe Observable</button>
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let str of stringList">
+    {{str}}
+  </li>
+</ul>
+
+<button
+  mat-raised-button
+  color="accent"
+  (click)="onFireSubscribeMap()"
+>Subscribe with Map operator</button>
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let str of stringListWithMap">
+    {{str}}
+  </li>
+</ul>
+
+
+<button
+  mat-raised-button
+  color="accent"
+  (click)="onFireSubscribeFilter()"
+>Subscribe with Filter operator</button>
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let str of stringListWithFilter">
+    {{str}}
+  </li>
+</ul>

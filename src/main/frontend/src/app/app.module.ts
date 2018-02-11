@@ -45,6 +45,8 @@ import { FirstStepChapter6Component } from './component/first-step-chapter-6/fir
 import {FirstStepChapter6Module} from "./component/first-step-chapter-6/first-step-chapter6/first-step-chapter6.module";
 import { FirstStepChapter7Component } from './component/first-step-chapter-7/first-step-chapter-7.component';
 import {FirstStepChapter7Module} from "./component/first-step-chapter-7/first-step-chapter7/first-step-chapter7.module";
+import {InMemoryWebApiModule} from "angular-in-memory-web-api";
+import {InMemoryUserService} from "./component/first-step-chapter-7/first-step-chapter7/services/in-memory-user.service";
 
 
 
@@ -74,6 +76,9 @@ import {FirstStepChapter7Module} from "./component/first-step-chapter-7/first-st
     /* 3rd Module */
     ToastModule.forRoot(),
 
+    /* In Memory Dummy Database */
+    InMemoryWebApiModule.forRoot(InMemoryUserService, { delay: 500, put204: false }),
+
     /* Angular Module */
     BrowserModule,HttpModule,FormsModule,
     BrowserAnimationsModule,
@@ -83,7 +88,6 @@ import {FirstStepChapter7Module} from "./component/first-step-chapter-7/first-st
     MatInputModule,MatTooltipModule, MatRadioModule,
     MatButtonModule,MatListModule,MatIconModule,
     MatExpansionModule,MatChipsModule, MatIconModule,
-
 
     /* Project2 */
     Project2Module,

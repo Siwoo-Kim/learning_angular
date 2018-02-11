@@ -12,10 +12,15 @@ import {
   MatToolbarModule,
   MatTooltipModule
 } from "@angular/material";
+import {InMemoryWebApiModule} from "angular-in-memory-web-api";
+import {InMemoryUserService} from "./services/in-memory-user.service";
+import {BasicRxjsComponent} from "./components/basic-rxjs/basic-rxjs.component";
 
 
 const components = [
   UserFormComponent,
+  BasicRxjsComponent,
+
 ];
 
 @NgModule({
@@ -25,7 +30,8 @@ const components = [
     FormsModule,
     HttpModule,
 
-
+    /* In Memory Dummy Database */
+    InMemoryWebApiModule.forRoot(InMemoryUserService, { delay: 500, put204: false }),
 
     MatToolbarModule, MatCheckboxModule,
     MatSnackBarModule, MatInputModule,

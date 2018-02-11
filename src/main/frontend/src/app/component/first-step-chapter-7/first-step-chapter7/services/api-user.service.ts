@@ -16,7 +16,9 @@ export class ApiUserService {
   /*http service enables communication between service and server via HTTP protocol*/
 
   user(id: number, callback){
-    this.http.get(`/user/${id}`).map(response => response.json()).subscribe(callback);
+    this.http.get(`/user/${id}`).map(response =>{
+      console.log(response);
+      return response.json(); }).subscribe(callback);
   }
 
   create(user: User, callback){

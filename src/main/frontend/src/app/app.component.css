@@ -39,6 +39,9 @@ footer {
   margin-right: 4px;
 }
 
+app-example-title{
+  margin-bottom: 15px;
+}
 li.sub-chapter {
   margin: 25px;
   margin-top: 100px;
