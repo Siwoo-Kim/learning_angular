@@ -29,9 +29,10 @@ const components = [
     CommonModule,
     FormsModule,
     HttpModule,
-
-    /* In Memory Dummy Database */
+/*
+    /!* In Memory Dummy Database *!/
     InMemoryWebApiModule.forRoot(InMemoryUserService, { delay: 500, put204: false }),
+*/
 
     MatToolbarModule, MatCheckboxModule,
     MatSnackBarModule, MatInputModule,

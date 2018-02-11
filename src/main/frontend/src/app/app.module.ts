@@ -76,8 +76,10 @@ import {InMemoryUserService} from "./component/first-step-chapter-7/first-step-c
     /* 3rd Module */
     ToastModule.forRoot(),
 
-    /* In Memory Dummy Database */
+/*
+    /!* In Memory Dummy Database *!/
     InMemoryWebApiModule.forRoot(InMemoryUserService, { delay: 500, put204: false }),
+*/
 
     /* Angular Module */
     BrowserModule,HttpModule,FormsModule,

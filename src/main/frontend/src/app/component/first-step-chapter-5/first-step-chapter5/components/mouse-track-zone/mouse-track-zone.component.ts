@@ -2,6 +2,8 @@ import {Component, Host, Input, OnInit, Optional} from '@angular/core';
 import {AbstractLoggerService, LogLevel} from "../../services/logger.service";
 import {LoggerFirstService} from "../../services/logger-first.service";
 import {LoggerSecondService} from "../../services/logger-second.service";
+import {Subject} from "rxjs/Subject";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-mouse-track-zone',
@@ -10,8 +12,10 @@ import {LoggerSecondService} from "../../services/logger-second.service";
 })
 export class MouseTrackZoneComponent implements OnInit {
 
-  logLevel:LogLevel = LogLevel.DEBUG;
+  /* logLevel:LogLevel = LogLevel.DEBUG; */
   loggerService:AbstractLoggerService;
+  moveSubject: Subject<MouseEvent> = new Subject<MouseEvent>();
+  mouseObservable: Observable<MouseEvent> = this.moveSubject.asObservable();
 
   constructor( loggerService:AbstractLoggerService /* @Host() @Optional() loggerFirstService:LoggerFirstService, loggerSecondService:LoggerSecondService */) {
        //Getting singleton instance from Angular
@@ -27,16 +31,21 @@ export class MouseTrackZoneComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.mouseObservable
+      .throttleTime(500)
+      .map(mouseevent => [mouseevent.clientX, mouseevent.clientY])
+      .subscribe(position => this.mousePostion = `x:${position[0]}, y:${position[1]}`);
   }
 
   mousePostion:string;
                       // Extracting property from the the calling argument[MouseEvent Object]
-  captureMousePosition({ clientX , clientY}){
-
+  captureMousePosition(mouseevent: MouseEvent /*{ clientX , clientY}*/){
+    /*
     this.mousePostion = `x: ${clientX} , y: ${clientY}`;
     this.loggerService.debug(this.mousePostion);
     console.dir(this.loggerService);
+    */
+    this.moveSubject.next(mouseevent);
   }
 
 }

@@ -1,7 +1,8 @@
 
 
-<div class="tract-zone" (click)="captureMousePosition($event)">
+<!--<div class="tract-zone" (click)="captureMousePosition($event)"></div>-->
                                           <!--Sending event object for the element to the handler-->
+<div class="tract-zone" (mousemove)="captureMousePosition($event)">
 </div>
 
 <p class="alert alert-info">
