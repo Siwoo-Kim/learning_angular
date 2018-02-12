@@ -12,4 +12,9 @@ export class RecipeAppComponent implements OnInit {
   ngOnInit() {
   }
 
+  loadedFeature:string = 'recipe';
+
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
+  }
 }
