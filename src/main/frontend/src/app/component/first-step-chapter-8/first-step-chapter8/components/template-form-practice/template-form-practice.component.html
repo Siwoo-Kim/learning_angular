@@ -1,0 +1,53 @@
+
+
+<app-example-title [chapter]="'Template Form Practice'"></app-example-title>
+
+<form
+  class="form-group"
+  #templateForm="ngForm"
+  (ngSubmit)="onSubmit(templateForm.value)"
+  (ngReset)="onReset()"
+  novalidate>
+  <!--disable html standard vaildator-->
+  <mat-form-field>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      matInput
+      ngModel
+      required
+      minlength="3"
+      placeholder="Enter name"
+      pattern="^[A-Z].*"
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="number"
+      class="form-control"
+      name="age"
+      matInput
+      ngModel
+      placeholder="Enter age"
+      required
+      pattern="[0-9]{1}"
+      max="100" min="1"
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="email"
+      class="form-control"
+      matInput
+      ngModel
+      required
+      placeholder="Enter email"
+      name="email"
+      email
+    >
+  </mat-form-field>
+  <button type="submit" mat-raised-button [disabled]="!templateForm.valid">Submit</button>
+  <button type="reset" mat-raised-button>Reset</button>
+
+</form>

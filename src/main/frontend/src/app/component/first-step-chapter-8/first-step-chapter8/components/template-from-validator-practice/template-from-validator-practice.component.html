@@ -1,0 +1,76 @@
+
+<app-example-title [chapter]="'Template Form and Validator'"></app-example-title>
+
+<form
+  #templateForm="ngForm"
+  (ngSubmit)="onSumbit(templateForm.value)"
+  (ngReset)="onReset()"
+  novalidate
+>
+  <p class="alert alert-info">{{ title }}</p>
+  <div class="form-group">
+    <mat-form-field class="col-12 form-control">
+      <input
+        matInput
+        ngModel
+        placeholder="Enter product Name"
+        type="text"
+        name="name"
+        minlength="3"
+        maxlength="10"
+        required
+      >
+    </mat-form-field>
+    <div class="form-control">
+      <mat-form-field class="col-5">
+        <input
+          matInput
+          ngModel
+          placeholder="Enter product price"
+          type="number"
+          name="price"
+          cmin="10"
+          cmax="150"
+          required
+        >
+      </mat-form-field>
+      <mat-form-field class="offset-1 col-5">
+        <input
+          matInput
+          ngModel
+          placeholder="Enter product amount"
+          type="number"
+          name="price"
+          cmin="1"
+          cmax="100"
+          required
+          pattern="^[1-9]\d*"
+        >
+      </mat-form-field>
+    </div>
+    <mat-form-field class="col-12 form-control">
+      <textarea
+        matInput
+        ngModel
+        rows="4"
+        placeholder="Enter product description"
+        type="text"
+        name="description"
+        minlength="5" maxlength="10"
+        required
+      ></textarea>
+    </mat-form-field>
+  </div>
+  <button type="submit"
+          color="primary"
+          mat-raised-button
+          [disabled]="!templateForm.valid"
+  >Submit</button>
+  <button type="reset" color="accent" mat-raised-button >Reset</button>
+</form>
+
+<p class="alert alert-warning" style="margin-top: 20px">Errors in form</p>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let err of errors"> {{ err | json }}</li>
+  </ul>
+

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {NgModel} from "@angular/forms";
 
 @Component({
   selector: 'app-example-3-1',
@@ -6,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./example-3-1.component.css']
 })
 export class Example31Component implements OnInit {
-
-  constructor() { }
+  myData:string;
 
   ngOnInit() {
   }

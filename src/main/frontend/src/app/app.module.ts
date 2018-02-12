@@ -47,6 +47,8 @@ import { FirstStepChapter7Component } from './component/first-step-chapter-7/fir
 import {FirstStepChapter7Module} from "./component/first-step-chapter-7/first-step-chapter7/first-step-chapter7.module";
 import {InMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryUserService} from "./component/first-step-chapter-7/first-step-chapter7/services/in-memory-user.service";
+import { FirstStepChapter8Component } from './component/first-step-chapter-8/first-step-chapter-8.component';
+import {FirstStepChapter8Module} from "./component/first-step-chapter-8/first-step-chapter8/first-step-chapter8.module";
 
 
 
@@ -71,6 +73,7 @@ import {InMemoryUserService} from "./component/first-step-chapter-7/first-step-c
     FirstStepChapter5Component,
     FirstStepChapter6Component,
     FirstStepChapter7Component,
+    FirstStepChapter8Component,
   ],
   imports: [
     /* 3rd Module */
@@ -105,7 +108,8 @@ import {InMemoryUserService} from "./component/first-step-chapter-7/first-step-c
     /* 앵귤러 첫걸음4 실습 컴포넌트 */
     FirstStepChapter3Module,FirstStepChapter4Module,
     FirstStepChapter4Module,FirstStepChapter5Module,
-    FirstStepChapter6Module,FirstStepChapter7Module
+    FirstStepChapter6Module,FirstStepChapter7Module,
+    FirstStepChapter8Module,
 
   ],
   exports : [ExampleTitleComponent],

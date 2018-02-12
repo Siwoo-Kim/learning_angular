@@ -1,0 +1,22 @@
+
+
+<app-example-title [chapter]="'NgModel and FormControl'"></app-example-title>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Enter mobile number [ex) 010-5555-5555]"
+      type="text"
+      [(ngModel)]="myData"
+      #myInput="ngModel"
+      required
+      pattern="010-[0-9]{4}-[0-9]{4}"
+    >
+  </mat-form-field>
+  <!--<p class="alert alert-info">Valid? : {{myInput.valid}}</p>-->
+  <p class="alert alert-info">Valid? : {{ isValid() }}</p>
+  <p class="alert alert-info">Untouched? : {{ myInput.untouched }}</p>
+  <p class="alert alert-info">Pristine? : {{ myInput.pristine }}</p>
+
+
+

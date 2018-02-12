@@ -1,0 +1,26 @@
+
+<app-example-title [chapter]="'NgModel and Two-way databinding'"></app-example-title>
+
+<mat-form-field>
+  <input
+    matInput
+    type="text"
+    placeholder="Type any word"
+    [(ngModel)]="myData1"
+  >
+</mat-form-field>
+<mat-form-field>
+  <input
+    matInput
+    type="text"
+    placeholder="Type and word"
+    [ngModel]="myData2"
+    (ngModelChange)="myData2=  $event"
+  >
+
+</mat-form-field>
+<p> {{ myData1 }}</p>
+
+<hr/>
+<app-example-8-2-1-child [(passingData)]="parentData"></app-example-8-2-1-child>
+<p> {{ parentData }}</p>
