@@ -1,12 +1,19 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link header-nav" [class.active]="!isSelected" >Recipe Book</a>
+    <a class="nav-link header-nav"
+       [class.active]="!isSelected" (click)="onSelect('recipe');"
+       #homeNavLink
+    >Recipe Book</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link header-nav" [class.active]="isSelected == 'recipe'" (click)="onSelect('recipe')">Recipes</a>
+    <a class="nav-link header-nav"
+       [class.active]="isSelected == 'recipe'"
+       (click)="onSelect('recipe')">Recipes</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link header-nav" [class.active]="isSelected == 'shopping-list'" (click)="onSelect('shopping-list')">Shopping List</a>
+    <a class="nav-link header-nav"
+       [class.active]="isSelected == 'shopping-list'"
+       (click)="onSelect('shopping-list')">Shopping List</a>
   </li>
 
   <li class="nav-item dropdown">

@@ -15,13 +15,16 @@
 
 <hr/>-->
 
-<div class="container">
                       <!--  $event is data from the child component   -->
-  <!--<app-cockpit
+  <!--
+
+  <div class="container">
+  <app-cockpit
     (serverCreated)="onServerAdded($event)"
     (blueprintCreated)="onBlueprintAdded($event)"
   ></app-cockpit>-->
-  <app-cockpit
+
+  <!--<app-cockpit
     (onServerEmit)="onServerAdded($event)"
     (onBlueprintEmit)="onBlueprintAdded($event)"
   ></app-cockpit>
@@ -39,7 +42,7 @@
         [srvElement]="serverElement"
         [name]="serverElement.name"
       >
-        <!--opening child component-->
+        &lt;!&ndash;opening child component&ndash;&gt;
         <p class="card-text" style="padding: 20px">
           <strong
             *ngIf="serverElement.type === 'server';else blueprint"
@@ -51,12 +54,81 @@
             >{{ serverElement.content }}</strong>
           </ng-template>
         </p>
-        <!--closing child component-->
+        &lt;!&ndash;closing child component&ndash;&gt;
       </app-server-element>
-        <!--sending serverElement property to child component-->
+        &lt;!&ndash;sending serverElement property to child component&ndash;&gt;
+    </div>
+  </div>
+
+</div>
+
+  -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd"
+      >Only show odd</button>
+      <br><br>
+      <ul class="list-group">
+        <div *ngIf="onlyOdd">
+          <li
+            class="list-group-item"
+            *ngFor="let odd of oddNumbers"
+            [ngClass]="{odd: odd % 2 !== 0}"
+            [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent' }"
+          >
+            {{ odd }}
+          </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+          <li
+            class="list-group-item"
+            *ngFor="let even of evenNumbers"
+            [ngClass]="{even: even === 0}"
+            [ngStyle]="{backgroundColor: even % 2 === 0 ? 'blue' : 'transparent' }"
+          >
+            {{ even }}
+          </li>
+        </div>
+      </ul>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -7,6 +7,9 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
     h3 {
       color : dodgerblue;
     }
+    .odd {
+      color: red;
+    }
   `],
   // encapsulation : ViewEncapsulation.None
 })
@@ -18,8 +21,6 @@ export class P2AppComponent {
       content : 'Just a test! '
     },
     ];
-
-
 
   onServerAdded(serverData : {serverName:string,serverContent:string}){
     this.serverElements.push({
@@ -45,4 +46,26 @@ export class P2AppComponent {
     this.serverElements.splice(0,1);
   }
 
+  numbers: number[] = [1,2,3,4,5,];
+  oddNumbers = [1,3,5];
+  evenNumbers = [2,4];
+  onlyOdd:boolean = false;
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
