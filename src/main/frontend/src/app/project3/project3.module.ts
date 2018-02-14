@@ -14,15 +14,16 @@ import {
   MatTooltipModule
 } from "@angular/material";
 import {AppCommonModule} from "../component/common/app-common.module";
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/p3-main/navbar/navbar.component';
+import { SidebarComponent } from './components/p3-main/sidebar/sidebar.component';
+import { FooterComponent } from './components/p3-main/footer/footer.component';
 import {MainComponent} from "./components/main.component";
+import {ProductModule} from "./components/product/product.module";
+import {CategoryModule} from "./components/category/category.module";
+import {P3MainModule} from "./components/p3-main/p3-main.module";
+import {RouterModule} from "@angular/router";
 
 const components = [
-  NavbarComponent,
-  SidebarComponent,
-  FooterComponent,
   MainComponent
 ];
 
@@ -31,13 +32,11 @@ const components = [
     AppCommonModule,
     CommonModule,
     FormsModule,
+    RouterModule,
 
-    /* material moduel */
-    MatToolbarModule, MatCheckboxModule,
-    MatSnackBarModule, MatInputModule,
-    MatTooltipModule, MatRadioModule,
-    MatButtonModule,MatListModule,
-    MatExpansionModule,MatChipsModule,
+    /*App Modules*/
+    ProductModule, CategoryModule,
+    P3MainModule,
   ],
   declarations: components,
   exports : components

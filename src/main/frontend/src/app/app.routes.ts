@@ -19,6 +19,10 @@ import {FirstStepChapter6Component} from "./component/first-step-chapter-6/first
 import {FirstStepChapter7Component} from "./component/first-step-chapter-7/first-step-chapter-7.component";
 import {FirstStepChapter8Component} from "./component/first-step-chapter-8/first-step-chapter-8.component";
 import {MainComponent} from "./project3/components/main.component";
+import {CategoryManagementComponent} from "./project3/components/category/category-management/category-management.component";
+import {MainDashboardComponent} from "./project3/components/p3-main/main-dashboard/main-dashboard.component";
+import {PageNotFoundComponent} from "./project3/components/p3-main/page-not-found/page-not-found.component";
+import {ProductManagementComponent} from "./project3/components/product/product-management/product-management.component";
 
 const routes:Routes = [
   {path:'',component:HomeComponent},
@@ -37,8 +41,18 @@ const routes:Routes = [
   {path:'first-step/chapter7',component:FirstStepChapter7Component},
   {path:'first-step/chapter8',component:FirstStepChapter8Component},
   {path:'project2',component:P2AppComponent},
-  {path:'project3',component:MainComponent},
+  {path:'project3',component: MainComponent},
+
+  /*
+  {path:'project3',component: MainComponent, children: [
+      {path:'product',component:ProductManagementComponent,outlet:'pj3'},
+      {path:'category',component:CategoryManagementComponent,outlet:'pj3'},
+      {path:'total',component:MainDashboardComponent,outlet:'pj3'},
+      {path:'**',component:PageNotFoundComponent,outlet:'pj3'}
+    ],},*/
+
   {path:'recipe',component:RecipeAppComponent},
+
 ];
 
 

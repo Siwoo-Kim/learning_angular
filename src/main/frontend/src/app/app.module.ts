@@ -45,8 +45,6 @@ import { FirstStepChapter6Component } from './component/first-step-chapter-6/fir
 import {FirstStepChapter6Module} from "./component/first-step-chapter-6/first-step-chapter6/first-step-chapter6.module";
 import { FirstStepChapter7Component } from './component/first-step-chapter-7/first-step-chapter-7.component';
 import {FirstStepChapter7Module} from "./component/first-step-chapter-7/first-step-chapter7/first-step-chapter7.module";
-import {InMemoryWebApiModule} from "angular-in-memory-web-api";
-import {InMemoryUserService} from "./component/first-step-chapter-7/first-step-chapter7/services/in-memory-user.service";
 import { FirstStepChapter8Component } from './component/first-step-chapter-8/first-step-chapter-8.component';
 import {FirstStepChapter8Module} from "./component/first-step-chapter-8/first-step-chapter8/first-step-chapter8.module";
 import {Project3Module} from "./project3/project3.module";

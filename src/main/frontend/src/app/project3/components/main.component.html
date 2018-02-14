@@ -4,9 +4,9 @@
   <div class="row">
     <app-sidebar (onChangeMenu)="selectedMenu = $event"></app-sidebar>
     <main class="col-10 offset-2 pt-3" [ngSwitch]="selectedMenu">
-      <div *ngSwitchCase="'product'">Product Page</div>
-      <div *ngSwitchCase="'category'">Category Page</div>
-      <div *ngSwitchDefault="">Main Page</div>
+      <div *ngSwitchCase="'product'"><app-product-management></app-product-management></div>
+      <div *ngSwitchCase="'category'"><app-category-management></app-category-management></div>
+      <div *ngSwitchDefault=""><app-main-dashboard></app-main-dashboard></div>
     </main>
   </div>
 </div>
