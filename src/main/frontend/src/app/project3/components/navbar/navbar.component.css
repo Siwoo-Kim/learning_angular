@@ -1,0 +1,14 @@
+.scm-navbar{
+  border-bottom: 1px solid darkgray;
+  background-color: #3247b8;
+}
+
+button{
+  margin-left: 5px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.navbar-brand {
+  font-family: 'Nanum Pen Script', cursiv;
+}
+

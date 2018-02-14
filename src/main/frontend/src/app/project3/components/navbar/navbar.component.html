@@ -1,0 +1,26 @@
+
+<nav class="navbar navbar-toggleable fixed-top scm-navbar">
+  <a class="navbar-brand text-white" href="./">{{ title }}</a>
+  <div class="collapse navbar-collapse d-flex justify-content-end" id="nav-bar">
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn btn-warning mr-2"><i class="fa fa-plus"></i> Register Product</button>
+    <form class="form-inline">
+        <input
+          type="number"
+          matInput
+          class="form-control"
+          placeholder="Product Number"
+          #searchInput
+        >
+      <button
+        mat-raised-button
+        color="primary"
+        class="btn btn-warning"
+        type="button"
+        (click)="searchProduct(searchInput.value)">
+      >Query</button>
+    </form>
+  </div>
+</nav>

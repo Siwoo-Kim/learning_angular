@@ -7,6 +7,7 @@
   class="form-group col-12"
   novalidate
 >
+    <!--formGroup shou;d be matched with form group model name-->
   <p class="alert alert-success">Register Product</p>
   <div class="row">
     <mat-form-field class="form-control">
@@ -14,8 +15,9 @@
         matInput
         placeholder="Enter Product Name"
         type="text"
-        formControlName="name"
+        [formControlName]="'name'"
       >
+      <!--formControlName should be matched with formControl model in the formGroup-->
     </mat-form-field>
   </div>
 
@@ -25,7 +27,7 @@
         matInput
         placeholder="Enter Product price"
         type="number"
-        formControlName="price"
+        [formControlName]="'price'"
       >
     </mat-form-field>
     <mat-form-field class="form-control offset-1 col-5" >

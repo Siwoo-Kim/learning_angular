@@ -18,6 +18,7 @@ import {RecipeAppComponent} from "./project2/recipe-project/components/recipe-ap
 import {FirstStepChapter6Component} from "./component/first-step-chapter-6/first-step-chapter-6.component";
 import {FirstStepChapter7Component} from "./component/first-step-chapter-7/first-step-chapter-7.component";
 import {FirstStepChapter8Component} from "./component/first-step-chapter-8/first-step-chapter-8.component";
+import {MainComponent} from "./project3/components/main.component";
 
 const routes:Routes = [
   {path:'',component:HomeComponent},
@@ -36,9 +37,9 @@ const routes:Routes = [
   {path:'first-step/chapter7',component:FirstStepChapter7Component},
   {path:'first-step/chapter8',component:FirstStepChapter8Component},
   {path:'project2',component:P2AppComponent},
+  {path:'project3',component:MainComponent},
   {path:'recipe',component:RecipeAppComponent},
-
-]
+];
 
 
 @NgModule({
