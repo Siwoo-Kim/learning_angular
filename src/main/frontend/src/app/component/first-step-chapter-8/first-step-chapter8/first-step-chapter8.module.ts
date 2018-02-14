@@ -13,7 +13,7 @@ import {
   MatTooltipModule
 } from "@angular/material";
 import {HttpModule} from "@angular/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AppCommonModule} from "../../common/app-common.module";
 import {Example814Component} from "./components/example-8-1-4/example-8-1-4.component";
 import {Example821Component} from "./components/example-8-2-1/example-8-2-1.component";
@@ -21,6 +21,7 @@ import {Example821ChildComponent} from "./components/example-8-2-1/example-8-2-1
 import {TemplateFormPracticeComponent} from "./components/template-form-practice/template-form-practice.component";
 import {MaxNumValidator, MinNumValidator} from "./validators/custom-validator.directive";
 import {TemplateFromValidatorPracticeComponent} from "./components/template-from-validator-practice/template-from-validator-practice.component";
+import {ReactiveFormPracticeComponent} from "./components/reactive-form-practice/reactive-form-practice.component";
 
 const components = [
   Example814Component,
@@ -30,7 +31,7 @@ const components = [
   TemplateFromValidatorPracticeComponent,
   MaxNumValidator,
   MinNumValidator,
-
+  ReactiveFormPracticeComponent,
 ];
 
 @NgModule({
@@ -39,10 +40,7 @@ const components = [
     CommonModule,
     FormsModule,
     HttpModule,
-    /*
-        /!* In Memory Dummy Database *!/
-        InMemoryWebApiModule.forRoot(InMemoryUserService, { delay: 500, put204: false }),
-    */
+    ReactiveFormsModule,
 
     MatToolbarModule, MatCheckboxModule,
     MatSnackBarModule, MatInputModule,

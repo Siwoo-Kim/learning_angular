@@ -1,0 +1,65 @@
+
+<app-example-title [chapter]="'Reactive Form Practice'"></app-example-title>
+<form
+  [formGroup]="productForm"
+  (ngSubmit)="onSubmit()"
+  (ngReset)="onReset()"
+  class="form-group col-12"
+  novalidate
+>
+  <p class="alert alert-success">Register Product</p>
+  <div class="row">
+    <mat-form-field class="form-control">
+      <input
+        matInput
+        placeholder="Enter Product Name"
+        type="text"
+        formControlName="name"
+      >
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field class="form-control col-5">
+      <input
+        matInput
+        placeholder="Enter Product price"
+        type="number"
+        formControlName="price"
+      >
+    </mat-form-field>
+    <mat-form-field class="form-control offset-1 col-5" >
+      <input
+        matInput
+        placeholder="Enter Product amount"
+        type="number"
+        formControlName="amount"
+      >
+    </mat-form-field>
+  </div>
+
+  <div class="row form-control">
+    <mat-form-field>
+      <textarea
+        rows="10"
+        matInput
+        placeholder="Type description"
+        formControlName="description"
+      ></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="button-group" style="margin-top: 15px; text-align: center">
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+    >Submit</button>
+    <button
+      mat-raised-button
+      type="reset"
+      color="accemt"
+    >Reset</button>
+  </div>
+
+</form>

@@ -7,6 +7,8 @@ import {ServersComponent} from "./components/servers/servers.component";
 import {RecipeProjectModule} from "./recipe-project/recipe-project.module";
 import { CockpitComponent } from './components/cockpit/cockpit.component';
 import { ServerElementComponent } from './components/server-element/server-element.component';
+import {BasicHighlightDirective} from "./components/basic-highlight/basic-highlight.directive";
+import { BetterHighlightDirective } from './components/better-highlight/better-highlight.directive';
 
 @NgModule({
   imports: [
@@ -14,7 +16,14 @@ import { ServerElementComponent } from './components/server-element/server-eleme
     RecipeProjectModule,
   ],
   declarations: [
-    P2AppComponent, ServerComponent,ServersComponent, CockpitComponent, ServerElementComponent
+    P2AppComponent,
+    ServerComponent,
+    ServersComponent,
+    CockpitComponent,
+    ServerElementComponent,
+    /*directive also be declared in declarations*/
+    BasicHighlightDirective,
+    BetterHighlightDirective,
   ]
 })
 export class Project2Module { }
