@@ -9,6 +9,9 @@ import { CockpitComponent } from './components/cockpit/cockpit.component';
 import { ServerElementComponent } from './components/server-element/server-element.component';
 import {BasicHighlightDirective} from "./components/basic-highlight/basic-highlight.directive";
 import { BetterHighlightDirective } from './components/better-highlight/better-highlight.directive';
+import { AccountComponent } from './components/account/account.component';
+import { NewAccountComponent } from './components/new-account/new-account.component';
+import {LoggingService} from "./services/logging-service";
 
 @NgModule({
   imports: [
@@ -24,6 +27,9 @@ import { BetterHighlightDirective } from './components/better-highlight/better-h
     /*directive also be declared in declarations*/
     BasicHighlightDirective,
     BetterHighlightDirective,
-  ]
+    AccountComponent,
+    NewAccountComponent,
+  ],
+  providers: [LoggingService]
 })
 export class Project2Module { }

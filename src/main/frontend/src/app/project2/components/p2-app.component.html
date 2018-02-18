@@ -63,6 +63,7 @@
 </div>
 
   -->
+<!--
 
 <div class="container">
   <div class="row">
@@ -96,6 +97,22 @@
       </ul>
       <p appBasicHighlight>Style me with basic directive!</p>
       <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">Style me with better directive!</p>
+    </div>
+  </div>
+</div>
+-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>
+      <hr>
+      <app-account
+        *ngFor="let acc of accounts;let id = index"
+        [account]="acc"
+        [id]="id"
+        (statusChanged)="onStatusChanged($event)"
+      ></app-account>
     </div>
   </div>
 </div>

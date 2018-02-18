@@ -14,7 +14,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   // encapsulation : ViewEncapsulation.None
 })
 export class P2AppComponent {
-  serverElements = [
+/*  serverElements = [
     {
       type : 'server',
       name : 'TestServer',
@@ -51,6 +51,31 @@ export class P2AppComponent {
   evenNumbers = [2,4];
   onlyOdd:boolean = false;
 
+  */
+
+  accounts = [
+    {
+      name: 'Master Account',
+      status: 'active'
+    },
+    {
+      name: 'Testaccount',
+      status: 'inactive'
+    },
+    {
+      name: 'Hidden Account',
+      status: 'unknown'
+    },
+  ];
+
+  onAccountAdded(newAccount: {name: string, status: string}) {
+    this.accounts.push(newAccount);
+  }
+
+  onStatusChanged(updateInfo: {id: number, newStatus: string}){
+    console.log(updateInfo);
+    this.accounts[updateInfo.id].status = updateInfo.newStatus;
+  }
 }
 
 
