@@ -10,6 +10,7 @@ import { RecipeDetailComponent } from './components/recipes/recipe-detail/recipe
 import { RecipeItemComponent } from './components/recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/shopping-edit.component';
+import {ShoppingListService} from "./components/shopping-list/shopping-list.service";
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-  ]
+  ],
+  providers: [ShoppingListService],
 })
 export class RecipeProjectModule { }

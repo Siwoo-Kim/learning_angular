@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {AccountService} from "../services/account-service";
 
 @Component({
   selector: 'app-project2',
@@ -13,7 +14,8 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   `],
   // encapsulation : ViewEncapsulation.None
 })
-export class P2AppComponent {
+export class P2AppComponent implements  OnInit{
+
 /*  serverElements = [
     {
       type : 'server',
@@ -53,21 +55,13 @@ export class P2AppComponent {
 
   */
 
-  accounts = [
-    {
-      name: 'Master Account',
-      status: 'active'
-    },
-    {
-      name: 'Testaccount',
-      status: 'inactive'
-    },
-    {
-      name: 'Hidden Account',
-      status: 'unknown'
-    },
-  ];
+  accounts: {name: string, status: string}[] = [];
 
+  constructor(private accountService: AccountService){}
+
+  ngOnInit(): void {
+    this.accounts = this.accountService.accounts;
+  }
   onAccountAdded(newAccount: {name: string, status: string}) {
     this.accounts.push(newAccount);
   }

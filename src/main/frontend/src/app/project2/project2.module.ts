@@ -12,6 +12,7 @@ import { BetterHighlightDirective } from './components/better-highlight/better-h
 import { AccountComponent } from './components/account/account.component';
 import { NewAccountComponent } from './components/new-account/new-account.component';
 import {LoggingService} from "./services/logging-service";
+import {AccountService} from "./services/account-service";
 
 @NgModule({
   imports: [
@@ -30,6 +31,6 @@ import {LoggingService} from "./services/logging-service";
     AccountComponent,
     NewAccountComponent,
   ],
-  providers: [LoggingService]
+  providers: [LoggingService,AccountService]
 })
 export class Project2Module { }
